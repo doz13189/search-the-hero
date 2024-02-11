@@ -11,7 +11,6 @@ const getMemories = async () => {
 
 export default async function Home() {
   const memories = await getMemories()
-  console.log(memories.response[0].description);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
