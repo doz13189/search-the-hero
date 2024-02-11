@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 const getMemories = async () => {
-  const response = await fetch(`${process.env.URL}/api/memory`);
+  const response = await fetch(`${process.env.API_URL}/api/memory`);
   if (response.ok) {
     return response.json();
   }
