@@ -2,7 +2,8 @@ import Image from "next/image";
 import Input from "./input";
 
 const getMemories = async () => {
-  const response = await fetch(`${process.env.API_URL}/api/memory`);
+  const response = await fetch(`${process.env.API_URL}/api/memory`, { next: { revalidate: 10 } });
+  console.log(response)
   if (response.ok) {
     return response.json();
   }
@@ -12,7 +13,6 @@ const getMemories = async () => {
 
 export default async function Search({ searchString }: { searchString: string }) {
   const memories = await getMemories();
-  console.log(searchString)
   console.log(memories)
 
   return (
