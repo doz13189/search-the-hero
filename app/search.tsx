@@ -5,7 +5,6 @@ const getMemories = async () => {
 	const response = await fetch(`${process.env.API_URL}/api/memory`, {
 		next: { revalidate: 10 },
 	});
-	console.log(response);
 	if (response.ok) {
 		return response.json();
 	}
@@ -16,7 +15,6 @@ export default async function Search({
 	searchString,
 }: { searchString: string }) {
 	const memories = await getMemories();
-	console.log(memories);
 
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-between p-24">
