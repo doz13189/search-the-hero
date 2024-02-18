@@ -17,7 +17,30 @@ export default async function Tags(args: {
 			{memories.response
 				// biome-ignore lint/suspicious/noExplicitAny: あとで修正する
 				.map((memory: any) => {
-					return <div key={memory.id}>{memory.name}</div>;
+					// let description = memory.description;
+					// description = description.replace(
+					// 	"@key1",
+					// 	String(memory.levels[0].skill[0].key1),
+					// );
+					// console.log(description);
+
+					// description = description.replace(
+					// 	"@key2",
+					// 	String(memory.levels[0].skill[0].key2),
+					// );
+					// console.log(description);
+
+					// description = description.replace(
+					// 	"@key3",
+					// 	String(memory.levels[0].skill[0].key3),
+					// );
+
+					return (
+						<div>
+							<div key={memory.id}>{memory.name}</div>
+							{/* <div>{description}</div> */}
+						</div>
+					);
 				})}
 		</div>
 	);
