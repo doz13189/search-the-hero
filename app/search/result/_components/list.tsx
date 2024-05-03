@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { getMemories } from "../../handler/requests";
+import { getMemories } from "../../../_lib/handler/memories";
 
 export const NoMemories: FC = () => {
 	return <>No Data...</>;
@@ -17,18 +17,19 @@ export const Memories: FC<{
 	const argRarity = args.searchParams?.rarity;
 	const argTags = args.searchParams?.tags;
 
-	const memories = getMemories(argRarity, argTags);
-	return memories
-		.then((response) => {
-			if (!response) {
+	const response = getMemories(argRarity, argTags);
+	return response
+		.then((value) => {
+			const memories = value.memories;
+			if (!memories) {
 				return <NoMemories />;
 			}
 
-			if (response?.length === 0) {
+			if (memories.length === 0) {
 				return <NoMemories />;
 			}
 
-			return response.map((memory) => (
+			return memories.map((memory) => (
 				<Memory id={memory.id} name={memory.name} />
 			));
 		})

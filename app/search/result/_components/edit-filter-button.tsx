@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { FC } from "react";
-import { createQuery } from "../SearchComponent";
+import { createQuery } from "../../_components/search";
 
 export const EditFilterButton: FC<{ rarity: string; tags: string[] }> = ({
 	rarity,

@@ -1,5 +1,6 @@
 "use client";
-import { Rarity, Tags } from "@/data/memories";
+
+import { Rarity, Tags } from "@/app/_data/memory/schema";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FC, useState } from "react";
 
@@ -162,7 +163,7 @@ const SearchComponent: FC<{
 						value={rarity}
 					>
 						<option value={""}>レアリティを選んでください</option>
-						{Object.values(Rarity).map((rarity) => {
+						{Rarity.options.map((rarity) => {
 							return (
 								<option key={rarity} value={rarity}>
 									{rarity}
@@ -194,7 +195,7 @@ const SearchComponent: FC<{
 						value={tags}
 					>
 						<option value={""}>スキル効果を選んでください</option>
-						{Object.values(Tags).map((tag) => {
+						{Tags.options.map((tag) => {
 							return (
 								<option key={tag} value={tag}>
 									{tag}

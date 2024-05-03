@@ -1,4 +1,4 @@
-import { MemoriesSchema } from "@/data/memories";
+import { MemoriesSchema } from "@/app/_data/memory/schema";
 
 export const getMemories = async (rarity: string, tags: string) => {
 	const response = await fetch(
@@ -9,14 +9,14 @@ export const getMemories = async (rarity: string, tags: string) => {
 	);
 
 	if (response.ok) {
-		const data = await response.json().then((data) => data.response);
+		const data = await response.json();
 		const result = MemoriesSchema.safeParse(data);
 		if (result.success) {
 			return result.data;
 		}
 
-		console.error(result.error.errors);
 		throw new Error("Invalid response data");
 	}
+	console.error(response);
 	throw new Error(`HTTP error ${response.status}`);
 };
