@@ -6,7 +6,7 @@ export async function GET(request: NextRequest) {
 	const tags = request.nextUrl.searchParams.get("tags");
 	const searchParams = tags
 		?.split(",")
-		.map((tag) => `[*tags~${tag}]`)
+		.map((tag) => `[*tags~${tag}][*rarity~UR]`)
 		.join("");
 
 	const response = JsonQuery(`memories[**]${searchParams}`, {
