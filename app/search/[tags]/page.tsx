@@ -1,5 +1,5 @@
+import { getMemories } from "../../handler/requests";
 import SearchComponent from "../SearchComponent";
-import { getMemories } from "../requests";
 
 export default async function Tags(args: {
 	params: { tags: string };

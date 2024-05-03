@@ -1,3 +1,4 @@
+
 // Critical Hit Rate UP
 // Critical Resistance UP
 // Ecstatic
@@ -240,6 +241,7 @@ export const memories: Memories = {
 				"singleBuffMaxHpUP",
 				"AllBuffSkillImpactUp",
 				"AllBuffPlusUltraGaugeUp",
+				"AllBuffSkillImpactUp",
 			],
 		},
 	],
