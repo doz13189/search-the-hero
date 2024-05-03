@@ -15,8 +15,8 @@ export const getMemories = async (searchParams: string) => {
 			return result.data;
 		}
 
-			console.error(result.error.errors);
-			throw new Error("Invalid response data");
+		console.error(result.error.errors);
+		throw new Error("Invalid response data");
 	}
-		throw new Error(`HTTP error ${response.status}`);
+	throw new Error(`HTTP error ${response.status}`);
 };
