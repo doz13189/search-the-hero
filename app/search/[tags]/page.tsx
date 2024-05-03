@@ -1,12 +1,42 @@
+import { FC, Suspense } from "react";
 import { getMemories } from "../../handler/requests";
 import SearchComponent from "../SearchComponent";
+
+const NoMemories: FC = () => {
+	return <>No Data...</>;
+};
+
+const Memory: FC<{ id: number; name: string }> = ({ id, name }) => {
+	return <div key={id}>{name}</div>;
+};
+
+const Memories: FC<{ tags: string }> = ({ tags }) => {
+	const memories = getMemories(tags);
+	return memories
+		.then((response) => {
+			if (!response) {
+				return <NoMemories />;
+			}
+
+			if (response?.length === 0) {
+				return <NoMemories />;
+			}
+
+			return response.map((memory) => (
+				<Memory id={memory.id} name={memory.name} />
+			));
+		})
+		.catch((err) => {
+			console.error(err);
+			return <NoMemories />;
+		});
+};
 
 export default async function Tags(args: {
 	params: { tags: string };
 	searchParams: object;
 }) {
 	const tags = args.params.tags;
-	const memories = await getMemories(tags);
 
 	return (
 		<div className="min-h-screen container mx-auto py-5 px-3">
@@ -14,34 +44,9 @@ export default async function Tags(args: {
 				<SearchComponent />
 			</div>
 
-			{memories.response
-				// biome-ignore lint/suspicious/noExplicitAny: あとで修正する
-				.map((memory: any) => {
-					// let description = memory.description;
-					// description = description.replace(
-					// 	"@key1",
-					// 	String(memory.levels[0].skill[0].key1),
-					// );
-					// console.log(description);
-
-					// description = description.replace(
-					// 	"@key2",
-					// 	String(memory.levels[0].skill[0].key2),
-					// );
-					// console.log(description);
-
-					// description = description.replace(
-					// 	"@key3",
-					// 	String(memory.levels[0].skill[0].key3),
-					// );
-
-					return (
-						<div>
-							<div key={memory.id}>{memory.name}</div>
-							{/* <div>{description}</div> */}
-						</div>
-					);
-				})}
+			<Suspense fallback={"Loading..."}>
+				<Memories tags={tags} />
+			</Suspense>
 		</div>
 	);
 }

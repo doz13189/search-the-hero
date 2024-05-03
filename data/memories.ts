@@ -1,3 +1,4 @@
+import { z } from "zod";
 
 // Critical Hit Rate UP
 // Critical Resistance UP
@@ -190,6 +191,22 @@ type Tag =
 	| "AllBuffSkillImpactUp"
 	| "AllBuffPlusUltraGaugeUp";
 
+const tag: Record<Tag, Tag> = {
+	singleBuffPowerUP: "singleBuffPowerUP",
+	allBuffPowerUP: "allBuffPowerUP",
+	singleBuffDefenseUP: "singleBuffDefenseUP",
+	allBuffDefenseUP: "allBuffDefenseUP",
+	singleBuffSpeedUP: "singleBuffSpeedUP",
+	allBuffSpeedUP: "allBuffSpeedUP",
+	singleBuffMaxHpUP: "singleBuffMaxHpUP",
+	allBuffMaxHpUP: "allBuffMaxHpUP",
+	singleBuffSpeedUp: "singleBuffSpeedUp",
+	singleBuffDefenseUp: "singleBuffDefenseUp",
+	singleBuffCriticalUp: "singleBuffCriticalUp",
+	AllBuffSkillImpactUp: "AllBuffSkillImpactUp",
+	AllBuffPlusUltraGaugeUp: "AllBuffPlusUltraGaugeUp",
+}
+
 export type Memories = {
 	memories: {
 		id: number;
@@ -206,6 +223,27 @@ export type Memories = {
 		tags: Tag[];
 	}[];
 };
+
+export const MemorySchema = z.object({
+	id: z.number(),
+	name: z.string(),
+	description: z.string(),
+	levels: z.array(
+		z.object({
+			level: z.number(),
+			skill: z.array(
+				z.object({
+					key1: z.number(),
+					key2: z.number(),
+					key3: z.number(),
+				}),
+			),
+		}),
+	),
+	tags: z.array(z.nativeEnum(tag)),
+})
+
+export const MemoriesSchema = z.array(MemorySchema).optional();
 
 export const memories: Memories = {
 	memories: [

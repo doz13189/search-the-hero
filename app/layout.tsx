@@ -21,7 +21,8 @@ export default function RootLayout({
 		<html lang="ja">
 			<body className={font.className}>
 				<div className="container mx-auto">
-					<div className="
+					<div
+						className="
 						m-1
 						p-2
 						flex
