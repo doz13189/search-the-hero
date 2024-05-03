@@ -1,8 +1,8 @@
 import { MemoriesSchema } from "@/data/memories";
 
-export const getMemories = async (searchParams: string) => {
+export const getMemories = async (rarity: string, tags: string) => {
 	const response = await fetch(
-		`${process.env.API_URL}/api/memory?tags=${searchParams}`,
+		`${process.env.API_URL}/api/memory?tags=${tags}`,
 		{
 			next: { revalidate: 10 },
 		},

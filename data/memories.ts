@@ -191,7 +191,7 @@ type Tag =
 	| "AllBuffSkillImpactUp"
 	| "AllBuffPlusUltraGaugeUp";
 
-const tag: Record<Tag, Tag> = {
+export const Tags: Record<Tag, Tag> = {
 	singleBuffPowerUP: "singleBuffPowerUP",
 	allBuffPowerUP: "allBuffPowerUP",
 	singleBuffDefenseUP: "singleBuffDefenseUP",
@@ -207,11 +207,20 @@ const tag: Record<Tag, Tag> = {
 	AllBuffPlusUltraGaugeUp: "AllBuffPlusUltraGaugeUp",
 }
 
+type Rarity = "UR" | "SR" | "R" | "N";
+export const Rarity: Record<Rarity, Rarity> = {
+	UR: "UR",
+	SR: "SR",
+	R: "R",
+	N: "N",
+}
+
 export type Memories = {
 	memories: {
 		id: number;
 		name: string;
 		description: string;
+		rarity: Rarity
 		levels: {
 			level: 1 | 2 | 3 | 4;
 			skill: {
@@ -228,6 +237,7 @@ export const MemorySchema = z.object({
 	id: z.number(),
 	name: z.string(),
 	description: z.string(),
+	rarity: z.nativeEnum(Rarity),
 	levels: z.array(
 		z.object({
 			level: z.number(),
@@ -240,7 +250,7 @@ export const MemorySchema = z.object({
 			),
 		}),
 	),
-	tags: z.array(z.nativeEnum(tag)),
+	tags: z.array(z.nativeEnum(Tags)),
 })
 
 export const MemoriesSchema = z.array(MemorySchema).optional();
@@ -252,6 +262,7 @@ export const memories: Memories = {
 			name: "Global Ver. 2nd Anniv.!",
 			description:
 				'自分のスピード@key1%アップ、恐怖耐性アップ/"力タイプ"、"技タイプ"、"知タイプ"が装備した時、自分のクリティカル率@key2%アップ/"信タイプ"、"破タイプ"が装備した時、自分のディフェンス@key3%アップ',
+			rarity: "UR",
 			levels: [
 				{ level: 1, skill: [{ key1: 20, key2: 20, key3: 20 }] },
 				{ level: 2, skill: [{ key1: 25, key2: 20, key3: 20 }] },
@@ -269,6 +280,7 @@ export const memories: Memories = {
 			name: "一撃で仕留めろ",
 			description:
 				'"力タイプ"が装備した時、自分の最大HP@key1%アップ、バリア(1ヒット)を付与(最大1回)/3ターン毎に、味方全体のスキル威力@key2%アップ(1ターン)(最大3回)、プルスウルトラゲージ@key3%アップ(最大3回)',
+			rarity: "UR",
 			levels: [
 				{ level: 1, skill: [{ key1: 20, key2: 20, key3: 20 }] },
 				{ level: 2, skill: [{ key1: 25, key2: 20, key3: 20 }] },
