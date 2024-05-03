@@ -190,7 +190,7 @@ type Tag =
 	| "AllBuffSkillImpactUp"
 	| "AllBuffPlusUltraGaugeUp";
 
-type Memories = {
+export type Memories = {
 	memories: {
 		id: number;
 		name: string;

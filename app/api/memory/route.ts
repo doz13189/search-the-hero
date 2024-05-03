@@ -1,4 +1,4 @@
-import { memories } from "@/data/memories";
+import { Memories, memories } from "@/data/memories";
 import JsonQuery from "json-query";
 import { NextRequest, NextResponse } from "next/server";
 

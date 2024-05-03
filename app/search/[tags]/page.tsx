@@ -9,7 +9,7 @@ export default async function Tags(args: {
 	const memories = await getMemories(tags);
 
 	return (
-		<div className="min-h-screen container mx-auto py-24 px-3">
+		<div className="min-h-screen container mx-auto py-5 px-3">
 			<div className="mb-3">
 				<SearchComponent />
 			</div>
