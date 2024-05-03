@@ -1,4 +1,4 @@
-import { memories } from "@/data/memories";
+import { memories } from "@/app/_data/memory/object";
 import JsonQuery from "json-query";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -13,5 +13,5 @@ export async function GET(request: NextRequest) {
 		data: memories,
 	}).value;
 
-	return NextResponse.json({ response }, { status: 200 });
+	return NextResponse.json({ memories: response }, { status: 200 });
 }

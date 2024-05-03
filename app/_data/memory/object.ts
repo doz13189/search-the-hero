@@ -1,5 +1,5 @@
 import { z } from "zod";
-
+import { MemoriesSchema } from "./schema";
 // Critical Hit Rate UP
 // Critical Resistance UP
 // Ecstatic
@@ -176,86 +176,7 @@ import { z } from "zod";
 // Stress
 // Fa Jin
 
-type Tag =
-	| "singleBuffPowerUP"
-	| "allBuffPowerUP"
-	| "singleBuffDefenseUP"
-	| "allBuffDefenseUP"
-	| "singleBuffSpeedUP"
-	| "allBuffSpeedUP"
-	| "singleBuffMaxHpUP"
-	| "allBuffMaxHpUP"
-	| "singleBuffSpeedUp"
-	| "singleBuffDefenseUp"
-	| "singleBuffCriticalUp"
-	| "AllBuffSkillImpactUp"
-	| "AllBuffPlusUltraGaugeUp";
-
-export const Tags: Record<Tag, Tag> = {
-	singleBuffPowerUP: "singleBuffPowerUP",
-	allBuffPowerUP: "allBuffPowerUP",
-	singleBuffDefenseUP: "singleBuffDefenseUP",
-	allBuffDefenseUP: "allBuffDefenseUP",
-	singleBuffSpeedUP: "singleBuffSpeedUP",
-	allBuffSpeedUP: "allBuffSpeedUP",
-	singleBuffMaxHpUP: "singleBuffMaxHpUP",
-	allBuffMaxHpUP: "allBuffMaxHpUP",
-	singleBuffSpeedUp: "singleBuffSpeedUp",
-	singleBuffDefenseUp: "singleBuffDefenseUp",
-	singleBuffCriticalUp: "singleBuffCriticalUp",
-	AllBuffSkillImpactUp: "AllBuffSkillImpactUp",
-	AllBuffPlusUltraGaugeUp: "AllBuffPlusUltraGaugeUp",
-}
-
-type Rarity = "UR" | "SR" | "R" | "N";
-export const Rarity: Record<Rarity, Rarity> = {
-	UR: "UR",
-	SR: "SR",
-	R: "R",
-	N: "N",
-}
-
-export type Memories = {
-	memories: {
-		id: number;
-		name: string;
-		description: string;
-		rarity: Rarity
-		levels: {
-			level: 1 | 2 | 3 | 4;
-			skill: {
-				key1: number;
-				key2: number;
-				key3: number;
-			}[];
-		}[];
-		tags: Tag[];
-	}[];
-};
-
-export const MemorySchema = z.object({
-	id: z.number(),
-	name: z.string(),
-	description: z.string(),
-	rarity: z.nativeEnum(Rarity),
-	levels: z.array(
-		z.object({
-			level: z.number(),
-			skill: z.array(
-				z.object({
-					key1: z.number(),
-					key2: z.number(),
-					key3: z.number(),
-				}),
-			),
-		}),
-	),
-	tags: z.array(z.nativeEnum(Tags)),
-})
-
-export const MemoriesSchema = z.array(MemorySchema).optional();
-
-export const memories: Memories = {
+export const memories: z.infer<typeof MemoriesSchema> = {
 	memories: [
 		{
 			id: 2400127,

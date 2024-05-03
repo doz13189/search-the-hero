@@ -1,7 +1,7 @@
 import { Suspense } from "react";
-import { SearchFilters } from "../SearchComponent";
-import { EditFilterButton } from "./edit-filter-button";
-import { Memories } from "./memories";
+import { SearchFilters } from "../_components/search";
+import { EditFilterButton } from "./_components/edit-filter-button";
+import { Memories } from "./_components/list";
 
 export default async function Tags(args: {
 	searchParams: { rarity: string; tags: string };
