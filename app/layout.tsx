@@ -33,8 +33,17 @@ export default function RootLayout({
 						rounded-lg
 						"
 					>
-						<span>Search The Hero</span>
+						<span>Search the memory</span>
 					</div>
+					<div
+						className="
+						mx-1
+						px-2
+						"
+					>
+						<p className="text-red-500 text-xs">今はまだ...全てのメモリーのデータは入っていません</p>
+					</div>
+					
 					{children}
 				</div>
 			</body>
