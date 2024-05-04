@@ -4,6 +4,10 @@ import { FC } from "react";
 import { z } from "zod";
 import { getMemories } from "../../../_lib/handler/memories";
 
+export const Sorry: FC = () => {
+	return <>レアリティが N, R, SR のメモリーのデータは準備中です...</>;
+};
+
 export const NoMemories: FC = () => {
 	return <>No Data...</>;
 };
@@ -32,6 +36,10 @@ export const Memories: FC<{
 }> = ({ args }) => {
 	const argRarity = args.searchParams?.rarity;
 	const argTags = args.searchParams?.tags;
+
+	if (argRarity === "N" || argRarity === "R" || argRarity === "SR") {
+		return <Sorry />;
+	}
 
 	const response = getMemories(argRarity, argTags);
 	return response
