@@ -10,7 +10,7 @@ export default async function Tags(args: {
 	const argTags = args.searchParams?.tags?.split(",");
 
 	return (
-		<div className="min-h-screen container mx-auto py-5 px-3">
+		<div className="min-h-screen container mx-auto py-1 px-3">
 			<div className="mb-3">
 				<SearchFilters rarity={argRarity} tags={argTags} />
 				<div
