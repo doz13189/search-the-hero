@@ -13,9 +13,9 @@ export const EditFilterButton: FC<{ rarity: string; tags: string[] }> = ({
 		<button
 			type="submit"
 			className="
-			my-3
+			my-1
 			px-4
-			py-2
+			py-1
 			text-sm
 			bg-yellow
 			border-2

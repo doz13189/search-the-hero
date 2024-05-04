@@ -10,7 +10,6 @@ const TagsLabel: { [key in z.infer<typeof Tags>]: string } = {
 	allBuffSpeedUP: "全体スピードアップ",
 	singleBuffMaxHpUP: "単体HPアップ",
 	allBuffMaxHpUP: "全体HPアップ",
-	singleBuffSpeedUp: "単体スピードアップ",
 	singleBuffCriticalUp: "単体クリティカル率アップ",
 	AllBuffSkillImpactUp: "全体スキル威力アップ",
 	AllBuffPlusUltraGaugeUp: "全体PUゲージアップ",

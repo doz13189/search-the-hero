@@ -95,26 +95,21 @@ const SearchComponent: FC<{
 		<div>
 			<label
 				htmlFor="search"
-				className="mb-2 text-sm font-medium text-gray-900 sr-only text-white"
+				className="text-sm font-medium text-gray-900 sr-only text-white"
 			>
 				Search
 			</label>
 
 			<SearchFilters rarity={rarity} tags={tags} />
 
-			<div
-				className="
-					flex
-					justify-end
-				"
-			>
+			<div className="flex justify-end">
 				<button
 					type="submit"
 					className="
-						my-3
-						mx-3
+						my-1
+						mx-1
 						px-4
-						py-2
+						py-1
 						text-sm
 						bg-yellow
 						border-2
@@ -131,9 +126,9 @@ const SearchComponent: FC<{
 				<button
 					type="submit"
 					className="
-						my-3
+						my-1
 						px-4
-						py-2
+						py-1
 						text-sm
 						bg-yellow
 						border-2
@@ -148,9 +143,9 @@ const SearchComponent: FC<{
 				</button>
 			</div>
 
-			<div className="my-3">
+			<div>
 				<form>
-					<label htmlFor="countries" className="block mb-2">
+					<label htmlFor="countries" className="block mb-1">
 						レアリティ
 					</label>
 					<select
@@ -179,9 +174,9 @@ const SearchComponent: FC<{
 				</form>
 			</div>
 
-			<div className="my-3">
+			<div className="my-2">
 				<form>
-					<label htmlFor="countries_multiple" className="block mb-2">
+					<label htmlFor="countries_multiple" className="block mb-1">
 						スキル効果
 					</label>
 					<select
