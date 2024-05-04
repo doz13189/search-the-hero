@@ -41,9 +41,11 @@ export default function RootLayout({
 						px-2
 						"
 					>
-						<p className="text-red-500 text-xs">今はまだ...全てのメモリーのデータは入っていません</p>
+						<p className="text-red-500 text-xs">
+							今はまだ...全てのメモリーのデータは入っていません
+						</p>
 					</div>
-					
+
 					{children}
 				</div>
 			</body>

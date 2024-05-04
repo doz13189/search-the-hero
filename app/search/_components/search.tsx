@@ -102,9 +102,7 @@ const SearchComponent: FC<{
 
 			<SearchFilters rarity={rarity} tags={tags} />
 
-			<div
-				className="flex justify-end"
-			>
+			<div className="flex justify-end">
 				<button
 					type="submit"
 					className="
