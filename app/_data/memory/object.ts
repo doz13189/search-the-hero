@@ -192,7 +192,7 @@ export const memories: z.infer<typeof MemoriesSchema> = {
 			],
 			tags: [
 				"singleBuffSpeedUp",
-				"singleBuffDefenseUp",
+				"singleBuffDefenseUP",
 				"singleBuffCriticalUp",
 			],
 		},
@@ -212,7 +212,6 @@ export const memories: z.infer<typeof MemoriesSchema> = {
 				"singleBuffMaxHpUP",
 				"AllBuffSkillImpactUp",
 				"AllBuffPlusUltraGaugeUp",
-				"AllBuffSkillImpactUp",
 			],
 		},
 	],
