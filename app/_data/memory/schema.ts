@@ -11,7 +11,6 @@ export const Tags = z.enum([
 	"singleBuffMaxHpUP",
 	"allBuffMaxHpUP",
 	"singleBuffSpeedUp",
-	"singleBuffDefenseUp",
 	"singleBuffCriticalUp",
 	"AllBuffSkillImpactUp",
 	"AllBuffPlusUltraGaugeUp",

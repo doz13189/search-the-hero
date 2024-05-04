@@ -1,8 +1,10 @@
 "use client";
 
+import { getTagLabel } from "@/app/_data/memory/label";
 import { Rarity, Tags } from "@/app/_data/memory/schema";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, FC, useState } from "react";
+import { z } from "zod";
 
 export const createQuery = (rarity: string, tags: string[]) => {
 	const rarityQuery = rarity ? `rarity=${rarity}` : null;
@@ -54,7 +56,10 @@ export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 			"
 			>
 				{rarity && `${rarity},`}
-				{tags && `${tags.join(",")}`}
+				{tags &&
+					`${tags
+						.map((tag) => getTagLabel(tag as z.infer<typeof Tags>))
+						.join(",")}`}
 			</p>
 		</div>
 	);
@@ -195,10 +200,10 @@ const SearchComponent: FC<{
 						value={tags}
 					>
 						<option value={""}>スキル効果を選んでください</option>
-						{Tags.options.map((tag) => {
+						{Tags.options.sort().map((tag) => {
 							return (
 								<option key={tag} value={tag}>
-									{tag}
+									{getTagLabel(tag)}
 								</option>
 							);
 						})}
