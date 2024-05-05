@@ -12,7 +12,6 @@ export const writeMessage = async (message: string) => {
 };
 
 export const getMessage = async () => {
-	console.log("fire ");
 	const response = await fetch(`${process.env.API_URL}/api/message`, {
 		next: { revalidate: 10 },
 	});
