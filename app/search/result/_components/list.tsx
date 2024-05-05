@@ -9,14 +9,12 @@ export const Sorry: FC = () => {
 };
 
 export const NoMemories: FC = () => {
-	return <>
-		<p>
-			見つかりません。
-		</p>
-		<p>
-			あるいは、データの準備中です...
-		</p>
-	</>;
+	return (
+		<>
+			<p>見つかりません。</p>
+			<p>あるいは、データの準備中です...</p>
+		</>
+	);
 };
 
 export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
@@ -26,11 +24,13 @@ export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 		<div>
 			<div>{memory.name}</div>
 			{memory.tags.map((tag) => (
-				<span key={memory.id} className="inline-block bg-yellow text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded">
+				<span
+					key={memory.id}
+					className="inline-block bg-yellow text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
+				>
 					{getTagLabel(tag)}
 				</span>
 			))}
-
 		</div>
 	);
 };
