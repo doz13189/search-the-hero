@@ -6,7 +6,7 @@ import { MessageSchema } from "../_data/message/schema";
 import { getMessage } from "../_lib/handler/message";
 import { SendByServerActions } from "./_components/send-by-server-actions";
 
-export const MessageDetail: FC<{ message: z.infer<typeof MessageSchema> }> = ({
+const MessageDetail: FC<{ message: z.infer<typeof MessageSchema> }> = ({
 	message,
 }) => {
 	return (
@@ -18,7 +18,7 @@ export const MessageDetail: FC<{ message: z.infer<typeof MessageSchema> }> = ({
 	);
 };
 
-export const Messages: FC = () => {
+const Messages: FC = () => {
 	const response = getMessage();
 	return response
 		.then((value) => {
