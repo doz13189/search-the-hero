@@ -40,20 +40,20 @@ export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 			<p
 				id="search"
 				className="
-				w-full
-				p-4
-				ps-10
-				h-14
-				text-sm
-				text-gray-900
-				bg-light-gray
-				border-2
-				border-grey
-				rounded-lg
-				overflow-hidden
-				text-overflow-ellipsis
-				whitespace-nowrap
-			"
+					w-full
+					p-4
+					ps-10
+					h-14
+					text-sm
+					text-gray-900
+					bg-light-gray
+					border-2
+					border-grey
+					rounded-lg
+					overflow-hidden
+					text-overflow-ellipsis
+					whitespace-nowrap
+				"
 			>
 				{rarity && `${rarity},`}
 				{tags &&
@@ -125,7 +125,7 @@ const SearchComponent: FC<{
 				</button>
 				<button
 					type="submit"
-					className="
+					className={`
 						my-1
 						px-4
 						py-1
@@ -134,10 +134,12 @@ const SearchComponent: FC<{
 						border-2
 						border-grey
 						rounded-lg
-					"
+						${tags.length === 0 ? 'bg-gray-300 text-gray-500' : ''}
+				  `}
 					onClick={() =>
 						router.push(`/search/result?${createQuery(rarity, tags)}`)
 					}
+					disabled={tags.length === 0}
 				>
 					Search
 				</button>
