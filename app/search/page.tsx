@@ -1,4 +1,4 @@
-import Link from "next/link";
+// import Link from "next/link";
 import SearchComponent from "./_components/search";
 
 export default async function Search(args: {
@@ -10,6 +10,7 @@ export default async function Search(args: {
 				<SearchComponent args={args} />
 			</div>
 
+			{/*
 			<div className="fixed bottom-3 left-1">
 				<Link
 					href={"/message"}
@@ -28,6 +29,7 @@ export default async function Search(args: {
 					Question
 				</Link>
 			</div>
+			*/}
 		</div>
 	);
 }
