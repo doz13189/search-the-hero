@@ -130,11 +130,10 @@ const SearchComponent: FC<{
 						px-4
 						py-1
 						text-sm
-						bg-yellow
 						border-2
 						border-grey
 						rounded-lg
-						${tags.length === 0 ? 'bg-gray-300 text-gray-500' : ''}
+						${tags.length === 0 ? 'bg-gray-300 text-gray-500' : 'bg-yellow'}
 				  `}
 					onClick={() =>
 						router.push(`/search/result?${createQuery(rarity, tags)}`)

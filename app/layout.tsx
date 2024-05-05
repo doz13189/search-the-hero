@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { RocknRoll_One } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const font = RocknRoll_One({
 	weight: ["400"],
@@ -33,7 +34,7 @@ export default function RootLayout({
 						rounded-lg
 						"
 					>
-						<span>Search the memory</span>
+						<Link href="/search" >Search the memory</Link>
 					</div>
 					{children}
 				</div>
