@@ -8,7 +8,6 @@ export async function writeMessage(
       },
       formData: FormData,
   ) {
-    console.log("message", formData.get("message"))
     const filePath = path.join(
         process.cwd(),
         "app/_data/message",
