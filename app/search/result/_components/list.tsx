@@ -25,7 +25,7 @@ export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 			<div>{memory.name}</div>
 			{memory.tags.map((tag) => (
 				<span
-					key={memory.id}
+					key={tag}
 					className="inline-block bg-yellow text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
 				>
 					{getTagLabel(tag)}
