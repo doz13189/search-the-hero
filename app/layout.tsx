@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { RocknRoll_One } from "next/font/google";
-import Link from "next/link";
 import "./globals.css";
+import { Menu } from "./search/_components/menu";
 
 const font = RocknRoll_One({
 	weight: ["400"],
@@ -18,24 +18,35 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	// FIXME: おそらくキャッシュの問題でプレイキャラ検索/メモリ検索の切り替え時に色が変わらない
+	// const headersList = headers();
+	// const currentUrl = headersList.get("x-url")
+	// const isCharacterSearchPage = currentUrl?.includes("search/character")
+
 	return (
 		<html lang="ja">
 			<body className={font.className}>
 				<div className="container mx-auto">
+					{/*
 					<div
 						className="
-						m-1
-						p-2
+						my-1
+						py-2
 						flex
 						justify-center
-						bg-orange
-						border-2
+						text-orange
+						bg-light-gray
+						border-t-2
+						border-b-2
 						border-grey
-						rounded-lg
 						"
 					>
-						<Link href="/search">Search the memory</Link>
+						<Link href="/search">Search the hero</Link>
 					</div>
+					*/}
+
+					<Menu />
+
 					{children}
 				</div>
 			</body>

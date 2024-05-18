@@ -136,7 +136,7 @@ const SearchComponent: FC<{
 						${tags.length === 0 ? "bg-gray-300 text-gray-500" : "bg-yellow"}
 				  `}
 					onClick={() =>
-						router.push(`/search/result?${createQuery(rarity, tags)}`)
+						router.push(`/search/memory/result?${createQuery(rarity, tags)}`)
 					}
 					disabled={tags.length === 0}
 				>
