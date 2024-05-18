@@ -12,7 +12,6 @@ export async function GET(request: NextRequest) {
 	const response = JsonQuery(`heroes[**]${searchParams}`, {
 		data: heroes,
 	}).value;
-	console.log("response", response)
 
 	return NextResponse.json({ heroes: response }, { status: 200 });
 }
