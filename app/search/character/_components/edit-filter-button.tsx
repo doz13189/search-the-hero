@@ -22,7 +22,7 @@ export const EditFilterButton: FC<{ rarity: string; tags: string[] }> = ({
 			border-grey
 			rounded-lg
 		"
-			onClick={() => router.push(`/search?${createQuery(rarity, tags)}`)}
+			onClick={() => router.push(`/search/character?${createQuery(rarity, tags)}`)}
 		>
 			Edit Filters
 		</button>

@@ -2,7 +2,9 @@ import { getTagLabel } from "@/app/_data/memory/label";
 import { MemorySchema } from "@/app/_data/memory/schema";
 import { FC } from "react";
 import { z } from "zod";
-import { getMemories } from "../../../_lib/handler/memories";
+import { getMemories } from "../../../../_lib/handler/memories";
+import { getHeroes } from "@/app/_lib/handler/heroes";
+import { HeroSchema } from "@/app/_data/hero/schema";
 
 export const Sorry: FC = () => {
 	return <>レアリティが N, R, SR のメモリーのデータは準備中です...</>;
@@ -17,11 +19,12 @@ export const NoMemories: FC = () => {
 	);
 };
 
-export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
+export const Memory: FC<{ memory: z.infer<typeof HeroSchema> }> = ({
 	memory,
 }) => {
 	return (
 		<div>
+			<div>{memory.epithet}</div>
 			<div>{memory.name}</div>
 			{memory.tags.map((tag) => (
 				<span
@@ -47,10 +50,10 @@ export const Memories: FC<{
 		return <Sorry />;
 	}
 
-	const response = getMemories(argRarity, argTags);
+	const response = getHeroes(argRarity, argTags);
 	return response
 		.then((value) => {
-			const memories = value.memories;
+			const memories = value.heroes;
 			if (!memories) {
 				return <NoMemories />;
 			}

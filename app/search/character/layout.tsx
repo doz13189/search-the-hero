@@ -12,7 +12,7 @@ export default function RootLayout({
 						"
 			>
 				<p className="text-red-500 text-xs">
-					今はまだ...全てのメモリーのデータは入っていません
+					今はまだ...全てのキャラ/メモリーのデータは入っていません
 				</p>
 			</div>
 
