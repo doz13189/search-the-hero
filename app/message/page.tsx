@@ -51,7 +51,7 @@ export default async function Message() {
 
 			<div className="fixed bottom-3 left-1">
 				<Link
-					href={"/search/character"}
+					href={"/search/hero"}
 					className="
 						my-1
 						mx-1

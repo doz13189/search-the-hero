@@ -1,7 +1,7 @@
 "use client";
 
 import { Tags } from "@/app/_data/_common/schema";
-import { getTagLabel } from "@/app/_data/memory/label";
+import { getTagLabel } from "@/app/_data/_common/label";
 import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 
 export const SkillForm: FC<{ tags: string[] ,setTags:  Dispatch<SetStateAction<string[]>>; }> = ({

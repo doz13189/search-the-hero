@@ -1,5 +1,5 @@
 import { Tags } from "@/app/_data/_common/schema";
-import { getTagLabel } from "@/app/_data/memory/label";
+import { getTagLabel } from "@/app/_data/_common/label";
 import { FC } from "react";
 import { z } from "zod";
 
