@@ -1,4 +1,4 @@
-import { getTagLabel } from "@/app/_data/memory/label";
+import { getTagLabel } from "@/app/_data/_common/label";
 import { MemorySchema } from "@/app/_data/memory/schema";
 import { FC } from "react";
 import { z } from "zod";

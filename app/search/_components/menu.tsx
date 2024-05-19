@@ -7,7 +7,7 @@ import { FC } from "react";
 export const Menu: FC = ({
 }) => {
 	const pathname = usePathname();
-	const isCharacterPage =  pathname.includes("/search/hero")
+	const isHeroPage =  pathname.includes("/search/hero")
 	return (
 		<div className="flex">
 		<div className="flex-1">
@@ -20,7 +20,7 @@ export const Menu: FC = ({
 					border-2
 					border-grey
 					rounded-lg
-					${isCharacterPage ? "bg-orange" : "bg-soft-orange text-grey"}
+					${isHeroPage ? "bg-orange" : "bg-soft-orange text-grey"}
 				`}
 			>
 				<Link href="/search/hero">プレイキャラ検索</Link>
@@ -36,7 +36,7 @@ export const Menu: FC = ({
 				border-2
 				border-grey
 				rounded-lg
-				${isCharacterPage ? "bg-soft-orange text-grey" : "bg-orange"}
+				${isHeroPage ? "bg-soft-orange text-grey" : "bg-orange"}
 			`}
 			>
 				<Link href="/search/memory">メモリー検索</Link>
