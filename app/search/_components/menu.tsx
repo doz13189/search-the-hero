@@ -7,7 +7,7 @@ import { FC } from "react";
 export const Menu: FC = ({
 }) => {
 	const pathname = usePathname();
-	const isCharacterPage =  pathname === "/search/character"
+	const isCharacterPage =  pathname.includes("/search/hero")
 	return (
 		<div className="flex">
 		<div className="flex-1">
@@ -23,7 +23,7 @@ export const Menu: FC = ({
 					${isCharacterPage ? "bg-orange" : "bg-soft-orange text-grey"}
 				`}
 			>
-				<Link href="/search/character">プレイキャラ検索</Link>
+				<Link href="/search/hero">プレイキャラ検索</Link>
 			</div>
 		</div>
 		<div className="flex-1">

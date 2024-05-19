@@ -3,19 +3,8 @@ import { MemorySchema } from "@/app/_data/memory/schema";
 import { FC } from "react";
 import { z } from "zod";
 import { getMemories } from "../../../../_lib/handler/memories";
-
-export const Sorry: FC = () => {
-	return <>レアリティが N, R, SR のメモリーのデータは準備中です...</>;
-};
-
-export const NoMemories: FC = () => {
-	return (
-		<>
-			<p>見つかりません。</p>
-			<p>あるいは、データの準備中です...</p>
-		</>
-	);
-};
+import { Sorry } from "@/app/search/_components/sorry";
+import { NoData } from "@/app/search/_components/no-data";
 
 export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 	memory,
@@ -52,17 +41,17 @@ export const Memories: FC<{
 		.then((value) => {
 			const memories = value.memories;
 			if (!memories) {
-				return <NoMemories />;
+				return <NoData />;
 			}
 
 			if (memories.length === 0) {
-				return <NoMemories />;
+				return <NoData />;
 			}
 
 			return memories.map((memory) => <Memory memory={memory} />);
 		})
 		.catch((err) => {
 			console.error(err);
-			return <NoMemories />;
+			return <NoData />;
 		});
 };

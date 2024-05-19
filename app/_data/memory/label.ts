@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Tags } from "./schema";
+import { Tags } from "../_common/schema";
 
 const TagsLabel: { [key in z.infer<typeof Tags>]: string } = {
 	singleBuffPowerUP: "単体パワーアップ",

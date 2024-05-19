@@ -1,31 +1,17 @@
 import { getTagLabel } from "@/app/_data/memory/label";
-import { MemorySchema } from "@/app/_data/memory/schema";
 import { FC } from "react";
 import { z } from "zod";
-import { getMemories } from "../../../../_lib/handler/memories";
 import { getHeroes } from "@/app/_lib/handler/heroes";
 import { HeroSchema } from "@/app/_data/hero/schema";
+import { Sorry } from "@/app/search/_components/sorry";
+import { NoData } from "@/app/search/_components/no-data";
 
-export const Sorry: FC = () => {
-	return <>レアリティが N, R, SR のメモリーのデータは準備中です...</>;
-};
-
-export const NoMemories: FC = () => {
-	return (
-		<>
-			<p>見つかりません。</p>
-			<p>あるいは、データの準備中です...</p>
-		</>
-	);
-};
-
-export const Memory: FC<{ memory: z.infer<typeof HeroSchema> }> = ({
+export const Hero: FC<{ memory: z.infer<typeof HeroSchema> }> = ({
 	memory,
 }) => {
 	return (
 		<div>
-			<div>{memory.epithet}</div>
-			<div>{memory.name}</div>
+			<div>{memory.epithet} {memory.name}</div>
 			{memory.tags.map((tag) => (
 				<span
 					key={tag}
@@ -38,7 +24,7 @@ export const Memory: FC<{ memory: z.infer<typeof HeroSchema> }> = ({
 	);
 };
 
-export const Memories: FC<{
+export const Heroes: FC<{
 	args: {
 		searchParams: { rarity: string; tags: string };
 	};
@@ -53,19 +39,19 @@ export const Memories: FC<{
 	const response = getHeroes(argRarity, argTags);
 	return response
 		.then((value) => {
-			const memories = value.heroes;
-			if (!memories) {
-				return <NoMemories />;
+			const heroes = value.heroes;
+			if (!heroes) {
+				return <NoData />;
 			}
 
-			if (memories.length === 0) {
-				return <NoMemories />;
+			if (heroes.length === 0) {
+				return <NoData />;
 			}
 
-			return memories.map((memory) => <Memory memory={memory} />);
+			return heroes.map((hero) => <Hero memory={hero} />);
 		})
 		.catch((err) => {
 			console.error(err);
-			return <NoMemories />;
+			return <NoData />;
 		});
 };

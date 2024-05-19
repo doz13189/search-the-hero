@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import { SearchFilters } from "../_components/search";
-import { EditFilterButton } from "./_components/edit-filter-button";
 import { Memories } from "./_components/list";
+import { SearchFilters } from "../../_components/search-filters";
+import { EditFilterButton } from "../../_components/edit-filter-button";
 
-export default async function Tags(args: {
+export default function MemorySearchResult(args: {
 	searchParams: { rarity: string; tags: string };
 }) {
 	const argRarity = args.searchParams?.rarity;
@@ -19,7 +19,7 @@ export default async function Tags(args: {
 					justify-end
 				"
 				>
-					<EditFilterButton rarity={argRarity} tags={argTags} />
+					<EditFilterButton pathname={"memory"} rarity={argRarity} tags={argTags} />
 				</div>
 			</div>
 

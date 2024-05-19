@@ -1,0 +1,10 @@
+import { FC } from "react";
+
+export const NoData: FC = () => {
+	return (
+		<>
+			<p>見つかりません。</p>
+			<p>あるいは、データの準備中です...</p>
+		</>
+	);
+};

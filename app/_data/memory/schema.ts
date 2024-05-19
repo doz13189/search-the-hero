@@ -1,19 +1,5 @@
 import { z } from "zod";
-
-export const Rarity = z.enum(["UR", "SR", "R", "N"]);
-export const Tags = z.enum([
-	"singleBuffPowerUP",
-	"allBuffPowerUP",
-	"singleBuffDefenseUP",
-	"allBuffDefenseUP",
-	"singleBuffSpeedUP",
-	"allBuffSpeedUP",
-	"singleBuffMaxHpUP",
-	"allBuffMaxHpUP",
-	"singleBuffCriticalUp",
-	"AllBuffSkillImpactUp",
-	"AllBuffPlusUltraGaugeUp",
-]);
+import { Rarity, Tags } from "../_common/schema";
 
 export const MemorySchema = z.object({
 	id: z.number(),
