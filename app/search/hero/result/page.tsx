@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import { SearchFilters } from "../_components/search";
-import { EditFilterButton } from "./_components/edit-filter-button";
-import { Memories } from "./_components/list";
+import { EditFilterButton } from "../../_components/edit-filter-button";
+import { SearchFilters } from "../../_components/search-filters";
+import { Heroes } from "./_components/list";
 
-export default async function Tags(args: {
+export default async function HeroSearchResult(args: {
 	searchParams: { rarity: string; tags: string };
 }) {
 	const argRarity = args.searchParams?.rarity;
@@ -19,12 +19,12 @@ export default async function Tags(args: {
 					justify-end
 				"
 				>
-					<EditFilterButton rarity={argRarity} tags={argTags} />
+					<EditFilterButton pathname={"hero"} rarity={argRarity} tags={argTags} />
 				</div>
 			</div>
 
 			<Suspense fallback={"Loading..."}>
-				<Memories args={args} />
+				<Heroes args={args} />
 			</Suspense>
 		</div>
 	);

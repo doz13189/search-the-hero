@@ -40,7 +40,7 @@ export default function Search(args: {
 						<ResetButton setRarity={setRarity} setTags={setTags} />
 					</div>
 					<div className="flex-initial">
-						<FilterButton pathname="memory" rarity={rarity} tags={tags} />
+						<FilterButton pathname="hero" rarity={rarity} tags={tags} />
 					</div>
 				</div>
 			</div>
