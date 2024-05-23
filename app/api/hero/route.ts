@@ -3,13 +3,8 @@ import JsonQuery from "json-query";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
-	const tags = request.nextUrl.searchParams.get("tags");
-	const searchParams = tags
-		?.split(",")
-		.map((tag) => `[*tags~${tag}][*rarity~UR]`)
-		.join("");
-
-	const response = JsonQuery(`heroes[**]${searchParams}`, {
+	const id = request.nextUrl.searchParams.get("id");
+	const response = JsonQuery(`heroes[id=${id}]`, {
 		data: heroes,
 	}).value;
 

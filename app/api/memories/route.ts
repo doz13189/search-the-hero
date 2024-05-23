@@ -1,11 +1,15 @@
-import { heroes } from "@/app/_data/hero/object";
 import { memories } from "@/app/_data/memory/object";
 import JsonQuery from "json-query";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
-	const id = request.nextUrl.searchParams.get("id");
-	const response = JsonQuery(`memories[id=${id}]`, {
+	const tags = request.nextUrl.searchParams.get("tags");
+	const searchParams = tags
+		?.split(",")
+		.map((tag) => `[*tags~${tag}][*rarity~UR]`)
+		.join("");
+
+	const response = JsonQuery(`memories[**]${searchParams}`, {
 		data: memories,
 	}).value;
 
