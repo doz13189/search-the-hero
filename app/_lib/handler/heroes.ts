@@ -2,7 +2,7 @@ import { HeroesSchema } from "@/app/_data/hero/schema";
 
 export const getHeroes = async (rarity: string, tags: string) => {
 	const response = await fetch(
-		`${process.env.API_URL}/api/hero?tags=${tags}`,
+		`${process.env.API_URL}/api/heroes?tags=${tags}`,
 		{
 			next: { revalidate: 10 },
 		},

@@ -5,13 +5,14 @@ import { z } from "zod";
 import { getMemories } from "../../../../_lib/handler/memories";
 import { Sorry } from "@/app/search/_components/sorry";
 import { NoData } from "@/app/search/_components/no-data";
+import Link from "next/link";
 
 export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 	memory,
 }) => {
 	return (
-		<div>
-			<div>{memory.name}</div>
+		<Link href={`/search/memory/result/${memory.id}`}>
+			<div>{`[${memory.rarity}] ${memory.name}`}</div>
 			{memory.tags.map((tag) => (
 				<span
 					key={tag}
@@ -20,7 +21,7 @@ export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 					{getTagLabel(tag)}
 				</span>
 			))}
-		</div>
+		</Link>
 	);
 };
 
