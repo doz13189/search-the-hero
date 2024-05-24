@@ -5,7 +5,7 @@ import { HeroSchema } from "@/app/_data/hero/schema";
 import { Sorry } from "@/app/search/_components/sorry";
 import { NoData } from "@/app/search/_components/no-data";
 import Link from "next/link";
-import { Tags } from "./tags";
+import { Tags } from "../../../_components/tags";
 
 export const Hero: FC<{ memory: z.infer<typeof HeroSchema> }> = ({
 	memory,
@@ -13,7 +13,7 @@ export const Hero: FC<{ memory: z.infer<typeof HeroSchema> }> = ({
 	return (
 		<Link href={`/search/hero/result/${memory.id}`}>
 			<div>{memory.epithet} {memory.name}</div>
-			<Tags memory={memory} />
+			<Tags tags={memory.tags} />
 		</Link>
 	);
 };
