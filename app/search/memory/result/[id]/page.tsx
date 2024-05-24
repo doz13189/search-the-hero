@@ -1,6 +1,5 @@
 import { MemorySchema } from "@/app/_data/memory/schema";
-import { Tags } from "@/app/search/hero/result/_components/tags";
-import { memo } from "react";
+import { Tags } from "@/app/search/_components/tags";
 import { z } from "zod";
 
 
@@ -31,7 +30,7 @@ export default function Page({ params }: { params: { id: string } }) {
 					<div className="min-h-screen container mx-auto py-1 px-3">
 						<div className="py-1">{`[${data.memories.rarity}] ${data.memories.name}`}</div>
 						<div className="py-1">
-						<Tags memory={data.memories} />
+						<Tags tags={data.memories} />
 						</div>
 						<div className="
 							mt-1

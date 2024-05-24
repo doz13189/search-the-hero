@@ -1,4 +1,3 @@
-import { heroes } from "@/app/_data/hero/object";
 import { memories } from "@/app/_data/memory/object";
 import JsonQuery from "json-query";
 import { NextRequest, NextResponse } from "next/server";

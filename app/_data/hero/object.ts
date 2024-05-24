@@ -71,7 +71,15 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				],
 			},
 			tags: [
-				"allBuffSpeedUP",
+				"burning",
+				"singleActionSkillImpactUp",
+				"piercingShot",
+				"allCriticalDamageDown",
+				"singleSkillImpactUp",
+				"stunImmunity",
+				"singlePowerUp",
+				"lastStand",
+				"allSpeedUp",
 			],
 		},
 	]
