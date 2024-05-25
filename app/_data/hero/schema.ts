@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { Rarity, Tags } from "../_common/schema";
+import { Rarity, skillTags } from "../_common/schema";
+import { typedObjectKeys } from "../_common/utils";
 
 const LevelsSchema = z.array(
 	z.object({
@@ -19,10 +20,11 @@ const SkillSchema = z.object({
 	levels: LevelsSchema,
 });
 
+const [firstKey, ...otherKeys] = typedObjectKeys(skillTags);
 export const HeroSchema = z.object({
 	id: z.number(),
 	epithet: z.string(),
-	name: z.string(),	
+	name: z.string(),
 	rarity: Rarity,
 	resist: z.object({
 		burning: z.number(),
@@ -36,7 +38,7 @@ export const HeroSchema = z.object({
 	actionSkill2: SkillSchema,
 	autoSkill1: SkillSchema,
 	autoSkill2: SkillSchema,
-	tags: z.array(Tags),
+	tags: z.array(z.enum([firstKey, ...otherKeys]))
 });
 
 export const HeroesSchema = z.object({

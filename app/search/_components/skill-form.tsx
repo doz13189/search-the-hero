@@ -1,7 +1,6 @@
 "use client";
 
-import { Tags } from "@/app/_data/_common/schema";
-import { getTagLabel } from "@/app/_data/_common/label";
+import { getTagLabel, skillTags } from "@/app/_data/_common/schema";
 import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 
 export const SkillForm: FC<{ tags: string[] ,setTags:  Dispatch<SetStateAction<string[]>>; }> = ({
@@ -43,10 +42,10 @@ export const SkillForm: FC<{ tags: string[] ,setTags:  Dispatch<SetStateAction<s
 			value={tags}
 		>
 			<option value={""}>スキル効果を選んでください</option>
-			{Tags.options.sort().map((tag) => {
+			{Object.keys(skillTags).sort().map((tag) => {
 				return (
 					<option key={tag} value={tag}>
-						{getTagLabel(tag)}
+						{getTagLabel(tag as any)}
 					</option>
 				);
 			})}

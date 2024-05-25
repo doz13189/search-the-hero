@@ -17,9 +17,9 @@ export const memories: z.infer<typeof MemoriesSchema> = {
 				{ level: 4, skill: [{ key1: 35, key2: 30, key3: 30 }] },
 			],
 			tags: [
-				"singleBuffSpeedUP",
-				"singleBuffDefenseUP",
-				"singleBuffCriticalUp",
+				"singleSpeedUp",
+				"singleDefenseUp",
+				"singleCriticalHitRateUp",
 			],
 		},
 		{
@@ -35,7 +35,7 @@ export const memories: z.infer<typeof MemoriesSchema> = {
 				{ level: 4, skill: [{ key1: 30, key2: 25, key3: 20 }] },
 			],
 			tags: [
-				"singleBuffMaxHpUP",
+				"singleMaxHpUp",
 			],
 		},
 	],

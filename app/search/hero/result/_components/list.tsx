@@ -7,13 +7,13 @@ import { NoData } from "@/app/search/_components/no-data";
 import Link from "next/link";
 import { Tags } from "../../../_components/tags";
 
-export const Hero: FC<{ memory: z.infer<typeof HeroSchema> }> = ({
-	memory,
+export const Hero: FC<{ hero: z.infer<typeof HeroSchema> }> = ({
+	hero,
 }) => {
 	return (
-		<Link href={`/search/hero/result/${memory.id}`}>
-			<div>{memory.epithet} {memory.name}</div>
-			<Tags tags={memory.tags} />
+		<Link href={`/search/hero/result/${hero.id}`}>
+			<div>{`[${hero.rarity}] ${hero.epithet} ${hero.name}`}</div>
+			<Tags tags={hero.tags} />
 		</Link>
 	);
 };
@@ -42,7 +42,7 @@ export const Heroes: FC<{
 				return <NoData />;
 			}
 
-			return heroes.map((hero) => <Hero memory={hero} />);
+			return heroes.map((hero) => <Hero hero={hero} />);
 		})
 		.catch((err) => {
 			console.error(err);
