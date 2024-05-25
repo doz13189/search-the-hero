@@ -1,6 +1,7 @@
 
 import { getTagLabel } from "@/app/_data/_common/schema";
 import { FC } from "react";
+import { Tags } from "./tags";
 
 export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 	rarity,
@@ -8,7 +9,7 @@ export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 }) => {
 	return (
 		<div className="relative">
-			<div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+			<div className="inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
 				<svg
 					className="w-4 h-4 text-gray-500 text-gray-400"
 					aria-hidden="true"
@@ -25,27 +26,25 @@ export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 					/>
 				</svg>
 			</div>
-			<p
-				id="search"
-				className="
-					w-full
-					p-4
-					ps-10
-					h-14
-					text-sm
-					text-gray-900
-					rounded-lg
-					overflow-hidden
-					text-overflow-ellipsis
-					whitespace-nowrap
-				"
-			>
-				{rarity && `${rarity},`}
-				{tags &&
-					`${tags
-						.map((tag) => getTagLabel(tag as any))
-						.join(",")}`}
-			</p>
+			<div className="ps-10">
+				{rarity &&
+					<span
+						key={rarity}
+						className="inline-block text-xs"
+					>
+						{`${rarity},`}
+					</span>
+				}
+				{tags.map((tag) => (
+					<span
+						key={tag}
+						className="inline-block text-xs"
+					>
+						{`${getTagLabel(tag as any)},`}
+					</span>
+				))}
+			</div>
+
 		</div>
 	);
 };
