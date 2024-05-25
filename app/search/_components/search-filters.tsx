@@ -1,7 +1,6 @@
-import { Tags } from "@/app/_data/_common/schema";
-import { getTagLabel } from "@/app/_data/_common/label";
+
+import { getTagLabel } from "@/app/_data/_common/schema";
 import { FC } from "react";
-import { z } from "zod";
 
 export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 	rarity,
@@ -44,7 +43,7 @@ export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 				{rarity && `${rarity},`}
 				{tags &&
 					`${tags
-						.map((tag) => getTagLabel(tag as z.infer<typeof Tags>))
+						.map((tag) => getTagLabel(tag as any))
 						.join(",")}`}
 			</p>
 		</div>

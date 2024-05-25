@@ -1,6 +1,8 @@
 import { z } from "zod";
-import { Rarity, Tags } from "../_common/schema";
+import { Rarity, skillTags } from "../_common/schema";
+import { typedObjectKeys } from "../_common/utils";
 
+const [firstKey, ...otherKeys] = typedObjectKeys(skillTags);
 export const MemorySchema = z.object({
 	id: z.number(),
 	name: z.string(),
@@ -18,7 +20,7 @@ export const MemorySchema = z.object({
 			),
 		}),
 	),
-	tags: z.array(Tags),
+	tags: z.array(z.enum([firstKey, ...otherKeys]))
 });
 
 export const MemoriesSchema = z.object({
