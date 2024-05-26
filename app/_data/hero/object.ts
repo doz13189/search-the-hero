@@ -11809,7 +11809,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 					}
 				]
 			},
-			"tags": ["buffBlock", "bullseye", "singleSkillImpactUp", "singlePowerUp", "singleSpeedUp", "nitro", "allSkillImpactUp", "allCriticalHitRateUp", "criticalHitImpactUp", "plusUltraEffectUp", "singleCriticalHitRateUp", "singleMaxHpUp", "overwhelm", "allSkillImpactDown", "allCooldownTimeDown", "allCooldownTimeUp", "allPlusUltraGaugeUp"]
+			"tags": ["buffBlock", "bullseye", "skillImpactUpSingle", "powerUpSingle", "speedUpSingle", "nitro", "skillImpactUpAll", "criticalHitRateUpAll", "criticalHitImpactUp", "plusUltraEffectUp", "criticalHitRateUpSingle", "maxHpUpSingle", "overwhelm", "skillImpactDownAll", "cooldownTimeDownAll", "cooldownTimeUpAll", "plusUltraGaugeUpAll"]
 		},
 		{
 			"id": "1103001",
@@ -69409,7 +69409,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 					}
 				]
 			},
-			"tags": ["singleEvasion", "singleSkillImpactUp", "singleSpeedUp", "allDefenseDown", "allSpeedDown", "singleMaxHpUp", "singlePowerUp", "allSpeedUp", "singleCooldownTimeReduction", "allSpeedDown"]
+			"tags": ["evasionSingle", "skillImpactUpSingle", "speedUpSingle", "defenseDownAll", "speedDownAll", "maxHpUpSingle", "powerUpSingle", "speedUpAll", "cooldownTimeReductionSingle", "speedDownAll"]
 		}
 	]
 };

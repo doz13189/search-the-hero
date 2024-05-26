@@ -15,6 +15,7 @@ export const getMemories = async (rarity: string, tags: string) => {
 			return result.data;
 		}
 
+		console.error(result.error.errors);
 		throw new Error("Invalid response data");
 	}
 	console.error(response);

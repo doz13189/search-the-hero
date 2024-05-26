@@ -153,7 +153,7 @@ const rawSkillTags = {
 	piercingShot: { name: "貫通", isAll: false },
 	plusUltraEffectUp: { name: "プルスウルトラ効率アップ", isAll: false },
 	plusUltraGaugeChargingUp: { name: "プルスウルトラゲージ上昇量アップ", isAll: false },
-	plusUltraGaugeDown: { name: "プルスウルトラゲージ減少", isAll: false },
+	plusUltraGaugeDown: { name: "プルスウルトラゲージ減少", isAll: true },
 	plusUltraGaugeDownImmunity: { name: "プルスウルトラゲージ減少完全耐性", isAll: false },
 	plusUltraGaugeUp: { name: "プルスウルトラゲージ増加", isAll: true },
 	plusUltraMoveDamageDown: { name: "プルスウルトラ技ダメージ軽減", isAll: false },
@@ -204,7 +204,7 @@ const rawSkillTags = {
 
 type SkillKeyTagsType<T extends Record<string, { name: string; isAll: boolean }>> = {
 	[K in keyof T]: T[K]['isAll'] extends true ?
-	`single${Capitalize<string & K>}` | `all${Capitalize<string & K>}` :
+	`${string & K}Single` | `${string & K}All` :
 	K
 }[keyof T];
 
@@ -223,9 +223,9 @@ const generateSkillTags = <T extends Record<string, { name: string; isAll: boole
 	(Object.keys(obj) as (keyof T)[]).forEach((key) => {
 	  const value = obj[key].name as SkillNameTagsType<T>;
 	  if (obj[key].isAll) {
-		const capitalizedKey = `${(key as string).charAt(0).toUpperCase()}${(key as string).slice(1)}`;
-		const singleKey = `${capitalizedKey}single` as SkillKeyTagsType<T>;
-		const allKey = `${capitalizedKey}all` as SkillKeyTagsType<T>;
+		const capitalizedKey = `${(key as string).charAt(0)}${(key as string).slice(1)}`;
+		const singleKey = `${capitalizedKey}Single` as SkillKeyTagsType<T>;
+		const allKey = `${capitalizedKey}All` as SkillKeyTagsType<T>;
 		result[singleKey] = `${value}(単体)`;
 		result[allKey] = `${value}(全体)`;
 	  } else {
