@@ -1,7 +1,6 @@
 
 import { getTagLabel } from "@/app/_data/_common/schema";
 import { FC } from "react";
-import { Tags } from "./tags";
 
 export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 	rarity,
@@ -35,7 +34,7 @@ export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 						{`${rarity},`}
 					</span>
 				}
-				{tags.map((tag) => (
+				{tags?.map((tag) => (
 					<span
 						key={tag}
 						className="inline-block text-xs"

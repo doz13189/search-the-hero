@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Rarity, skillTags } from "../_common/schema";
+import { Rarity, Type, skillTags } from "../_common/schema";
 import { typedObjectKeys } from "../_common/utils";
 
 const LevelsSchema = z.array(
@@ -16,23 +16,26 @@ const LevelsSchema = z.array(
 );
 
 const SkillSchema = z.object({
+	name: z.string(),
 	description: z.string(),
 	levels: LevelsSchema,
 });
 
 const [firstKey, ...otherKeys] = typedObjectKeys(skillTags);
 export const HeroSchema = z.object({
-	id: z.number(),
+	id: z.string(),
 	epithet: z.string(),
 	name: z.string(),
 	rarity: Rarity,
-	resist: z.object({
-		burning: z.number(),
-		frozen: z.number(),
-		frostbite: z.number(),
-	}),
-	critical: z.number(),
-	defense: z.number(),
+	type: Type,
+	// NOTE: データ取得の難易度が高いため、一旦、保留
+	// resist: z.object({
+	// 	burning: z.number(),
+	// 	frozen: z.number(),
+	// 	frostbite: z.number(),
+	// }),
+	// critical: z.number(),
+	// defense: z.number(),
 	plusUltra: SkillSchema,
 	actionSkill1: SkillSchema,
 	actionSkill2: SkillSchema,
