@@ -2,7 +2,6 @@ import { MemorySchema } from "@/app/_data/memory/schema";
 import { FC } from "react";
 import { z } from "zod";
 import { getMemories } from "../../../../_lib/handler/memories";
-import { Sorry } from "@/app/search/_components/sorry";
 import { NoData } from "@/app/search/_components/no-data";
 import Link from "next/link";
 import { getTagLabel } from "@/app/_data/_common/schema";
@@ -32,10 +31,6 @@ export const Memories: FC<{
 }> = ({ args }) => {
 	const argRarity = args.searchParams?.rarity;
 	const argTags = args.searchParams?.tags;
-
-	if (argRarity === "N" || argRarity === "R" || argRarity === "SR") {
-		return <Sorry />;
-	}
 
 	const response = getMemories(argRarity, argTags);
 	return response

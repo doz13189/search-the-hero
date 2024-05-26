@@ -1,8 +1,17 @@
 import { HeroesSchema } from "@/app/_data/hero/schema";
 
 export const getHeroes = async (rarity: string, tags: string) => {
+	let query = "";
+	if (tags) {
+		query = `tags=${tags}`
+	}
+
+	if (rarity) {
+		query = query + `&rarity=${rarity}`;
+	}
+
 	const response = await fetch(
-		`${process.env.API_URL}/api/heroes?tags=${tags}`,
+		`${process.env.API_URL}/api/heroes?${query}`,
 		{
 			next: { revalidate: 10 },
 		},

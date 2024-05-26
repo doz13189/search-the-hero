@@ -1,10 +1,18 @@
 import { z } from "zod";
 
 export const Rarity = z.enum([
-	"UR",
-	"SR",
-	"R",
-	"N"
+	"ur",
+	"sr",
+	"r",
+	"n"
+]);
+
+export const Type = z.enum([
+	"str",
+	"abl",
+	"int",
+	"mnd",
+	"dst",
 ]);
 
 const rawSkillTags = {
@@ -202,7 +210,7 @@ type SkillKeyTagsType<T extends Record<string, { name: string; isAll: boolean }>
 
 type SkillNameTagsType<T extends Record<string, { name: string; isAll: boolean }>> = {
 	[K in keyof T]: T[K]['isAll'] extends true
-	? `単体${T[K]['name']}` | `全体${T[K]['name']}`
+	? `${T[K]['name']}(単体)` | `${T[K]['name']}(全体)`
 	: T[K]['name'];
 }[keyof T];
 
@@ -218,8 +226,8 @@ const generateSkillTags = <T extends Record<string, { name: string; isAll: boole
 		const capitalizedKey = `${(key as string).charAt(0).toUpperCase()}${(key as string).slice(1)}`;
 		const singleKey = `single${capitalizedKey}` as SkillKeyTagsType<T>;
 		const allKey = `all${capitalizedKey}` as SkillKeyTagsType<T>;
-		result[singleKey] = `単体${value}`;
-		result[allKey] = `全体${value}`;
+		result[singleKey] = `${value}(単体)`;
+		result[allKey] = `${value}(全体)`;
 	  } else {
 		result[key as SkillKeyTagsType<T>] = value;
 	  }

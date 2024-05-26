@@ -17,6 +17,23 @@ const createSkillDescription = (skill: H["plusUltra"] | H["actionSkill1"] | H["a
 	return description;
 }
 
+const typeLabel = (type: H["type"]) => {
+	switch (type) {
+		case "str":
+			return "力";
+		case "abl":
+			return "技";
+		case "int":
+			return "知";
+		case "mnd":
+			return "信";
+		case "dst":
+			return "破";
+		default:
+			const _: never = type;
+	}
+
+}
 
 export default function Page({ params }: { params: { id: string } }) {
 
@@ -26,7 +43,12 @@ export default function Page({ params }: { params: { id: string } }) {
 		const hero = value.heroes;
 		return (
 			<div className="min-h-screen container mx-auto py-1 px-3">
+				<div className="py-1">
+					<p className="text-xs">{typeLabel(hero.type)}タイプ</p>
+				</div>
+
 				<div className="py-1">{`[${hero.rarity}] ${hero.epithet} ${hero.name}`}</div>
+
 				<div className="py-1">
 					<Tags tags={hero.tags} />
 				</div>
