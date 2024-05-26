@@ -19,6 +19,7 @@ export const getHero = async (id: string) => {
 			return result.data;
 		}
 
+		console.error(result.error.errors);
 		throw new Error("Invalid response data");
 	}
 	console.error(response);

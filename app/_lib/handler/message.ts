@@ -23,6 +23,7 @@ export const getMessage = async () => {
 			return result.data;
 		}
 
+		console.error(result.error.errors);
 		throw new Error("Invalid response data");
 	}
 	console.error(response);
