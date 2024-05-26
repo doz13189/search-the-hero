@@ -224,8 +224,8 @@ const generateSkillTags = <T extends Record<string, { name: string; isAll: boole
 	  const value = obj[key].name as SkillNameTagsType<T>;
 	  if (obj[key].isAll) {
 		const capitalizedKey = `${(key as string).charAt(0).toUpperCase()}${(key as string).slice(1)}`;
-		const singleKey = `single${capitalizedKey}` as SkillKeyTagsType<T>;
-		const allKey = `all${capitalizedKey}` as SkillKeyTagsType<T>;
+		const singleKey = `${capitalizedKey}single` as SkillKeyTagsType<T>;
+		const allKey = `${capitalizedKey}all` as SkillKeyTagsType<T>;
 		result[singleKey] = `${value}(単体)`;
 		result[allKey] = `${value}(全体)`;
 	  } else {
