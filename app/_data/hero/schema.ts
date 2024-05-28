@@ -15,13 +15,14 @@ const LevelsSchema = z.array(
 	}),
 );
 
+const [firstKey, ...otherKeys] = typedObjectKeys(skillTags);
 const SkillSchema = z.object({
 	name: z.string(),
 	description: z.string(),
-	levels: LevelsSchema,
+	tags: z.array(z.enum([firstKey, ...otherKeys]))
+	// levels: LevelsSchema,
 });
 
-const [firstKey, ...otherKeys] = typedObjectKeys(skillTags);
 export const HeroSchema = z.object({
 	id: z.string(),
 	epithet: z.string(),
@@ -37,11 +38,10 @@ export const HeroSchema = z.object({
 	// critical: z.number(),
 	// defense: z.number(),
 	plusUltra: SkillSchema,
-	actionSkill1: SkillSchema,
-	actionSkill2: SkillSchema,
+	actionSkill1: SkillSchema.merge(z.object({ coolDown: z.string() })),
+	actionSkill2: SkillSchema.merge(z.object({ coolDown: z.string() })),
 	autoSkill1: SkillSchema,
 	autoSkill2: SkillSchema,
-	tags: z.array(z.enum([firstKey, ...otherKeys]))
 });
 
 export const HeroesSchema = z.object({
