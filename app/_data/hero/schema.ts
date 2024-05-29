@@ -42,6 +42,7 @@ export const HeroSchema = z.object({
 	actionSkill2: SkillSchema.merge(z.object({ coolDown: z.string() })),
 	autoSkill1: SkillSchema,
 	autoSkill2: SkillSchema,
+	validationStatus: z.enum(["valid", "invalid"]),
 });
 
 export const HeroesSchema = z.object({
