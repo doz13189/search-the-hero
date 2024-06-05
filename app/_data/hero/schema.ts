@@ -16,7 +16,7 @@ const LevelsSchema = z.array(
 );
 
 const [firstKey, ...otherKeys] = typedObjectKeys(skillTags);
-const SkillSchema = z.object({
+export const SkillSchema = z.object({
 	name: z.string(),
 	description: z.string(),
 	tags: z.array(z.enum([firstKey, ...otherKeys]))

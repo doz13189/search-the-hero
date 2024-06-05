@@ -6,16 +6,6 @@ import { HeroSchema } from "@/app/_data/hero/schema";
 import { getHero } from "@/app/_lib/handler/hero";
 
 type H = z.infer<typeof HeroSchema>
-const createSkillDescription = (skill: H["plusUltra"] | H["actionSkill1"] | H["actionSkill2"] | H["autoSkill1"] | H["autoSkill2"]) => {
-	let description = skill.description;
-	for (const keys of skill.levels[4].skill) {
-		for (const key in keys) {
-			// @ts-ignore: fixme
-			description = description.replace(`@${key}`, `${keys[key]}`)
-		}
-	}
-	return description;
-}
 
 const typeLabel = (type: H["type"]) => {
 	switch (type) {
@@ -50,7 +40,7 @@ export default function Page({ params }: { params: { id: string } }) {
 				<div className="py-1">{`[${hero.rarity}] ${hero.epithet} ${hero.name}`}</div>
 
 				<div className="py-1">
-					<Tags tags={hero.tags} />
+					<Tags tags={[...hero.plusUltra.tags, ...hero.actionSkill1.tags, ...hero.actionSkill2.tags, ...hero.autoSkill1.tags, ...hero.autoSkill2.tags]} />
 				</div>
 
 				<div className="py-2">
@@ -61,7 +51,7 @@ export default function Page({ params }: { params: { id: string } }) {
 							text-xs
 							bg-light-gray
 							rounded-lg
-						">{createSkillDescription(hero.plusUltra)}</div>
+						">{hero.plusUltra.description}</div>
 				</div>
 
 				<div className="py-2">
@@ -72,7 +62,7 @@ export default function Page({ params }: { params: { id: string } }) {
 							text-xs
 							bg-light-gray
 							rounded-lg
-						">{createSkillDescription(hero.actionSkill1)}</div>
+						">{hero.actionSkill1.description}</div>
 				</div>
 
 				<div className="py-2">
@@ -83,7 +73,7 @@ export default function Page({ params }: { params: { id: string } }) {
 							text-xs
 							bg-light-gray
 							rounded-lg
-						">{createSkillDescription(hero.actionSkill2)}</div>
+						">{hero.actionSkill2.description}</div>
 				</div>
 
 				<div className="py-2">
@@ -94,7 +84,7 @@ export default function Page({ params }: { params: { id: string } }) {
 							text-xs
 							bg-light-gray
 							rounded-lg
-						">{createSkillDescription(hero.autoSkill1)}</div>
+						">{hero.autoSkill1.description}</div>
 				</div>
 
 				<div className="py-2">
@@ -105,7 +95,7 @@ export default function Page({ params }: { params: { id: string } }) {
 							text-xs
 							bg-light-gray
 							rounded-lg
-						">{createSkillDescription(hero.autoSkill2)}</div>
+						">{hero.autoSkill2.description}</div>
 				</div>
 			</div>
 		);

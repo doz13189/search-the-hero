@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { z } from "zod";;
-import { HeroSchema } from "@/app/_data/hero/schema";
+import { SkillSchema } from "@/app/_data/hero/schema";
 import { MemorySchema } from "@/app/_data/memory/schema";
 import { getTagLabel } from "@/app/_data/_common/schema";
 
-export const Tags: FC<{ tags: z.infer<typeof HeroSchema>["tags"] | z.infer<typeof MemorySchema>["tags"] }> = ({
+export const Tags: FC<{ tags: z.infer<typeof SkillSchema>["tags"] | z.infer<typeof MemorySchema>["tags"] }> = ({
 	tags,
 }) => {
 	return (

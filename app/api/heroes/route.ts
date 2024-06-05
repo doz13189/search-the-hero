@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
 	if (tags) {
 		searchParams = searchParams + tags
 			?.split(",")
-			.map((tag) => `[*tags~${tag}]`)
+			.map((tag) => `actionSkill1[**][*tags~${tag}]`)
 			.join("");
 	}
 
@@ -18,8 +18,10 @@ export async function GET(request: NextRequest) {
 		searchParams = searchParams + `[*rarity=${rarity}]`;
 	}
 
-	const response = JsonQuery(`heroes[**]${searchParams}`, {
-		data: heroes,
+	
+	const response = JsonQuery(`actionSkill1[**][*tags~powerUpSingle]`, {
+	// const response = JsonQuery(`heroes[**]${searchParams}`, {
+		data: heroes.heroes,
 	}).value;
 
 	return NextResponse.json({ heroes: response }, { status: 200 });
