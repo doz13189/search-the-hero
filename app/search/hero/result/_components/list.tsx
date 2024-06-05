@@ -12,7 +12,7 @@ export const Hero: FC<{ hero: z.infer<typeof HeroSchema> }> = ({
 	return (
 		<Link href={`/search/hero/result/${hero.id}`}>
 			<div>{`[${hero.rarity}] ${hero.epithet} ${hero.name}`}</div>
-			<Tags tags={hero.tags} />
+			<Tags tags={[...hero.plusUltra.tags, ...hero.actionSkill1.tags, ...hero.actionSkill2.tags, ...hero.autoSkill1.tags, ...hero.autoSkill2.tags]} />
 		</Link>
 	);
 };
