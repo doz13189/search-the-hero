@@ -1442,7 +1442,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "爆速かるたインパクト 敵単体に600%ダメージ/敵の最大HP10%分ダメージアップ(最大20000)/自分にバリア(1ヒット)を付与/自分のHPが50%未満の時、自分のHP30%回復",
-				"tags": ["skillImpactUpSingle", "barrierSingle", "recoverySingle"]
+				"tags": ["barrierSingle", "recoverySingle"]
 
 			},
 			"actionSkill1": {
@@ -1953,7 +1953,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "鏡餅スタンピング 敵単体に650%ダメージ、中 確率 (50%)で拘束(2ターン)を付与、中 確率 (60%)で回復阻害(2ターン)を付与/敵全体のアクションスキル威力30%ダウン(3ターン)",
-				"tags": ["boundAll", "recoveryBlockSingle", "actionSkillImpactDownAll"]
+				"tags": ["boundSingle", "recoveryBlockSingle", "actionSkillImpactDownAll"]
 
 			},
 			"actionSkill1": {
@@ -1979,7 +1979,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "行かせてたまるか！ 敵全体のアクションスキル威力25%ダウン(3ターン)(最大1回)/自分のスキルで2CHAIN以上成功時、敵全体のアクションスキル威力10%ダウン(3ターン)/自分のスキルで3CHAIN成功時、ターゲットを無視してランダムな敵単体に低 確率 (30%)でプルスウルトラゲージ上昇量15%ダウン(2ターン)※アリーナ、サークル祭限定効果/2ターン毎に、敵全体のプルスウルトラゲージ10%ダウン※アリーナ、サークル祭限定効果",
-				"tags": ["actionSkillImpactDownAll", "plusUltraGaugeUpSingle", "plusUltraGaugeDownAll"]
+				"tags": ["actionSkillImpactDownAll", "plusUltraGaugeDownAll", "plusUltraGaugeDownSingle"]
 
 			},
 		},
@@ -3174,7 +3174,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				"name": "イヤな視線",
 				"description": "敵全体のスピードを20%ダウン(3ターン)/敵が\"女性\"だったら更に20%ダウン(3ターン)、アクションスキル威力を10%ダウン(3ターン)",
 				"coolDown": "Cool Down 3 Turns",
-				"tags": ["speedDownAll", "powerDownAll"]
+				"tags": ["speedDownAll", "actionSkillImpactDownAll"]
 			},
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
@@ -3842,7 +3842,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				"name": "今できる最善",
 				"description": "味方単体にバリア(1ヒット)を付与/味方単体のパワーを35%アップ(3ターン)/自分のHPが80%以上の時、味方単体のクリティカル率を20%アップ(3ターン)",
 				"coolDown": "Cool Down 4 Turns",
-				"tags": ["barrierSingle", "powerUpSingle", "criticalHitRateUpSingle"]
+				"tags": ["barrierAll", "powerUpSingle", "criticalHitRateUpSingle"]
 
 			},
 			"autoSkill1": {
@@ -4431,7 +4431,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "ライトニングブレイド 敵単体に700%ダメージ/このスキルに貫通を付与/自分のHPが60%以上の時、このスキルは必中となる/自分に混乱(1ターン)を付与",
-				"tags": ["piercingShot", "confusionSingle"]
+				"tags": ["piercingShot", "bullseye", "confusionSingle"]
 			},
 			"actionSkill1": {
 				"name": "人間スタンガン",
@@ -4483,7 +4483,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "ノリ気で行くぜ！ 自分のスキルでCHAIN成功時、自分のアクションスキル威力を10%アップ(最大5回)",
-				"tags": ["powerUpSingle"]
+				"tags": ["actionSkillImpactDownSingle"]
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -4939,7 +4939,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "恐怖に負けぬ心 自分のHPが50%以上の時、自分のアクションスキルダメージ30%カット/自分がアクションスキルダメージカットでないまま、1回ターンをまたいだ時、味方全体にHP30%自動回復(3ターン)を付与(最大1回)/自分がアクションスキルダメージカットでないまま、2回ターンをまたいだ時、味方全体にくいしばり(2回)を付与",
-				"tags": ["damageDownSingle", "hpRegenerationSingle", "lastStandAll"]
+				"tags": ["actionSkillDamageDownSingle", "hpRegenerationAll", "lastStandAll"]
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -4958,7 +4958,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "オクトブロー 敵単体に650%ダメージ、低 確率 (20%)でスタン(2ターン)を付与/自分の最大HP30%アップ(3ターン)/このスキルに必中を付与",
-				"tags": ["stunSingle", "maxHpUpSingle"]
+				"tags": ["stunSingle", "maxHpUpSingle", "bullseye"]
 			},
 			"actionSkill1": {
 				"name": "オクトスイング",
@@ -4970,12 +4970,12 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				"name": "複製乱打",
 				"description": "敵全体に250%ダメージ/自分の最大HPに応じてダメージアップ/自分の最大HP30%アップ(3ターン)/このスキルに必中を付与",
 				"coolDown": "Cool Down 4 Turns",
-				"tags": ["maxHpUpSingle"]
+				"tags": ["maxHpUpSingle", "bullseye"]
 			},
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "触手索敵 自分以外の味方全体のスタン・拘束・混乱耐性アップ/自分がスタン・拘束・混乱の時、味方全体のそれぞれの耐性アップ(最大2回)/自分のクリティカル攻撃が1回発生しなかった時、自分のクリティカル率10%アップ(3ターン)/自分のクリティカル攻撃が1回発生しきった時、自分の最大HP10%アップ(最大3回)",
-				"tags": ["criticalHitRateUpSingle", "maxHpUpSingle"]
+				"tags": ["stunResistUpAll", "bindResistUpAll", "confusionResistUpAll", "criticalHitRateUpSingle", "maxHpUpSingle"]
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -4993,13 +4993,13 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "尾拳流撃 自分に圧倒(4ターン)を付与/敵単体に650%ダメージ/自分のアクションスキル威力を30%アップ(5ターン)",
-				"tags": ["overwhelm", "powerUpSingle"]
+				"tags": ["overwhelm", "actionSkillImpactUpSingle"]
 			},
 			"actionSkill1": {
 				"name": "尾空旋舞",
 				"description": "敵単体に400%ダメージ/このスキルでCHAIN成功時、味方全体のアクションスキル威力を10%アップ(8ターン)/敵が\"力タイプ\"だったらスキル威力を40%アップ",
 				"coolDown": "Cool Down 4 Turns",
-				"tags": ["powerUpSingle"]
+				"tags": ["actionSkillImpactDownAll", "skillImpactUpSingle"]
 			},
 			"actionSkill2": {
 				"name": "尾拳・\"沼田打旋風\"",
@@ -5010,7 +5010,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "誠実な武闘派 味方全体の\"技タイプ\"キャラのアクションスキル威力を25%アップ/自分のHPが50%未満の時、戦闘中に1度だけ自分にくいしばり(1回)を付与",
-				"tags": ["powerUpSingle", "lastStandSingle"]
+				"tags": ["actionSkillImpactUpAll", "lastStandSingle"]
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -5028,19 +5028,19 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "テーピングコンボ 敵単体に650%ダメージ/敵のスピードがダウンしている時、このスキルは必中となる/敵単体のパワーを30%ダウン(3ターン)/敵単体のスピードを30%ダウン(3ターン)/敵単体に中 確率 (45%)で拘束(2ターン)を付与",
-				"tags": ["powerDownSingle", "speedDownSingle", "confusionSingle"]
+				"tags": ["bullseye", "powerDownSingle", "speedDownSingle", "boundSingle"]
 			},
 			"actionSkill1": {
 				"name": "バリケードテープ",
 				"description": "敵全体に高 確率 (70%)で拘束(1ターン)を付与/敵全体のスピードを30%ダウン(3ターン)/自分にバリア(1ヒット)を付与",
 				"coolDown": "Cool Down 5 Turns",
-				"tags": ["confusionSingle", "speedDownSingle", "barrierSingle"]
+				"tags": ["boundAll", "speedDownSingle", "barrierSingle"]
 			},
 			"actionSkill2": {
 				"name": "バインドキック",
 				"description": "敵単体に375%ダメージ/敵のスピードがダウンしている時、このスキルは必中となる/敵単体のパワーを25%ダウン(3ターン)/敵単体のクリティカル率を35%ダウン(3ターン)/敵単体の一時的なスピードアップを全て解除",
 				"coolDown": "Cool Down 4 Turns",
-				"tags": ["powerDownSingle", "criticalHitRateDownSingle", "removeBuffsSingle"]
+				"tags": ["bullseye", "powerDownSingle", "criticalHitRateDownSingle", "removeBuffsSingle"]
 			},
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
@@ -5050,7 +5050,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "バツグンの滞空力 毎ターン、自分のスピードを10%アップ(2ターン)/自分のスピードがダウンしていない時、自分のディフェンスを20%アップ/味方全体の\"雄英高校1年A組\"が拘束状態になる確率を下げる",
-				"tags": ["speedUpSingle", "defenseUpSingle", "confusionSingle"]
+				"tags": ["speedUpSingle", "defenseUpSingle", "bindHitRateDownAll"]
 			},
 		},
 		{
@@ -5098,7 +5098,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "シーフコンボ 敵単体に600%ダメージ、中 確率 (50%)で混乱(2ターン)を付与/敵単体の混乱のキャラのパワー30%ダウン(4ターン)/自分に挑発(1ターン)を付与/味方全体のクールタイム1短縮/このスキルに必中を付与",
-				"tags": ["confusionSingle", "powerDownSingle", "aggro", "cooldownTimeReductionSingle"]
+				"tags": ["confusionSingle", "powerDownSingle", "aggro", "cooldownTimeReductionSingle", "bullseye"]
 			},
 			"actionSkill1": {
 				"name": "クレバーな思考",
@@ -5253,12 +5253,12 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				"name": "猛毒ドクキノコちゃん",
 				"description": "敵全体に250%ダメージ、中 確率 (50%)で暗闇(3ターン)を付与、低 確率 (25%)で回復阻害(3ターン)を付与、アクションスキル威力20%ダウン(3ターン)",
 				"coolDown": "Cool Down 4 Turns",
-				"tags": ["blindSingle", "recoveryBlockSingle", "powerDownSingle"]
+				"tags": ["blindAll", "recoveryBlockAll", "actionSkillImpactDownAll"]
 			},
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "キノコのエキスパート 3ターン毎に、敵全体のアクションスキル威力20%ダウン(2ターン)、クリティカル率20%ダウン(2ターン)/自分のHPが50%未満の時、自分のクールタイム2短縮(最大1回)",
-				"tags": ["powerDownSingle", "criticalHitRateDownSingle", "cooldownTimeReductionSingle"]
+				"tags": ["actionSkillImpactDownAll", "criticalHitRateDownAll", "cooldownTimeReductionSingle"]
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -5481,7 +5481,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "陽気なお調子者 自分がかばうでない時、自分に隠れるを付与/自分が隠れるの時、自分に必中を付与、スピード40%アップ",
-				"tags": ["cover", "speedUpSingle"],
+				"tags": ["cover", "bullseye", "speedUpSingle"],
 
 			},
 			"autoSkill2": {
@@ -5928,7 +5928,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "LOUISIANA SMASH 敵単体に700%ダメージ/敵が\"敵\"だったらスキル威力が20%アップ/味方全体のアクションスキル威力を20%アップ(3ターン)",
-				"tags": ["powerUpSingle", "skillImpactUpSingle"],
+				"tags": ["skillImpactUpSingle", "actionSkillImpactDownAll"],
 			},
 			"actionSkill1": {
 				"name": "TEXAS SMASH",
@@ -6092,7 +6092,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "笑顔で救う 自分が不屈でない時、自分の出血ダメージ50%カット/自分のHPが80%以上の時、自分のスピード30%アップ/1ターン毎に、自分のパワー5%ダウン(最大6回)、ディフェンス5%ダウン(最大6回)/自分のクリティカル攻撃が2回発生しきった時、自分のパワー10%アップ(最大10回)/自分よりディフェンスが高い相手から攻撃を2回受けきった時、自分の被ダメージ35%回復(2ターン)を付与(最大5回)、ディフェンス10%アップ(最大5回)",
-				"tags": ["damageDownSingle", "speedUpSingle", "powerDownSingle", "defenseDownSingle", "powerUpSingle", "damageTakenRestoreSingle", "defenseUpSingle"],
+				"tags": ["bleedingDamageDownSingle", "speedUpSingle", "powerDownSingle", "defenseDownSingle", "powerUpSingle", "damageTakenRestoreSingle", "defenseUpSingle"],
 
 			},
 			"autoSkill2": {
@@ -6202,7 +6202,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill2": {
 				"name": "捕縛布",
 				"description": "敵単体に300%ダメージ/敵単体に中 確率 (40%)で拘束(1ターン)を付与/敵単体のスキル威力を25%ダウン(3ターン)",
-				"tags": ["skillsSealed", "skillImpactDownSingle"],
+				"tags": ["boundSingle", "skillImpactDownSingle"],
 				"coolDown": "Cool Down 5 Turns"
 
 			},
@@ -6233,7 +6233,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill1": {
 				"name": "捕縛布",
 				"description": "敵単体に400%ダメージ/このスキルで2CHAIN以上成功時、中 確率 (50%)で拘束(1ターン)を付与",
-				"tags": ["skillsSealed", "skillsSealed"],
+				"tags": ["boundSingle"],
 				"coolDown": "Cool Down 5 Turns"
 			},
 			"actionSkill2": {
@@ -6263,7 +6263,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "捕縛布",
 				"description": "敵単体に500%ダメージ/敵単体に低 確率 (25%)で拘束(1ターン)を付与/敵が\"力タイプ\"だったら拘束状態にする確率を上げる",
-				"tags": ["skillsSealed", "skillsSealed"],
+				"tags": ["boundSingle", "bindHitRateUpSingle"],
 			},
 			"actionSkill1": {
 				"name": "捕縛強襲",
@@ -6310,7 +6310,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill2": {
 				"name": "捕縛強襲",
 				"description": "敵単体に425%ダメージ/敵単体に中 確率 (50%)で拘束(2ターン)を付与/自分のプルスウルトラゲージを40%アップ/敵がパワーダウン状態だったらスキル威力を30%アップ",
-				"tags": ["skillsSealed", "plusUltraGaugeUpSingle", "skillImpactUpSingle"],
+				"tags": ["boundSingle", "plusUltraGaugeUpSingle", "skillImpactUpSingle"],
 				"coolDown": "Cool Down 4 Turns"
 			},
 			"autoSkill1": {
@@ -6347,7 +6347,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill2": {
 				"name": "捕縛布",
 				"description": "敵単体の一時的な強化を1つ解除する/敵単体に275%ダメージ/敵単体に低 確率 (20%)で拘束(2ターン)を付与",
-				"tags": ["removeBuffsSingle", "skillsSealed", "skillsSealed"],
+				"tags": ["removeBuffsSingle", "boundSingle"],
 				"coolDown": "Cool Down 4 Turns"
 			},
 			"autoSkill1": {
@@ -6372,7 +6372,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "捕縛落打 敵単体の一時的な強化4個解除、600%ダメージ、高 確率 (70%)で拘束(2ターン)を付与/自分に回避(2回)を付与",
-				"tags": ["removeBuffsSingle", "skillsSealed"],
+				"tags": ["removeBuffsSingle", "boundSingle", "evasionSingle"],
 			},
 			"actionSkill1": {
 				"name": "抹消鉄拳",
@@ -6445,13 +6445,13 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "スーパーハイパーヴォイス 敵単体に700%ダメージ/自分が高揚状態の時、このスキルは必中となる/自分のアクションスキルのクールタイムを2短縮する",
-				"tags": ["ecstaticSingle", "cooldownTimeReductionSingle"],
+				"tags": ["bullseye", "cooldownTimeReductionSingle"],
 
 			},
 			"actionSkill1": {
 				"name": "エコーヴォイス",
 				"description": "敵全体に275%ダメージ/敵全体のディフェンスを20%ダウン(3ターン)/自分が高揚状態の時、このスキルは必中となる",
-				"tags": ["defenseDownSingle"],
+				"tags": ["defenseDownSingle", "bullseye"],
 				"coolDown": "Cool Down 6 Turns"
 
 			},
@@ -6485,12 +6485,12 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "D・Jパンチ 敵単体に550%ダメージ/敵全体に150%ダメージ/自分のパワーがアップしている時、このスキルは必中となる/敵のスピードがダウンしている時、スキル威力を30%アップ",
-				"tags": ["powerUpSingle", "speedDownSingle"],
+				"tags": ["bullseye", "skillImpactUpSingle"],
 			},
 			"actionSkill1": {
 				"name": "エコーヴォイス",
 				"description": "敵全体に250%ダメージ/自分のパワーがアップしている時、このスキルは必中となり、スキル威力を20%アップ/敵全体のスピードを15%ダウン(3ターン)",
-				"tags": ["powerUpSingle", "speedDownSingle"],
+				"tags": ["bullseye", "skillImpactUpSingle","speedDownAll"],
 				"coolDown": "Cool Down 4 Turns"
 			},
 			"actionSkill2": {
@@ -6561,7 +6561,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill1": {
 				"name": "グランドクラッシュ",
 				"description": "敵全体に275%ダメージ/敵全体のスピードを30%ダウン(3ターン)/自分の最大HPがアップしている時、このスキルは必中となる",
-				"tags": ["speedDownSingle"],
+				"tags": ["speedDownAll", "bullseye"],
 				"coolDown": "Cool Down 4 Turns"
 			},
 			"actionSkill2": {
@@ -6812,7 +6812,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "バーストアロー 敵単体に650%ダメージ、高 確率 (80%)で燃焼(4ターン)を付与/自分のアクションスキル威力30%アップ(4ターン)/敵が燃焼の時、このスキルに貫通を付与",
-				"tags": ["burningSingle", "skillImpactUpSingle"],
+				"tags": ["burningSingle", "actionSkillImpactDownSingle", "piercingShot"],
 			},
 			"actionSkill1": {
 				"name": "フレイムバースト",
@@ -6953,12 +6953,12 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "矯正拘束",
 				"description": "敵単体に400%ダメージ/敵単体のスピードを20%ダウン(3ターン)/敵単体に中 確率 (40%)で拘束(2ターン)を付与",
-				"tags": ["speedDownSingle"],
+				"tags": ["speedDownSingle", "boundSingle"],
 			},
 			"actionSkill1": {
 				"name": "雁字搦め",
 				"description": "敵全体のスピードを25%ダウン(3ターン)/敵全体のアクションスキル威力を15%ダウン(3ターン)/このスキルで2CHAIN以上成功時、拘束状態にする確率を上げる/敵全体に低 確率 (25%)で拘束(1ターン)を付与",
-				"tags": ["speedDownSingle", "skillImpactDownSingle"],
+				"tags": ["speedDownAll", "skillImpactDownAll", "bindHitRateDownSingle", "boundAll"],
 				"coolDown": "Cool Down 6 Turns"
 			},
 			"actionSkill2": {
@@ -6993,7 +6993,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill1": {
 				"name": "ハングファイバー",
 				"description": "敵単体に400%ダメージ/敵単体に低 確率 (20%)で拘束(2ターン)を付与/敵単体のスピードを35%ダウン(8ターン)/敵が\"破タイプ\"だったらこのスキルは必中となり、拘束状態にする確率を上げる",
-				"tags": ["boundSingle", "speedDownSingle", "bullseye"],
+				"tags": ["boundSingle", "speedDownSingle", "bullseye", "bindHitRateUpSingle"],
 				"coolDown": "Cool Down 4 Turns"
 			},
 			"actionSkill2": {
@@ -7024,12 +7024,12 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "忍法千枚通し 敵単体に550%ダメージ/自分のスピードに応じてスキル威力アップ/自分のクリティカル抵抗35%アップ(3ターン)、回避(3回)を付与/自分が身軽の時、このスキルに貫通を付与",
-				"tags": ["skillImpactUpSingle", "criticalResistanceUpSingle", "evasionSingle"],
+				"tags": ["skillImpactUpSingle", "criticalResistanceUpSingle", "evasionSingle", "piercingShot"],
 			},
 			"actionSkill1": {
 				"name": "刺突蹴撃",
 				"description": "敵単体に350%ダメージ/自分のスピードに応じてスキル威力アップ/自分のクリティカル抵抗30%アップ(3ターン)/自分が身軽の時、自分に回避(2回)を付与、このスキルに貫通を付与",
-				"tags": ["skillImpactUpSingle", "criticalResistanceUpSingle", "evasionSingle"],
+				"tags": ["skillImpactUpSingle", "criticalResistanceUpSingle", "evasionSingle", "piercingShot"],
 				"coolDown": "Cool Down 3 Turns"
 
 			},
@@ -7043,7 +7043,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "忍術使い 自分がクリティカル抵抗アップの時、自分に身軽を付与/自分が回避の時、味方全体のスピード40%アップ",
-				"tags": ["criticalResistanceUpSingle", "composureSingle", "speedUpSingle"],	
+				"tags": ["agile", "speedUpAll"],
 
 			},
 			"autoSkill2": {
@@ -7140,7 +7140,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill1": {
 				"name": "ファットアタック",
 				"description": "敵単体に300%ダメージ/このスキルで2CHAIN以上成功時、拘束状態にする確率を上げる/敵単体に中 確率 (35%)で拘束(1ターン)を付与",
-				"tags": ["boundSingle"],
+				"tags": ["boundSingle", "bindHitRateUpSingle"],
 				"coolDown": "Cool Down 4 Turns"
 
 			},
@@ -7219,7 +7219,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill1": {
 				"name": "雨覆羽",
 				"description": "味方全体が受けるダメージを30%カット(2ターン)/自分に回避(1回)を付与/味方全体のアクションスキル威力を15%アップ(3ターン)",
-				"tags": ["damageDownSingle", "evasionSingle", "skillImpactUpSingle"],
+				"tags": ["damageDownSingle", "evasionSingle", "actionSkillImpactUpAll"],
 				"coolDown": "Cool Down 5 Turns"
 			},
 			"actionSkill2": {
@@ -7322,7 +7322,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "剛翼重奏 敵単体に750%ダメージ/自分のアクションスキル威力を30%アップ(3ターン)/自分のディフェンスがダウンしている時、自分に貫通(3ターン)を付与",
-				"tags": ["skillImpactUpSingle", "piercingShot"],
+				"tags": ["actionSkillImpactUpSingle", "piercingShot"],
 			},
 			"actionSkill1": {
 				"name": "剛翼散弾",
@@ -7340,7 +7340,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "飛躍 自分のディフェンスがダウンしている時、自分のアクションスキル威力を60%アップ/自分が攻撃を3回受けきった後に、自分に回避(1回)を付与(最大3回)",
-				"tags": ["skillImpactUpSingle", "evasionSingle"],
+				"tags": ["actionSkillImpactUpSingle", "evasionSingle"],
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -7363,7 +7363,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill1": {
 				"name": "雨覆羽",
 				"description": "味方全体のプルスウルトラ技威力25%アップ(3ターン)、スピード25%アップ(3ターン)/味方全体の\"プロヒーロー\"のプルスウルトラゲージ30%アップ、身軽(3ターン)を付与/このスキルでCHAIN成功時、ターゲットを無視してランダムな敵単体にクールタイム2増加(2ターン)を付与※アリーナ、サークル祭限定効果",
-				"tags": ["plusUltraMoveImpactUpSingle", "speedUpSingle", "plusUltraGaugeUpSingle", "composureSingle"],
+				"tags": ["plusUltraMoveImpactUpAll", "speedUpSingle", "plusUltraGaugeUpAll", "agile", "cooldownTimeExtensionSingle"],
 				"coolDown": "Cool Down 4 Turns"
 
 			},
@@ -7765,7 +7765,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "皮肉屋 敵味方全体が燃焼状態になる確率を上げる/自分が燃焼状態の時、自分のアクションスキル威力を50%アップ",
-				"tags": ["burningSingle", "skillImpactUpSingle"],
+				"tags": ["burningSingle", "actionSkillImpactUpSingle"],
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -7893,7 +7893,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill1": {
 				"name": "撃つね！",
 				"description": "敵単体に350%ダメージ/敵単体のディフェンスを10%ダウン(3ターン)、中 確率 (40%)で出血(3ターン)を付与/このスキルでCHAIN成功時、出血状態にする確率を上げる",
-				"tags": ["defenseDownSingle", "bleedingSingle"],
+				"tags": ["defenseDownSingle", "bleedingSingle", "bleedHitRateUpSingle"],
 				"coolDown": "Cool Down 5 Turns"
 			},
 			"actionSkill2": {
@@ -7923,18 +7923,18 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "切り裂く恋心 敵単体に475%ダメージ、ディフェンス20%ダウン(3ターン)、高 確率 (60%)で出血(5ターン)を付与/敵の最大HP10%分ダメージアップ(最大30000)/敵が出血の時、このスキルのクリティカル率50%アップ、必中を付与、敵単体に中 確率 (70%)で回復阻害(3ターン)を付与",
-				"tags": ["defenseDownSingle", "bleedingSingle", "maxHpUpSingle", "criticalHitRateUpSingle", "skillImpactUpSingle", "recoveryBlockSingle"],
+				"tags": ["defenseDownSingle", "bleedingSingle", "maxHpUpSingle", "criticalHitRateUpSingle", "bullseye", "recoveryBlockSingle"],
 			},
 			"actionSkill1": {
 				"name": "ナイフカーニバル",
 				"description": "敵全体に300%ダメージ、クリティカル率40%ダウン(3ターン)、低 確率 (25%)で回復阻害(3ターン)を付与、中 確率 (40%)で出血(3ターン)を付与/このスキルに必中を付与",
-				"tags": ["criticalHitRateDownAll", "recoveryBlockAll", "bleedingAll", "skillImpactUpAll"],
+				"tags": ["criticalHitRateDownAll", "recoveryBlockAll", "bleedingAll", "bullseye"],
 				"coolDown": "Cool Down 6 Turns"
 			},
 			"actionSkill2": {
 				"name": "トキメク気持ち",
 				"description": "敵単体に375%ダメージ、中 確率 (45%)で回復阻害(3ターン)を付与、高 確率 (65%)で出血(3ターン)を付与/敵の最大HP5%分ダメージアップ(最大15000)/敵が出血の時、このスキルのクリティカル率45%アップ",
-				"tags": ["recoveryBlockSingle", "bleedingSingle", "maxHpUpSingle", "criticalHitRateUpSingle", "skillImpactUpSingle"],
+				"tags": ["recoveryBlockSingle", "bleedingSingle", "criticalHitRateUpSingle"],
 				"coolDown": "Cool Down 5 Turns"
 			},
 			"autoSkill1": {
@@ -7945,7 +7945,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "躊躇なき凶行 自分の出血命中率アップ(3ターン)(最大1回)/自分のスキルでCHAIN成功時、自分のクリティカル率30%アップ(3ターン)/自分のスキルで2CHAIN以上成功時、自分のプルスウルトラゲージ15%アップ、敵全体のクリティカル率25%ダウン(3ターン)",
-				"tags": ["criticalHitRateUpSingle", "plusUltraGaugeUpSingle", "criticalHitRateDownAll"],
+				"tags": ["bleedHitRateUpSingle", "criticalHitRateUpSingle", "plusUltraGaugeUpSingle", "criticalHitRateDownAll"],
 			},
 		},
 		{
@@ -8124,7 +8124,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "稀代のマジシャン WAVE開始後、自分のクリティカル率を30%アップ(3ターン)/クリティカル発生時、自分の拘束状態を付与する確率を上げる(最大5回)",
-				"tags": ["criticalHitRateUpSingle", "boundSingle"],
+				"tags": ["criticalHitRateUpSingle", "bindHitRateUpSingle"],
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -8285,13 +8285,13 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "ジェントリーフルスピード 敵単体に500%ダメージ/自分のスピードに応じてスキル威力が大きくアップ/自分が弾性状態の時、このスキルは必中となる/自分に回避(1回)を付与",
-				"tags": ["skillImpactUpSingle", "evasionSingle"],
+				"tags": ["skillImpactUpSingle", "bullseye", "evasionSingle"],
 
 			},
 			"actionSkill1": {
 				"name": "ジェントリーサンドイッチ",
 				"description": "敵単体に350%ダメージ/敵単体に低 確率 (30%)で拘束(1ターン)を付与/自分が弾性状態の時、拘束状態にする確率を上げる",
-				"tags": ["boundSingle"],
+				"tags": ["boundSingle", "bindHitRateUpSingle"],
 				"coolDown": "Cool Down 4 Turns"
 			},
 			"actionSkill2": {
@@ -8379,7 +8379,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "素直な心 自分が高揚の時、自分のディフェンスを30%アップ、出血を付与する確率を上げる",
-				"tags": ["defenseUpSingle", "bleedingSingle"],
+				"tags": ["defenseUpSingle", "bleedHitRateUpSingle"],
 			},
 		},
 		{
@@ -8576,7 +8576,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "負荷塊！！ 敵単体に650%ダメージ/味方全体の最大HP30%アップ(3ターン)/自分のストレスが5個以上の時、このスキルに必中を付与/自分のストレスが10個以上の時、このスキルに貫通を付与",
-				"tags": ["skillImpactUpSingle", "maxHpUpSingle"],
+				"tags": ["maxHpUpAll", "bullseye", "piercingShot"],
 			},
 			"actionSkill1": {
 				"name": "重圧陥",
@@ -8598,7 +8598,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "指導者の素質 自分のストレスが5個未満の時、自分に挑発を付与、くいしばりを付与/自分がダメージカットの時、自分に挑発を付与、クリティカル抵抗40%アップ",
-				"tags": ["boundSingle", "criticalResistanceUpSingle"],
+				"tags": ["aggro", "boundSingle", "criticalResistanceUpSingle"],
 			},
 		},
 		{
@@ -8611,7 +8611,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "Plus Ultra Move Lv.3",
 				"description": "ステッピングスナイプ 敵単体に650%ダメージ/自分が必中の時、このスキルに貫通を付与、敵単体の一時的なくいしばりを全て解除/自分の拘束耐性がアップしている時、自分に必中(4ターン)を付与",
-				"tags": ["skillImpactUpSingle", "boundSingle", "evasionSingle"],
+				"tags": ["piercingShot", "removeBuffsSingle", "bullseye"],
 			},
 			"actionSkill1": {
 				"name": "一発必中",
@@ -8623,12 +8623,12 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				"name": "スカイショット",
 				"description": "敵単体に400%ダメージ/自分が必中の時、このスキルに貫通を付与/自分に拘束耐性(4ターン)を付与/このスキルでCHAIN成功時、自分のアクションスキルのクールタイムを1短縮/このスキルで2CHAIN以上成功時、自分に隠れる(2ターン)を付与",
 				"coolDown": "Cool Down 4 Turns",
-				"tags": ["cooldownTimeReductionSingle", "hideSingle"],
+				"tags": ["piercingShot", "bindImmunity", "cooldownTimeReductionSingle", "hideSingle"],
 			},
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "スナイパーライフル人間 自分に必中(2ターン)を付与/3ターン毎に、自分に必中(1ターン)を付与/自分が必中の時、自分のスキル威力を35%アップ、スピードを30%アップ",
-				"tags": ["skillImpactUpSingle", "speedUpSingle"],
+				"tags": ["bullseye", "skillImpactUpSingle", "speedUpSingle"],
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
@@ -8652,7 +8652,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				"name": "リフレクション",
 				"description": "自分に通常攻撃を無効化した上でカウンターする状態(3ターン)を付与、挑発(3ターン)を付与、ダメージを35%カット(3ターン)",
 				"coolDown": "Cool Down 5 Turns",
-				"tags": ["counter", "boundSingle", "damageDownSingle"]
+				"tags": ["counter", "aggro", "damageDownSingle"]
 			},
 			"actionSkill2": {
 				"name": "リフレクトウェーブ",

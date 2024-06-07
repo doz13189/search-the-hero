@@ -37,7 +37,7 @@ export const Heroes: FC<{
 				return <NoData />;
 			}
 
-			return heroes.map((hero) => <Hero hero={hero} />);
+			return heroes.map((hero) => <div className="mb-2"><Hero hero={hero} /></div>);
 		})
 		.catch((err) => {
 			console.error(err);
