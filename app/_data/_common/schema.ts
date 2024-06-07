@@ -16,37 +16,37 @@ export const Type = z.enum([
 ]);
 
 const rawSkillTags = {
-	actionSkillDamageDown: { name: "アクションスキルダメージ軽減", isAll: true },
-	actionSkillImpactDown: { name: "アクションスキル威力ダウン", isAll: true },
+	actionSkillDamageDown: { name: "アクションスキルダメージ軽減", isAll: true }, // ok
+	actionSkillImpactDown: { name: "アクションスキル威力ダウン", isAll: true }, // ok
 	actionSkillImpactDownImmunity: { name: "アクションスキル威力ダウン完全耐性", isAll: true },
-	actionSkillImpactUp: { name: "アクションスキル威力アップ", isAll: true },
-	aggro: { name: "挑発", isAll: false },
-	agile: { name: "身軽", isAll: false },
-	barrier: { name: "バリア", isAll: true },
-	bindHitRateDown: { name: "拘束命中率ダウン", isAll: true },
-	bindHitRateUp: { name: "拘束命中率アップ", isAll: true },
-	bindImmunity: { name: "拘束完全耐性", isAll: false },
-	bindResistDown: { name: "拘束耐性ダウン", isAll: true },
-	bindResistUp: { name: "拘束耐性アップ", isAll: true },
-	bleedHitRateDown: { name: "出血命中率ダウン", isAll: true },
-	bleedHitRateUp: { name: "出血命中率アップ", isAll: true },
-	bleedImmunity: { name: "出血完全耐性", isAll: true },
-	bleedResistDown: { name: "出血耐性ダウン", isAll: true },
-	bleedResistUp: { name: "出血耐性アップ", isAll: true },
+	actionSkillImpactUp: { name: "アクションスキル威力アップ", isAll: true }, // ok
+	aggro: { name: "挑発", isAll: false }, // ok
+	agile: { name: "身軽", isAll: false }, // ok
+	barrier: { name: "バリア", isAll: true }, // ok
+	bindHitRateDown: { name: "拘束命中率ダウン", isAll: true }, // ok
+	bindHitRateUp: { name: "拘束命中率アップ", isAll: true }, // ok
+	bindImmunity: { name: "拘束完全耐性", isAll: false }, // ok
+	bindResistDown: { name: "拘束耐性ダウン", isAll: true }, // ok
+	bindResistUp: { name: "拘束耐性アップ", isAll: true }, // ok
+	bleedHitRateDown: { name: "出血命中率ダウン", isAll: true }, // ok
+	bleedHitRateUp: { name: "出血命中率アップ", isAll: true }, // ok
+	bleedImmunity: { name: "出血完全耐性", isAll: true }, // ok
+	bleedResistDown: { name: "出血耐性ダウン", isAll: true }, // ok
+	bleedResistUp: { name: "出血耐性アップ", isAll: true }, // ok
 	bleeding: { name: "出血", isAll: true },
-	bleedingDamageDown: { name: "出血ダメージ軽減", isAll: true },
-	blind: { name: "暗闇", isAll: true },
-	blindHitRateDown: { name: "暗闇命中率ダウン", isAll: true },
-	blindHitRateUp: { name: "暗闇命中率アップ", isAll: true },
-	blindImmunity: { name: "暗闇完全耐性", isAll: false },
-	blindResistDown: { name: "暗闇耐性ダウン", isAll: true },
-	blindResistUp: { name: "暗闇耐性アップ", isAll: true },
-	bound: { name: "拘束", isAll: true },
-	buffBlock: { name: "強化阻害", isAll: true },
-	buffBlockImmunity: { name: "強化阻害完全耐性", isAll: false },
-	buffBlockResistDown: { name: "強化阻害耐性ダウン", isAll: true },
-	buffBlockResistUp: { name: "強化阻害耐性アップ", isAll: true },
-	bullseye: { name: "必中", isAll: false },
+	bleedingDamageDown: { name: "出血ダメージ軽減", isAll: true }, // ok
+	blind: { name: "暗闇", isAll: true }, //ok
+	blindHitRateDown: { name: "暗闇命中率ダウン", isAll: true }, // ok
+	blindHitRateUp: { name: "暗闇命中率アップ", isAll: true }, // ok
+	blindImmunity: { name: "暗闇完全耐性", isAll: false }, // ok
+	blindResistDown: { name: "暗闇耐性ダウン", isAll: true }, // ok
+	blindResistUp: { name: "暗闇耐性アップ", isAll: true }, // ok
+	bound: { name: "拘束", isAll: true }, // ok
+	buffBlock: { name: "強化阻害", isAll: true }, // ok
+	buffBlockImmunity: { name: "強化阻害完全耐性", isAll: false }, // ok
+	buffBlockResistDown: { name: "強化阻害耐性ダウン", isAll: true }, // ok
+	buffBlockResistUp: { name: "強化阻害耐性アップ", isAll: true }, // ok
+	bullseye: { name: "必中", isAll: false }, //ok
 	burnHitRateDown: { name: "燃焼命中率ダウン", isAll: true },
 	burnHitRateUp: { name: "燃焼命中率アップ", isAll: true },
 	burnImmunity: { name: "燃焼完全耐性", isAll: false },
