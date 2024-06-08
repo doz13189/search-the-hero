@@ -47,32 +47,32 @@ const rawSkillTags = {
 	buffBlockResistDown: { name: "強化阻害耐性ダウン", isAll: true }, // ok
 	buffBlockResistUp: { name: "強化阻害耐性アップ", isAll: true }, // ok
 	bullseye: { name: "必中", isAll: false }, //ok
-	burnHitRateDown: { name: "燃焼命中率ダウン", isAll: true },
-	burnHitRateUp: { name: "燃焼命中率アップ", isAll: true },
-	burnImmunity: { name: "燃焼完全耐性", isAll: false },
-	burnResistDown: { name: "燃焼耐性ダウン", isAll: true },
-	burnResistUp: { name: "燃焼耐性アップ", isAll: true },
-	burning: { name: "燃焼", isAll: true },
-	burningDamageDown: { name: "燃焼ダメージ軽減", isAll: true },
-	camouflage: { name: "保護色", isAll: false },
-	charmHitRateDown: { name: "魅了命中率ダウン", isAll: true },
-	charmHitRateUp: { name: "魅了命中率アップ", isAll: true },
-	charmImmunity: { name: "魅了完全耐性", isAll: false },
-	charmResistDown: { name: "魅了耐性ダウン", isAll: true },
-	charmResistUp: { name: "魅了耐性アップ", isAll: true },
-	charmed: { name: "魅了", isAll: true },
-	composure: { name: "余裕", isAll: true },
-	confusion: { name: "混乱", isAll: true },
-	confusionHitRateDown: { name: "混乱命中率ダウン", isAll: true },
-	confusionHitRateUp: { name: "混乱命中率アップ", isAll: true },
-	confusionImmunity: { name: "混乱完全耐性", isAll: false },
-	confusionResistDown: { name: "混乱耐性ダウン", isAll: true },
-	confusionResistUp: { name: "混乱耐性アップ", isAll: true },
-	cooldownTimeDown: { name: "クールタイム軽減", isAll: true },
-	cooldownTimeExtension: { name: "クールタイム延長", isAll: true },
-	cooldownTimeReduction: { name: "クールタイム短縮", isAll: true },
-	cooldownTimeUp: { name: "クールタイム増加", isAll: true },
-	counter: { name: "カウンター", isAll: false },
+	burnHitRateDown: { name: "燃焼命中率ダウン", isAll: true }, //ok
+	burnHitRateUp: { name: "燃焼命中率アップ", isAll: true }, //ok
+	burnImmunity: { name: "燃焼完全耐性", isAll: true }, //ok
+	burnResistDown: { name: "燃焼耐性ダウン", isAll: true }, //ok
+	burnResistUp: { name: "燃焼耐性アップ", isAll: true }, //ok
+	burning: { name: "燃焼", isAll: true }, //ok
+	burningDamageDown: { name: "燃焼ダメージ軽減", isAll: true }, //ok
+	camouflage: { name: "保護色", isAll: false }, // ok
+	charmHitRateDown: { name: "魅了命中率ダウン", isAll: true }, // ok
+	charmHitRateUp: { name: "魅了命中率アップ", isAll: true }, // ok
+	charmImmunity: { name: "魅了完全耐性", isAll: false }, // ok
+	charmResistDown: { name: "魅了耐性ダウン", isAll: true }, // ok
+	charmResistUp: { name: "魅了耐性アップ", isAll: true }, // ok
+	charmed: { name: "魅了", isAll: true }, // ok
+	composure: { name: "余裕", isAll: true }, // ok
+	confusion: { name: "混乱", isAll: true }, // ok
+	confusionHitRateDown: { name: "混乱命中率ダウン", isAll: true }, // ok
+	confusionHitRateUp: { name: "混乱命中率アップ", isAll: true }, // ok
+	confusionImmunity: { name: "混乱完全耐性", isAll: false }, // ok
+	confusionResistDown: { name: "混乱耐性ダウン", isAll: true }, // ok
+	confusionResistUp: { name: "混乱耐性アップ", isAll: true }, // ok
+	cooldownTimeDown: { name: "クールタイム軽減", isAll: true }, // ok
+	cooldownTimeExtension: { name: "クールタイム延長", isAll: true }, // ok
+	cooldownTimeReduction: { name: "クールタイム短縮", isAll: true }, // ok
+	cooldownTimeUp: { name: "クールタイム増加", isAll: true }, // ok
+	counter: { name: "カウンター", isAll: false }, //ok
 	cover: { name: "かばう", isAll: false },
 	critHitRateDownImmunity: { name: "クリティカル率ダウン完全耐性", isAll: false },
 	critHitRateDownResistDown: { name: "クリティカル率ダウン耐性ダウン", isAll: true },
