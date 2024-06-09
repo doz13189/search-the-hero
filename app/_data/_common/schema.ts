@@ -73,7 +73,7 @@ const rawSkillTags = {
 	cooldownTimeReduction: { name: "クールタイム短縮", isAll: true }, // ok
 	cooldownTimeUp: { name: "クールタイム増加", isAll: true }, // ok
 	counter: { name: "カウンター", isAll: false }, //ok
-	cover: { name: "かばう", isAll: false },
+	cover: { name: "かばう", isAll: false }, //ok
 	critHitRateDownImmunity: { name: "クリティカル率ダウン完全耐性", isAll: false },
 	critHitRateDownResistDown: { name: "クリティカル率ダウン耐性ダウン", isAll: true },
 	critHitRateDownResistUp: { name: "クリティカル率ダウン耐性アップ", isAll: true },
@@ -81,72 +81,72 @@ const rawSkillTags = {
 	criticalHitImpactUp: { name: "クリティカル威力アップ", isAll: true },
 	criticalHitRateDown: { name: "クリティカル率ダウン", isAll: true },
 	criticalHitRateUp: { name: "クリティカル率アップ", isAll: true },
-	criticalResistanceDown: { name: "クリティカル抵抗ダウン", isAll: true },
-	criticalResistanceDownImmunity: { name: "クリティカル抵抗ダウン完全耐性", isAll: false },
-	criticalResistanceUp: { name: "クリティカル抵抗アップ", isAll: true },
-	criticalSkillImpactDown: { name: "クリティカル威力ダウン", isAll: true },
-	criticalSkillImpactDownImmunity: { name: "クリティカル威力ダウン完全耐性", isAll: false },
-	damageDown: { name: "ダメージカット", isAll: true },
-	damageTakenRestore: { name: "被ダメージ回復", isAll: true },
-	dealtDamageRestore: { name: "与ダメージ回復", isAll: true },
+	criticalResistanceDown: { name: "クリティカル抵抗ダウン", isAll: true }, // ok
+	criticalResistanceDownImmunity: { name: "クリティカル抵抗ダウン完全耐性", isAll: false }, // ok
+	criticalResistanceUp: { name: "クリティカル抵抗アップ", isAll: true }, // ok
+	criticalSkillImpactDown: { name: "クリティカル威力ダウン", isAll: true }, // ok
+	criticalSkillImpactDownImmunity: { name: "クリティカル威力ダウン完全耐性", isAll: false }, // ok
+	damageDown: { name: "ダメージカット", isAll: true }, // ok
+	damageTakenRestore: { name: "被ダメージ回復", isAll: true }, // ok
+	dealtDamageRestore: { name: "与ダメージ回復", isAll: true }, // ok
 	defenseDown: { name: "ディフェンスダウン", isAll: true },
 	defenseDownImmunity: { name: "ディフェンスダウン完全耐性", isAll: false },
 	defenseDownResistDown: { name: "ディフェンスダウン耐性ダウン", isAll: true },
 	defenseDownResistUp: { name: "ディフェンスダウン耐性アップ", isAll: true },
 	defenseUp: { name: "ディフェンスアップ", isAll: true },
-	doubleAttack: { name: "2回攻撃", isAll: true },
-	ecstatic: { name: "高揚", isAll: true },
-	elasticity: { name: "弾性", isAll: false },
-	evasion: { name: "回避", isAll: true },
-	faJin: { name: "発勁", isAll: false },
-	fatigue: { name: "疲労", isAll: false },
-	fear: { name: "恐怖", isAll: false },
-	fearHitRateDown: { name: "恐怖命中率ダウン", isAll: true },
-	fearHitRateUp: { name: "恐怖命中率アップ", isAll: true },
-	fearImmunity: { name: "恐怖完全耐性", isAll: false },
-	fearResistDown: { name: "恐怖耐性ダウン", isAll: true },
-	fearResistUp: { name: "恐怖耐性アップ", isAll: true },
-	freezeHitRateDown: { name: "氷結命中率ダウン", isAll: true },
-	freezeHitRateUp: { name: "氷結命中率アップ", isAll: true },
-	freezeImmunity: { name: "氷結完全耐性", isAll: false },
-	freezeResistDown: { name: "氷結耐性ダウン", isAll: true },
-	freezeResistUp: { name: "氷結耐性アップ", isAll: true },
-	frostbite: { name: "凍傷", isAll: false },
-	frostbiteHitRateDown: { name: "凍傷命中率ダウン", isAll: true },
-	frostbiteHitRateUp: { name: "凍傷命中率アップ", isAll: true },
-	frostbiteImmunity: { name: "凍傷完全耐性", isAll: false },
-	frostbiteResistDown: { name: "凍傷耐性ダウン", isAll: true },
-	frostbiteResistUp: { name: "凍傷耐性アップ", isAll: true },
-	frozen: { name: "氷結", isAll: true },
-	hellfire: { name: "業火", isAll: true },
-	hellfireHitRateDown: { name: "業火命中率ダウン", isAll: true },
-	hellfireHitRateUp: { name: "業火命中率アップ", isAll: true },
-	hellfireResistUp: { name: "業火耐性アップ", isAll: true },
-	hide: { name: "隠れる", isAll: true },
-	hitRateDown: { name: "命中率ダウン", isAll: true },
-	hitRateUp: { name: "命中率アップ", isAll: true },
-	hpRegeneration: { name: "HP自動回復", isAll: true },
-	lastStand: { name: "くいしばり", isAll: true },
-	maxHpDown: { name: "最大HPダウン", isAll: true },
-	maxHpDownImmunity: { name: "最大HPダウン完全耐性", isAll: false },
-	maxHpDownResistDown: { name: "最大HPダウン耐性ダウン", isAll: true },
-	maxHpDownResistUp: { name: "最大HPダウン耐性アップ", isAll: true },
-	maxHpUp: { name: "最大HPアップ", isAll: true },
-	meatLump: { name: "肉塊", isAll: true },
-	meatLumpImmunity: { name: "肉塊完全耐性", isAll: false },
-	meatLumpResistDown: { name: "肉塊耐性ダウン", isAll: true },
-	meatLumpResistUp: { name: "肉塊耐性アップ", isAll: true },
-	multiUseSkills: { name: "連撃", isAll: false },
-	nitro: { name: "ニトロ", isAll: false },
-	normalAttackDamageDown: { name: "通常攻撃ダメージ軽減", isAll: true },
-	normalAttackImpactUp: { name: "通常攻撃威力アップ", isAll: true },
-	overwhelm: { name: "圧倒", isAll: false },
-	paralysis: { name: "麻痺", isAll: true },
-	paralysisHitRateDown: { name: "麻痺命中率ダウン", isAll: true },
-	paralysisHitRateUp: { name: "麻痺命中率アップ", isAll: true },
-	paralysisImmunity: { name: "麻痺完全耐性", isAll: false },
-	paralysisResistDown: { name: "麻痺耐性ダウン", isAll: true },
-	paralysisResistUp: { name: "麻痺耐性アップ", isAll: true },
+	doubleAttack: { name: "2回攻撃", isAll: true }, // ok
+	ecstatic: { name: "高揚", isAll: true }, // ok
+	elasticity: { name: "弾性", isAll: false }, // ok
+	evasion: { name: "回避", isAll: true }, // ok
+	faJin: { name: "発勁", isAll: false }, // ok
+	fatigue: { name: "疲労", isAll: false }, // ok
+	fear: { name: "恐怖", isAll: false }, // ok
+	fearHitRateDown: { name: "恐怖命中率ダウン", isAll: true }, // ok
+	fearHitRateUp: { name: "恐怖命中率アップ", isAll: true }, // ok
+	fearImmunity: { name: "恐怖完全耐性", isAll: false }, // ok
+	fearResistDown: { name: "恐怖耐性ダウン", isAll: true }, // ok
+	fearResistUp: { name: "恐怖耐性アップ", isAll: true }, // ok
+	freezeHitRateDown: { name: "氷結命中率ダウン", isAll: true }, // ok
+	freezeHitRateUp: { name: "氷結命中率アップ", isAll: true }, // ok
+	freezeImmunity: { name: "氷結完全耐性", isAll: false }, // ok
+	freezeResistDown: { name: "氷結耐性ダウン", isAll: true }, // ok
+	freezeResistUp: { name: "氷結耐性アップ", isAll: true }, // ok
+	frostbite: { name: "凍傷", isAll: true }, // ok
+	frostbiteHitRateDown: { name: "凍傷命中率ダウン", isAll: true }, // ok
+	frostbiteHitRateUp: { name: "凍傷命中率アップ", isAll: true }, // ok
+	frostbiteImmunity: { name: "凍傷完全耐性", isAll: false }, // ok
+	frostbiteResistDown: { name: "凍傷耐性ダウン", isAll: true }, // ok
+	frostbiteResistUp: { name: "凍傷耐性アップ", isAll: true }, // ok
+	frozen: { name: "氷結", isAll: true },  // ok
+	hellfire: { name: "業火", isAll: true },  // ok
+	hellfireHitRateDown: { name: "業火命中率ダウン", isAll: true },  // ok
+	hellfireHitRateUp: { name: "業火命中率アップ", isAll: true },  // ok
+	hellfireResistUp: { name: "業火耐性アップ", isAll: true },  // ok
+	hide: { name: "隠れる", isAll: true },  // ok
+	hitRateDown: { name: "命中率ダウン", isAll: true },  // ok
+	hitRateUp: { name: "命中率アップ", isAll: true }, // ok
+	hpRegeneration: { name: "HP自動回復", isAll: true }, // ok
+	lastStand: { name: "くいしばり", isAll: true }, // ok
+	maxHpDown: { name: "最大HPダウン", isAll: true }, // ok
+	maxHpDownImmunity: { name: "最大HPダウン完全耐性", isAll: false }, // ok
+	maxHpDownResistDown: { name: "最大HPダウン耐性ダウン", isAll: true }, // ok
+	maxHpDownResistUp: { name: "最大HPダウン耐性アップ", isAll: true }, // ok
+	maxHpUp: { name: "最大HPアップ", isAll: true }, // ok
+	meatLump: { name: "肉塊", isAll: true }, // ok
+	meatLumpImmunity: { name: "肉塊完全耐性", isAll: false },  // ok
+	meatLumpResistDown: { name: "肉塊耐性ダウン", isAll: true }, // ok
+	meatLumpResistUp: { name: "肉塊耐性アップ", isAll: true }, // ok
+	multiUseSkills: { name: "連撃", isAll: false }, // ok
+	nitro: { name: "ニトロ", isAll: false }, // ok
+	normalAttackDamageDown: { name: "通常攻撃ダメージ軽減", isAll: true }, // ok
+	normalAttackImpactUp: { name: "通常攻撃威力アップ", isAll: true }, // ok
+	overwhelm: { name: "圧倒", isAll: false }, // ok
+	paralysis: { name: "麻痺", isAll: true }, // ok
+	paralysisHitRateDown: { name: "麻痺命中率ダウン", isAll: true }, // ok
+	paralysisHitRateUp: { name: "麻痺命中率アップ", isAll: true }, // ok
+	paralysisImmunity: { name: "麻痺完全耐性", isAll: false }, // ok
+	paralysisResistDown: { name: "麻痺耐性ダウン", isAll: true }, // ok
+	paralysisResistUp: { name: "麻痺耐性アップ", isAll: true }, // ok
 	persistence: { name: "不屈", isAll: false },
 	phaseDamageDown: { name: "フェーズダメージカット", isAll: false },
 	piercingShot: { name: "貫通", isAll: false },
