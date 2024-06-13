@@ -442,7 +442,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"plusUltra": {
 				"name": "黒鞭",
 				"description": "自分に不屈(1ターン)を付与/敵単体に500%ダメージ/敵単体に中 確率 (40%)で拘束(1ターン)を付与/与えたダメージの一定量を自分も受ける/自分のアクションスキルのクールタイムを1短縮する/自分の一時的な強化を全て解除",
-				"tags": ["resilienceSingle", "boundSingle", "cooldownTimeReductionSingle", "removeBuffsSingle"]
+				"tags": ["persistence", "boundSingle", "cooldownTimeReductionSingle", "removeBuffsSingle"]
 
 			},
 			"actionSkill1": {
@@ -1676,7 +1676,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "行かせてたまるか！ 敵全体のアクションスキル威力25%ダウン(3ターン)(最大1回)/自分のスキルで2CHAIN以上成功時、敵全体のアクションスキル威力10%ダウン(3ターン)/自分のスキルで3CHAIN成功時、ターゲットを無視してランダムな敵単体に低 確率 (30%)でプルスウルトラゲージ上昇量15%ダウン(2ターン)※アリーナ、サークル祭限定効果/2ターン毎に、敵全体のプルスウルトラゲージ10%ダウン※アリーナ、サークル祭限定効果",
-				"tags": ["actionSkillImpactDownAll", "plusUltraGaugeDownAll", "plusUltraGaugeDownSingle"]
+				"tags": ["actionSkillImpactDownAll", "plusUltraGaugeDownAll", "plusUltraGaugeChargingDownSingle"]
 
 			},
 		},
@@ -1716,7 +1716,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "元気の出る応援 2ターン毎に、自分以外の味方全体のクリティカル率20%アップ(1ターン)/3ターン毎に、味方全体の最大HP15%アップ(2ターン)(最大4回)/自分がバリアの時、味方全体にクールタイム1軽減(2ターン)を付与(最大4回)/チームに\"緑谷出久\"がいる時、自分以外の味方全体のクリティカル威力20%アップ、プルスウルトラ技威力30%アップ",
-				"tags": ["criticalHitRateUpAll", "maxHpUpAll", "cooldownTimeReductionAll", "criticalHitRateUpAll", "skillImpactUpAll"]
+				"tags": ["criticalHitRateUpAll", "maxHpUpAll", "cooldownTimeReductionAll", "criticalHitImpactUpAll", "plusUltraMoveImpactUpAll"]
 			},
 		},
 		{
@@ -3462,7 +3462,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				"name": "ファーストエイド",
 				"description": "味方全体の状態異常を2つ回復/味方全体のHPを35%回復/味方全体のプルスウルトラ技の威力を15%アップ(3ターン)",
 				"coolDown": "Cool Down 6 Turns",
-				"tags": ["cancelStatusAilmentsAll", "hpRegenerationAll", "powerUpAll"]
+				"tags": ["cancelStatusAilmentsAll", "hpRegenerationAll", "plusUltraMoveImpactUpAll"]
 			},
 			"actionSkill2": {
 				"name": "マトリョーシカ",
@@ -6162,13 +6162,13 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill1": {
 				"name": "Auto Skill Lv.3",
 				"description": "バイブスアゲてけ!! 味方全体の\"信タイプ\"キャラのプルスウルトラ技の威力を25％アップ/自分のプルスウルトラ技の威力を5％アップ(毎ターン)(最大30%)",
-				"tags": ["plusUltraGaugeUpSingle"],
+				"tags": ["plusUltraMoveImpactUpAll"],
 
 			},
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "D・J WAVE開始後、自分に高揚(3ターン)を付与、敵全体のプルスウルトラ技の威力を20%ダウン(1回)",
-				"tags": ["ecstaticSingle", "plusUltraGaugeDownSingle"],
+				"tags": ["ecstaticSingle", "plusUltraMoveSkillImpactDownAll"],
 
 			},
 		},
@@ -6193,7 +6193,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill2": {
 				"name": "大音響",
 				"description": "味方全体のプルスウルトラ技の威力を40%アップ(5ターン)、受けるダメージを20%カット(3ターン)/敵全体の一時的な強化を1つ解除し、中 確率 (35%)で混乱(1ターン)を付与",
-				"tags": ["plusUltraGaugeUpSingle", "damageDownSingle", "removeBuffsSingle", "confusionSingle"],
+				"tags": ["plusUltraGaugeChargingUpAll", "damageDownSingle", "removeBuffsSingle", "confusionSingle"],
 				"coolDown": "Cool Down 5 Turns"
 			},
 			"autoSkill1": {
@@ -6204,7 +6204,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"autoSkill2": {
 				"name": "Auto Skill Lv.3",
 				"description": "ボイスヒーロー 自分のプルスウルトラ技の威力がアップしている時、自分のパワーを25%アップ/自分のスキルで2CHAIN以上成功時、味方全体のプルスウルトラゲージを10%アップ",
-				"tags": ["powerUpSingle", "plusUltraGaugeUpSingle"],
+				"tags": ["plusUltraMoveImpactUpSingle", "powerUpSingle", "plusUltraGaugeUpAll"],
 			},
 		},
 		{
@@ -6922,7 +6922,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 			"actionSkill2": {
 				"name": "剛翼散弾",
 				"description": "敵全体に250%ダメージ/味方全体のスピードを25%アップ(3ターン)/味方全体のプルスウルトラ技の威力を15%アップ(3ターン)",
-				"tags": ["speedUpSingle", "plusUltraMoveImpactUpAll"],
+				"tags": ["speedUpAll", "plusUltraMoveImpactUpAll"],
 				"coolDown": "Cool Down 5 Turns"
 			},
 			"autoSkill1": {
@@ -8314,7 +8314,7 @@ export const heroes: z.infer<typeof HeroesSchema> = {
 				"name": "一発必中",
 				"description": "敵単体に425%ダメージ/自分が必中の時、このスキルに貫通を付与/敵単体のパワーを25%ダウン(3ターン)、スピードを40%ダウン(3ターン)/自分のプルスウルトラゲージを25%アップ",
 				"coolDown": "Cool Down 5 Turns",
-				"tags": ["powerDownSingle", "speedDownSingle", "plusUltraGaugeUpSingle"],
+				"tags": ["piercingShot", "powerDownSingle", "speedDownSingle", "plusUltraGaugeUpSingle"],
 			},
 			"actionSkill2": {
 				"name": "スカイショット",

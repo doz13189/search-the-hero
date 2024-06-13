@@ -34,6 +34,10 @@ export default function Page({ params }: { params: { id: string } }) {
 		return (
 			<div className="min-h-screen container mx-auto py-1 px-3">
 				<div className="py-1">
+					<p className="text-xs">{hero.validationStatus === 'valid' ? 'このデータは検証済みです。' : 'このデータは未検証です。誤りを含む可能性があります。'}</p>
+				</div>
+
+				<div className="py-1">
 					<p className="text-xs">{typeLabel(hero.type)}タイプ</p>
 				</div>
 
@@ -44,7 +48,7 @@ export default function Page({ params }: { params: { id: string } }) {
 				</div>
 
 				<div className="py-2">
-					<p className="text-orange text-xs">Puls Ultra</p>
+					<p className="text-orange text-xs">Puls Ultra Lv.3</p>
 					<div className="
 							mt-1
 							p-1
@@ -55,7 +59,7 @@ export default function Page({ params }: { params: { id: string } }) {
 				</div>
 
 				<div className="py-2">
-					<p className="text-orange text-xs">Action Skill1</p>
+					<p className="text-orange text-xs">Action Skill 1 DX Lv.2</p>
 					<div className="
 							mt-1
 							p-1
@@ -66,7 +70,7 @@ export default function Page({ params }: { params: { id: string } }) {
 				</div>
 
 				<div className="py-2">
-					<p className="text-orange text-xs">Action Skill2</p>
+					<p className="text-orange text-xs">Action Skill 2 DX Lv.2</p>
 					<div className="
 							mt-1
 							p-1
@@ -77,7 +81,7 @@ export default function Page({ params }: { params: { id: string } }) {
 				</div>
 
 				<div className="py-2">
-					<p className="text-orange text-xs">Auto Skill1</p>
+					<p className="text-orange text-xs">Auto Skill1 Lv.3</p>
 					<div className="
 							mt-1
 							p-1
@@ -88,7 +92,7 @@ export default function Page({ params }: { params: { id: string } }) {
 				</div>
 
 				<div className="py-2">
-					<p className="text-orange text-xs">Auto Skill2</p>
+					<p className="text-orange text-xs">Auto Skill2 Lv.3</p>
 					<div className="
 							mt-1
 							p-1

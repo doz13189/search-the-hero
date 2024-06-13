@@ -147,23 +147,24 @@ const rawSkillTags = {
 	paralysisImmunity: { name: "麻痺完全耐性", isAll: false }, // ok
 	paralysisResistDown: { name: "麻痺耐性ダウン", isAll: true }, // ok
 	paralysisResistUp: { name: "麻痺耐性アップ", isAll: true }, // ok
-	persistence: { name: "不屈", isAll: false },
-	phaseDamageDown: { name: "フェーズダメージカット", isAll: false },
-	piercingShot: { name: "貫通", isAll: false },
-	plusUltraEffectUp: { name: "プルスウルトラ効率アップ", isAll: true },
-	plusUltraGaugeChargingUp: { name: "プルスウルトラゲージ上昇量アップ", isAll: true },
-	plusUltraGaugeDown: { name: "プルスウルトラゲージ減少", isAll: true },
-	plusUltraGaugeDownImmunity: { name: "プルスウルトラゲージ減少完全耐性", isAll: false },
-	plusUltraGaugeUp: { name: "プルスウルトラゲージ増加", isAll: true },
-	plusUltraMoveDamageDown: { name: "プルスウルトラ技ダメージ軽減", isAll: true },
-	plusUltraMoveImpactUp: { name: "プルスウルトラ技威力アップ", isAll: true },
-	plusUltraMoveSkillImpactDown: { name: "プルスウルトラ技威力ダウン", isAll: true },
-	plusUltraMoveSkillImpactDownImmunity: { name: "プルスウルトラ技威力ダウン完全耐性", isAll: false },
+	persistence: { name: "不屈", isAll: false }, // ok
+	phaseDamageDown: { name: "フェーズダメージカット", isAll: false }, // ok
+	piercingShot: { name: "貫通", isAll: false }, // ok
+	plusUltraEffectUp: { name: "プルスウルトラ効率アップ", isAll: true }, // ok
+	plusUltraGaugeChargingUp: { name: "プルスウルトラゲージ上昇量アップ", isAll: true }, // ok
+	plusUltraGaugeChargingDown: { name: "プルスウルトラゲージ上昇量ダウン", isAll: true }, // ok
+	plusUltraGaugeDown: { name: "プルスウルトラゲージ減少", isAll: true }, // ok
+	plusUltraGaugeDownImmunity: { name: "プルスウルトラゲージ減少完全耐性", isAll: false }, // ok
+	plusUltraMoveDamageDown: { name: "プルスウルトラ技ダメージ軽減", isAll: true }, // ok
+	plusUltraMoveImpactUp: { name: "プルスウルトラ技威力アップ", isAll: true }, // ok
+	plusUltraMoveSkillImpactDown: { name: "プルスウルトラ技威力ダウン", isAll: true }, // ok
+	plusUltraMoveSkillImpactDownImmunity: { name: "プルスウルトラ技威力ダウン完全耐性", isAll: false }, // ok
 	powerDown: { name: "パワーダウン", isAll: true },
 	powerDownImmunity: { name: "パワーダウン完全耐性", isAll: true },
 	powerDownResistDown: { name: "パワーダウン耐性ダウン", isAll: true },
 	powerDownResistUp: { name: "パワーダウン耐性アップ", isAll: true },
 	powerUp: { name: "パワーアップ", isAll: true },
+	plusUltraGaugeUp: { name: "プルスウルトラゲージ増加", isAll: true },
 	puGaugeDownResistDown: { name: "プルスウルトラゲージダウン耐性ダウン", isAll: true },
 	puGaugeDownResistUp: { name: "プルスウルトラゲージ減少耐性アップ", isAll: true },
 	puGaugeFillRateDown: { name: "プルスウルトラゲージ上昇率ダウン", isAll: true },
