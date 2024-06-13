@@ -9,7 +9,7 @@ export const Tags: FC<{ tags: z.infer<typeof SkillSchema>["tags"] | z.infer<type
 }) => {
 	return (
 		<>
-			{tags.map((tag) => (
+			{Array.from(new Set(tags)).sort().map((tag) => (
 				<span
 					key={tag}
 					className="inline-block bg-yellow text-yellow-800 text-xs me-2 px-3.5 py-0.5 rounded"
