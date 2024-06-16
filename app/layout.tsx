@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from "next";
 import { RocknRoll_One } from "next/font/google";
 import "./globals.css";
@@ -48,6 +49,7 @@ export default function RootLayout({
 					<Menu />
 
 					{children}
+					<Analytics />
 				</div>
 			</body>
 		</html>
