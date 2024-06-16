@@ -18,7 +18,7 @@ export const Type = z.enum([
 const rawSkillTags = {
 	actionSkillDamageDown: { name: "アクションスキルダメージ軽減", isAll: true }, // ok
 	actionSkillImpactDown: { name: "アクションスキル威力ダウン", isAll: true }, // ok
-	actionSkillImpactDownImmunity: { name: "アクションスキル威力ダウン完全耐性", isAll: true },
+	actionSkillImpactDownImmunity: { name: "アクションスキル威力ダウン完全耐性", isAll: true }, // ok
 	actionSkillImpactUp: { name: "アクションスキル威力アップ", isAll: true }, // ok
 	aggro: { name: "挑発", isAll: false }, // ok
 	agile: { name: "身軽", isAll: false }, // ok
@@ -33,7 +33,7 @@ const rawSkillTags = {
 	bleedImmunity: { name: "出血完全耐性", isAll: true }, // ok
 	bleedResistDown: { name: "出血耐性ダウン", isAll: true }, // ok
 	bleedResistUp: { name: "出血耐性アップ", isAll: true }, // ok
-	bleeding: { name: "出血", isAll: true },
+	bleeding: { name: "出血", isAll: true }, // ok
 	bleedingDamageDown: { name: "出血ダメージ軽減", isAll: true }, // ok
 	blind: { name: "暗闇", isAll: true }, //ok
 	blindHitRateDown: { name: "暗闇命中率ダウン", isAll: true }, // ok
@@ -74,13 +74,13 @@ const rawSkillTags = {
 	cooldownTimeUp: { name: "クールタイム増加", isAll: true }, // ok
 	counter: { name: "カウンター", isAll: false }, //ok
 	cover: { name: "かばう", isAll: false }, //ok
-	critHitRateDownImmunity: { name: "クリティカル率ダウン完全耐性", isAll: false },
-	critHitRateDownResistDown: { name: "クリティカル率ダウン耐性ダウン", isAll: true },
-	critHitRateDownResistUp: { name: "クリティカル率ダウン耐性アップ", isAll: true },
-	criticalDamageDown: { name: "クリティカルダメージ軽減", isAll: true },
-	criticalHitImpactUp: { name: "クリティカル威力アップ", isAll: true },
-	criticalHitRateDown: { name: "クリティカル率ダウン", isAll: true },
-	criticalHitRateUp: { name: "クリティカル率アップ", isAll: true },
+	critHitRateDownImmunity: { name: "クリティカル率ダウン完全耐性", isAll: false }, // ok
+	critHitRateDownResistDown: { name: "クリティカル率ダウン耐性ダウン", isAll: true }, // ok
+	critHitRateDownResistUp: { name: "クリティカル率ダウン耐性アップ", isAll: true }, // ok
+	criticalDamageDown: { name: "クリティカルダメージ軽減", isAll: true }, // ok
+	criticalHitImpactUp: { name: "クリティカル威力アップ", isAll: true }, // ok
+	criticalHitRateDown: { name: "クリティカル率ダウン", isAll: true }, // ok
+	criticalHitRateUp: { name: "クリティカル率アップ", isAll: true }, // ok
 	criticalResistanceDown: { name: "クリティカル抵抗ダウン", isAll: true }, // ok
 	criticalResistanceDownImmunity: { name: "クリティカル抵抗ダウン完全耐性", isAll: false }, // ok
 	criticalResistanceUp: { name: "クリティカル抵抗アップ", isAll: true }, // ok
@@ -89,11 +89,11 @@ const rawSkillTags = {
 	damageDown: { name: "ダメージカット", isAll: true }, // ok
 	damageTakenRestore: { name: "被ダメージ回復", isAll: true }, // ok
 	dealtDamageRestore: { name: "与ダメージ回復", isAll: true }, // ok
-	defenseDown: { name: "ディフェンスダウン", isAll: true },
-	defenseDownImmunity: { name: "ディフェンスダウン完全耐性", isAll: false },
-	defenseDownResistDown: { name: "ディフェンスダウン耐性ダウン", isAll: true },
-	defenseDownResistUp: { name: "ディフェンスダウン耐性アップ", isAll: true },
-	defenseUp: { name: "ディフェンスアップ", isAll: true },
+	defenseDown: { name: "ディフェンスダウン", isAll: true }, // ok
+	defenseDownImmunity: { name: "ディフェンスダウン完全耐性", isAll: false }, // ok
+	defenseDownResistDown: { name: "ディフェンスダウン耐性ダウン", isAll: true }, // ok
+	defenseDownResistUp: { name: "ディフェンスダウン耐性アップ", isAll: true }, // ok
+	defenseUp: { name: "ディフェンスアップ", isAll: true }, // ok
 	doubleAttack: { name: "2回攻撃", isAll: true }, // ok
 	ecstatic: { name: "高揚", isAll: true }, // ok
 	elasticity: { name: "弾性", isAll: false }, // ok
@@ -159,48 +159,48 @@ const rawSkillTags = {
 	plusUltraMoveImpactUp: { name: "プルスウルトラ技威力アップ", isAll: true }, // ok
 	plusUltraMoveSkillImpactDown: { name: "プルスウルトラ技威力ダウン", isAll: true }, // ok
 	plusUltraMoveSkillImpactDownImmunity: { name: "プルスウルトラ技威力ダウン完全耐性", isAll: false }, // ok
-	powerDown: { name: "パワーダウン", isAll: true },
-	powerDownImmunity: { name: "パワーダウン完全耐性", isAll: true },
-	powerDownResistDown: { name: "パワーダウン耐性ダウン", isAll: true },
-	powerDownResistUp: { name: "パワーダウン耐性アップ", isAll: true },
-	powerUp: { name: "パワーアップ", isAll: true },
-	plusUltraGaugeUp: { name: "プルスウルトラゲージ増加", isAll: true },
-	puGaugeDownResistDown: { name: "プルスウルトラゲージダウン耐性ダウン", isAll: true },
-	puGaugeDownResistUp: { name: "プルスウルトラゲージ減少耐性アップ", isAll: true },
-	puGaugeFillRateDown: { name: "プルスウルトラゲージ上昇率ダウン", isAll: true },
-	recovery: { name: "回復", isAll: true },
-	recoveryBlock: { name: "回復阻害", isAll: true },
-	recoveryBlockImmunity: { name: "回復阻害完全耐性", isAll: false },
+	powerDown: { name: "パワーダウン", isAll: true }, // ok
+	powerDownImmunity: { name: "パワーダウン完全耐性", isAll: true }, // ok
+	powerDownResistDown: { name: "パワーダウン耐性ダウン", isAll: true }, // ok
+	powerDownResistUp: { name: "パワーダウン耐性アップ", isAll: true }, // ok
+	powerUp: { name: "パワーアップ", isAll: true }, // ok
+	plusUltraGaugeUp: { name: "プルスウルトラゲージ増加", isAll: true }, // ok
+	puGaugeDownResistDown: { name: "プルスウルトラゲージダウン耐性ダウン", isAll: true }, // ok
+	puGaugeDownResistUp: { name: "プルスウルトラゲージ減少耐性アップ", isAll: true }, // ok
+	puGaugeFillRateDown: { name: "プルスウルトラゲージ上昇率ダウン", isAll: true }, // ok
+	recovery: { name: "回復", isAll: true }, // ok
+	recoveryBlock: { name: "回復阻害", isAll: true }, // ok
+	recoveryBlockImmunity: { name: "回復阻害完全耐性", isAll: false }, // ok
 	reduceBurningAndBleeding: { name: "燃焼・出血ダメージ軽減", isAll: true },
-	cancelStatusAilments: { name: "状態異常解除", isAll: true }, // 状態異常回復に使用する
-	removeBuffs: { name: "状態変化解除", isAll: true }, // 一時的な強化解除 & 一時的な状態異常無効全て解除に使用する
+	cancelStatusAilments: { name: "状態異常解除", isAll: true }, // 状態異常回復に使用する // ok
+	removeBuffs: { name: "状態変化解除", isAll: true }, // 一時的な強化解除 & 一時的な状態異常無効全て解除に使用する // ok
 	// removeStatusChanges: { name: "状態変化解除", isAll: true },
-	resilience: { name: "逆境", isAll: true },
-	sharpEye: { name: "見切り", isAll: false },
-	skillDamageDown: { name: "スキルダメージ軽減", isAll: true },
-	skillImpactDown: { name: "スキル威力ダウン", isAll: true },
-	skillImpactDownImmunity: { name: "スキル威力ダウン完全耐性", isAll: false },
-	skillImpactDownResistDown: { name: "スキル威力ダウン耐性ダウン", isAll: true },
-	skillImpactDownResistUp: { name: "スキル威力ダウン耐性アップ", isAll: true },
-	skillImpactUp: { name: "スキル威力アップ", isAll: true },
-	skillsSealed: { name: "スキル封印", isAll: false },
-	skillsSealedImmunity: { name: "スキル封印完全耐性", isAll: false },
-	skillsSealedResistDown: { name: "スキル封印耐性ダウン", isAll: true },
-	skillsSealedResistUp: { name: "スキル封印耐性アップ", isAll: true },
-	speedDown: { name: "スピードダウン", isAll: true },
-	speedDownImmunity: { name: "スピードダウン完全耐性", isAll: false },
-	speedDownResistDown: { name: "スピードダウン耐性ダウン", isAll: true },
-	speedDownResistUp: { name: "スピードダウン耐性アップ", isAll: true },
-	speedUp: { name: "スピードアップ", isAll: true },
-	statusAilmentCounter: { name: "状態異常カウンター", isAll: false },
-	statusAilmentNull: { name: "状態異常無効", isAll: true },
-	stress: { name: "ストレス", isAll: false },
-	stun: { name: "スタン", isAll: true },
-	stunHitRateUp: { name: "スタン命中率アップ", isAll: true },
-	stunImmunity: { name: "スタン完全耐性", isAll: false },
-	stunResistUp: { name: "スタン耐性アップ", isAll: true },
-	symbol: { name: "象徴", isAll: false },
-	tranquility: { name: "平静", isAll: false }
+	resilience: { name: "逆境", isAll: true }, // ok
+	sharpEye: { name: "見切り", isAll: false }, // ok
+	skillDamageDown: { name: "スキルダメージ軽減", isAll: true }, // ok
+	skillImpactDown: { name: "スキル威力ダウン", isAll: true }, // ok
+	skillImpactDownImmunity: { name: "スキル威力ダウン完全耐性", isAll: false }, // ok
+	skillImpactDownResistDown: { name: "スキル威力ダウン耐性ダウン", isAll: true }, // ok
+	skillImpactDownResistUp: { name: "スキル威力ダウン耐性アップ", isAll: true }, // ok
+	skillImpactUp: { name: "スキル威力アップ", isAll: true }, // ok
+	skillsSealed: { name: "スキル封印", isAll: false }, // ok
+	skillsSealedImmunity: { name: "スキル封印完全耐性", isAll: false }, // ok
+	skillsSealedResistDown: { name: "スキル封印耐性ダウン", isAll: true }, // ok
+	skillsSealedResistUp: { name: "スキル封印耐性アップ", isAll: true }, // ok
+	speedDown: { name: "スピードダウン", isAll: true }, // ok
+	speedDownImmunity: { name: "スピードダウン完全耐性", isAll: false }, //ok
+	speedDownResistDown: { name: "スピードダウン耐性ダウン", isAll: true }, //ok
+	speedDownResistUp: { name: "スピードダウン耐性アップ", isAll: true }, //ok
+	speedUp: { name: "スピードアップ", isAll: true }, // ok
+	statusAilmentCounter: { name: "状態異常カウンター", isAll: false }, // ok
+	statusAilmentNull: { name: "状態異常無効", isAll: true }, //ok
+	stress: { name: "ストレス", isAll: false }, //ok
+	stun: { name: "スタン", isAll: true }, //ok
+	stunHitRateUp: { name: "スタン命中率アップ", isAll: true }, //ok
+	stunImmunity: { name: "スタン完全耐性", isAll: false }, //ok
+	stunResistUp: { name: "スタン耐性アップ", isAll: true }, //ok
+	symbol: { name: "象徴", isAll: false }, //ok
+	tranquility: { name: "平静", isAll: false } //ok
 } as const
 
 type SkillKeyTagsType<T extends Record<string, { name: string; isAll: boolean }>> = {
