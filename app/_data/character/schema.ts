@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Rarity, Sex, CharacterSkills, Tags, Type } from "../_common/schema";
+import { Rarity, Sex, CharacterSkills, Tags, Type, Name } from "../_common/schema";
 
 
 const SkillSchema = z.object({
@@ -30,7 +30,7 @@ const SkillSchema = z.object({
 export const CharacterSchema = z.object({
 	id: z.string(),
 	epithet: z.string(),
-	name: z.string(),
+	name: Name,
 	rarity: Rarity,
 	type: Type,
 	sex: Sex,

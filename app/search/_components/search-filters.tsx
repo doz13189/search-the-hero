@@ -1,9 +1,11 @@
 
 import { FC } from "react";
 
-export const SearchFilters: FC<{ rarity: string; skills: string[] }> = ({
+export const SearchFilters: FC<{ rarity: string; skills: string[], name?: string; tags?: string[] }> = ({
 	rarity,
 	skills,
+	name,
+	tags
 }) => {
 	return (
 		<div className="relative">
@@ -33,6 +35,23 @@ export const SearchFilters: FC<{ rarity: string; skills: string[] }> = ({
 						{`${rarity.toUpperCase()},`}
 					</span>
 				}
+				{name &&
+					<span
+						key={name}
+						className="inline-block text-xs"
+					>
+						{`${name},`}
+					</span>
+				}
+				{tags?.map((tag) => (
+					<span
+						key={tag}
+						className="inline-block text-xs"
+					>
+						{`${tag},`}
+					</span>
+				))}
+
 				{skills?.map((skill) => (
 					<span
 						key={skill}

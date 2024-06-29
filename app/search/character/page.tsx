@@ -7,15 +7,21 @@ import { ResetButton } from "../_components/reset-button";
 import { SearchFilters } from "../_components/search-filters";
 import { SkillForm } from "../_components/skill-form";
 import { useState } from "react";
+import { NameForm } from "../_components/name-form";
+import { TagForm } from "../_components/tag-form";
 
 export default function Search(args: {
-	searchParams: { rarity: string; skills: string };
+	searchParams: { rarity: string; name: string; skills: string; tags: string };
 }) {
 	const argRarity = args.searchParams?.rarity;
 	const argSkills = args.searchParams?.skills?.split(",");
+	const argName = args.searchParams?.name;
+	const argTags = args.searchParams?.tags?.split(",");
 
 	const [rarity, setRarity] = useState(argRarity || "");
 	const [skills, setSkills] = useState<string[]>(argSkills || []);
+	const [name, setName] = useState(argName || "");
+	const [tags, setTags] = useState<string[]>(argTags || []);
 
 	return (
 		<div className="py-1 px-3">
@@ -25,10 +31,19 @@ export default function Search(args: {
 				</div>
 
 				<div className="my-2">
+					<NameForm name={name} setName={setName} />
+				</div>
+
+				<div className="my-2">
+					<TagForm tags={tags} setTags={setTags} />
+				</div>
+
+				<div className="my-2">
 					<SkillForm skills={skills} setSkills={setSkills} skillArray={CharacterSkills} />
 				</div>
 
-				<SearchFilters rarity={rarity} skills={skills} />
+
+				<SearchFilters rarity={rarity} name={name} skills={skills} tags={tags} />
 
 				<label
 					htmlFor="search"
@@ -38,10 +53,10 @@ export default function Search(args: {
 				</label>
 				<div className="flex justify-end">
 					<div className="flex-initial">
-						<ResetButton setRarity={setRarity} setSkills={setSkills} />
+						<ResetButton setRarity={setRarity} setName={setName} setSkills={setSkills} setTags={setTags} />
 					</div>
 					<div className="flex-initial">
-						<FilterButton pathname="character" rarity={rarity} skills={skills} />
+						<FilterButton pathname="character" rarity={rarity} name={name} skills={skills} tags={tags} />
 					</div>
 				</div>
 			</div>
