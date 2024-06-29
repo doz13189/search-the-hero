@@ -25,12 +25,12 @@ export const FilterButton: FC<{ pathname: string, rarity: string; skills: string
 		border-2
 		border-grey
 		rounded-lg
-		${skills.length === 0 && !rarity && !name && !tags ? "bg-gray-300 text-gray-500" : "bg-yellow"}
+		${skills.length === 0 && !rarity && !name && tags?.length === 0 ? "bg-gray-300 text-gray-500" : "bg-yellow"}
   `}
 		onClick={() =>
 			router.push(`/search/${pathname}/result?${createQuery(rarity, skills, name, tags)}`)
 		}
-		disabled={skills.length === 0 && !rarity && !name && !tags}
+		disabled={skills.length === 0 && !rarity && !name && tags?.length === 0}
 	>
 		検索
 	</button>
