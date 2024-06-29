@@ -24,23 +24,6 @@ export default function Page({ params }: { params: { id: string } }) {
 						">{memory.description.skilldxlv1}</div>
 
 				</div>
-				<div className="py-2">
-					<p className="text-orange text-xs">
-						{`スタッツ`}
-					</p>
-					<div className="
-							mt-1
-							p-1
-							text-xs
-							bg-light-gray
-							rounded-lg
-						"
-					>
-						<p className="m-1">HP {memory.stats[memory.stats.length - 1].hp}</p>
-						<p className="m-1">パワー {memory.stats[memory.stats.length - 1].power}</p>
-						<p className="m-1">スピード {memory.stats[memory.stats.length - 1].speed}</p>
-					</div>
-				</div>
 			</div>
 		);
 	})

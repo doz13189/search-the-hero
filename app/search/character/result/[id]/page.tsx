@@ -117,26 +117,6 @@ export default function Page({ params }: { params: { id: string } }) {
 						})}
 					</div>
 				</div>
-
-				<div className="py-2">
-					<p className="text-orange text-xs">
-						{`スタッツ`}
-					</p>
-					<div className="
-							mt-1
-							p-1
-							text-xs
-							bg-light-gray
-							rounded-lg
-						"
-					>
-						<p className="m-1">HP {character.stats[character.stats.length - 1].hp}</p>
-						<p className="m-1">パワー {character.stats[character.stats.length - 1].power}</p>
-						<p className="m-1">スピード {character.stats[character.stats.length - 1].speed}</p>
-						<p className="m-1">デフェンス {character.stats[character.stats.length - 1].defense}</p>
-						<p className="m-1">クリティカル {character.stats[character.stats.length - 1].critical}</p>
-					</div>
-				</div>
 			</div>
 		);
 
