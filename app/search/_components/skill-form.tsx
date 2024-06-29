@@ -1,11 +1,12 @@
 "use client";
 
-import { Skills } from "@/app/_data/_common/schema";
+import { CharacterSkills, MemorySkills } from "@/app/_data/_common/schema";
 import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 
-export const SkillForm: FC<{ skills: string[] ,setSkills:  Dispatch<SetStateAction<string[]>>; }> = ({
+export const SkillForm: FC<{ skills: string[] ,setSkills:  Dispatch<SetStateAction<string[]>>; skillArray: typeof MemorySkills | typeof CharacterSkills}> = ({
 	skills,
 	setSkills,
+	skillArray
 }) => {
 
 	const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -42,7 +43,7 @@ export const SkillForm: FC<{ skills: string[] ,setSkills:  Dispatch<SetStateActi
 			value={skills}
 		>
 			<option value={""}>スキル効果を選んでください</option>
-			{Skills.options.sort().map((tag) => {
+			{skillArray.options.sort().map((tag) => {
 				return (
 					<option key={tag} value={tag}>
 						{tag}

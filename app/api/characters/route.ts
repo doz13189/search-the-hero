@@ -1,4 +1,4 @@
-import { Skills } from "@/app/_data/_common/schema";
+import { CharacterSkills } from "@/app/_data/_common/schema";
 import { characters } from "@/app/_data/character/object";
 import { CharacterSchema } from "@/app/_data/character/schema";
 import JsonQuery from "json-query";
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 			?.split(",")
 			.map((skill) => {
 				response = response.filter((character: z.infer<typeof CharacterSchema>) => {
-					return character.skills.includes(skill as z.infer<typeof Skills>)
+					return character.skills.includes(skill as z.infer<typeof CharacterSkills>)
 				});
 			})
 	}

@@ -1,5 +1,6 @@
 "use client";
 
+import { CharacterSkills } from "@/app/_data/_common/schema";
 import { FilterButton } from "../_components/filter-button";
 import { RarityForm } from "../_components/rarity-form";
 import { ResetButton } from "../_components/reset-button";
@@ -24,7 +25,7 @@ export default function Search(args: {
 				</div>
 
 				<div className="my-2">
-					<SkillForm skills={skills} setSkills={setSkills} />
+					<SkillForm skills={skills} setSkills={setSkills} skillArray={CharacterSkills} />
 				</div>
 
 				<SearchFilters rarity={rarity} skills={skills} />

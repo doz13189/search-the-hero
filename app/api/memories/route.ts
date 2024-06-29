@@ -1,4 +1,4 @@
-import { Skills } from "@/app/_data/_common/schema";
+import { MemorySkills } from "@/app/_data/_common/schema";
 import { memories } from "@/app/_data/memory/object";
 import { MemorySchema } from "@/app/_data/memory/schema";
 import JsonQuery from "json-query";
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 			?.split(",")
 			.map((skill) => {
 				response = response.filter((memory: z.infer<typeof MemorySchema>) => {
-					return memory.skills.includes(skill as z.infer<typeof Skills>)
+					return memory.skills.includes(skill as z.infer<typeof MemorySkills>)
 				});
 			});
 	}
