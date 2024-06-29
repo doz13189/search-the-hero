@@ -1,10 +1,9 @@
 
-import { getTagLabel } from "@/app/_data/_common/schema";
 import { FC } from "react";
 
-export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
+export const SearchFilters: FC<{ rarity: string; skills: string[] }> = ({
 	rarity,
-	tags,
+	skills,
 }) => {
 	return (
 		<div className="relative">
@@ -31,15 +30,15 @@ export const SearchFilters: FC<{ rarity: string; tags: string[] }> = ({
 						key={rarity}
 						className="inline-block text-xs"
 					>
-						{`${rarity},`}
+						{`${rarity.toUpperCase()},`}
 					</span>
 				}
-				{tags?.map((tag) => (
+				{skills?.map((skill) => (
 					<span
-						key={tag}
+						key={skill}
 						className="inline-block text-xs"
 					>
-						{`${getTagLabel(tag as any)},`}
+						{`${skill},`}
 					</span>
 				))}
 			</div>

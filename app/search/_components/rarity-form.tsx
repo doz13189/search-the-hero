@@ -28,7 +28,7 @@ export const RarityForm: FC<{ rarity: string ,setRarity: Dispatch<SetStateAction
 				{Rarity.options.map((rarity) => {
 					return (
 						<option key={rarity} value={rarity}>
-							{rarity}
+							{rarity.toUpperCase()}
 						</option>
 					);
 				})}

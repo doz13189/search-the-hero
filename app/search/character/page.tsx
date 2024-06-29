@@ -8,13 +8,13 @@ import { SkillForm } from "../_components/skill-form";
 import { useState } from "react";
 
 export default function Search(args: {
-	searchParams: { rarity: string; tags: string };
+	searchParams: { rarity: string; skills: string };
 }) {
 	const argRarity = args.searchParams?.rarity;
-	const argTags = args.searchParams?.tags?.split(",");
+	const argSkills = args.searchParams?.skills?.split(",");
 
 	const [rarity, setRarity] = useState(argRarity || "");
-	const [tags, setTags] = useState<string[]>(argTags || []);
+	const [skills, setSkills] = useState<string[]>(argSkills || []);
 
 	return (
 		<div className="py-1 px-3">
@@ -24,10 +24,10 @@ export default function Search(args: {
 				</div>
 
 				<div className="my-2">
-					<SkillForm tags={tags} setTags={setTags} />
+					<SkillForm skills={skills} setSkills={setSkills} />
 				</div>
 
-				<SearchFilters rarity={rarity} tags={tags} />
+				<SearchFilters rarity={rarity} skills={skills} />
 
 				<label
 					htmlFor="search"
@@ -37,10 +37,10 @@ export default function Search(args: {
 				</label>
 				<div className="flex justify-end">
 					<div className="flex-initial">
-						<ResetButton setRarity={setRarity} setTags={setTags} />
+						<ResetButton setRarity={setRarity} setSkills={setSkills} />
 					</div>
 					<div className="flex-initial">
-						<FilterButton pathname="hero" rarity={rarity} tags={tags} />
+						<FilterButton pathname="character" rarity={rarity} skills={skills} />
 					</div>
 				</div>
 			</div>

@@ -7,12 +7,12 @@ import { FC } from "react";
 export const Menu: FC = ({
 }) => {
 	const pathname = usePathname();
-	const isHeroPage = pathname.includes("/search/hero")
+	const isCharacterPage = pathname.includes("/search/character")
 	return (
 		<div className="flex">
 			<div className="flex-1">
 				<Link
-					href="/search/hero"
+					href="/search/character"
 					className={`
 					m-1
 					p-2
@@ -21,7 +21,7 @@ export const Menu: FC = ({
 					border-2
 					border-grey
 					rounded-lg
-					${isHeroPage ? "bg-orange" : "bg-soft-orange text-grey"}
+					${isCharacterPage ? "bg-orange" : "bg-soft-orange text-grey"}
 				`}
 				>
 					プレイキャラ検索
@@ -38,7 +38,7 @@ export const Menu: FC = ({
 					border-2
 					border-grey
 					rounded-lg
-					${isHeroPage ? "bg-soft-orange text-grey" : "bg-orange"}
+					${isCharacterPage ? "bg-soft-orange text-grey" : "bg-orange"}
 					`}
 				>
 					メモリー検索

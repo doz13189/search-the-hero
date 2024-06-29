@@ -1,11 +1,11 @@
 "use client";
 
-import { getTagLabel, skillTags } from "@/app/_data/_common/schema";
+import { Skills } from "@/app/_data/_common/schema";
 import { ChangeEvent, Dispatch, FC, SetStateAction } from "react";
 
-export const SkillForm: FC<{ tags: string[] ,setTags:  Dispatch<SetStateAction<string[]>>; }> = ({
-	tags,
-	setTags,
+export const SkillForm: FC<{ skills: string[] ,setSkills:  Dispatch<SetStateAction<string[]>>; }> = ({
+	skills,
+	setSkills,
 }) => {
 
 	const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -18,7 +18,7 @@ export const SkillForm: FC<{ tags: string[] ,setTags:  Dispatch<SetStateAction<s
 			}
 		}
 
-		setTags(values);
+		setSkills(values);
 	};
 
 	return (
@@ -39,13 +39,13 @@ export const SkillForm: FC<{ tags: string[] ,setTags:  Dispatch<SetStateAction<s
 				w-full
 			"
 			onChange={handleSelectChange}
-			value={tags}
+			value={skills}
 		>
 			<option value={""}>スキル効果を選んでください</option>
-			{Object.keys(skillTags).sort().map((tag) => {
+			{Skills.options.sort().map((tag) => {
 				return (
 					<option key={tag} value={tag}>
-						{getTagLabel(tag as any)}
+						{tag}
 					</option>
 				);
 			})}

@@ -2,9 +2,9 @@
 
 import { FC, SetStateAction } from "react";
 
-export const ResetButton: FC<{ setRarity: (value: SetStateAction<string>) => void, setTags: (value: SetStateAction<string[]>) => void }> = ({
+export const ResetButton: FC<{ setRarity: (value: SetStateAction<string>) => void, setSkills: (value: SetStateAction<string[]>) => void }> = ({
 	setRarity,
-	setTags
+	setSkills
 }) => {
 	return (
 		<button
@@ -23,7 +23,7 @@ export const ResetButton: FC<{ setRarity: (value: SetStateAction<string>) => voi
 	"
 			onClick={() => {
 				setRarity("");
-				setTags([]);
+				setSkills([]);
 			}}
 		>
 			リセット
