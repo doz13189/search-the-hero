@@ -20,13 +20,15 @@ export const Character: FC<{ character: z.infer<typeof CharacterSchema> }> = ({
 
 export const Characters: FC<{
 	args: {
-		searchParams: { rarity: string; skills: string };
+		searchParams: { rarity: string; name: string; skills: string; tags: string; };
 	};
 }> = ({ args }) => {
 	const argRarity = args.searchParams?.rarity;
-	const argTags = args.searchParams?.skills;
+	const argSkills = args.searchParams?.skills;
+	const argName = args.searchParams?.name;
+	const argTags = args.searchParams?.tags;
 
-	const response = getCharacters(argRarity, argTags);
+	const response = getCharacters(argRarity, argName, argTags, argSkills);
 	return response
 		.then((value) => {
 			const characters = value.characters;

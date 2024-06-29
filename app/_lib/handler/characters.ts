@@ -1,6 +1,6 @@
 import { CharactersSchema } from "@/app/_data/character/schema";
 
-export const getCharacters = async (rarity: string, skills: string) => {
+export const getCharacters = async (rarity: string, name: string, tags: string, skills: string) => {
 	let query = "";
 	if (skills) {
 		query = `skills=${skills}`
@@ -8,6 +8,14 @@ export const getCharacters = async (rarity: string, skills: string) => {
 
 	if (rarity) {
 		query = query + `&rarity=${rarity}`;
+	}
+
+	if (name) {
+		query = query + `&name=${name}`;
+	}
+
+	if (tags) {
+		query = query + `&tags=${tags}`;
 	}
 
 	const response = await fetch(
