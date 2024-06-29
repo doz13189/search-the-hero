@@ -1,6 +1,6 @@
-import { MemoriesSchema } from "@/app/_data/memory/schema";
+import { CharactersSchema } from "@/app/_data/character/schema";
 
-export const getMemories = async (rarity: string, skills: string) => {
+export const getCharacters = async (rarity: string, skills: string) => {
 	let query = "";
 	if (skills) {
 		query = `skills=${skills}`
@@ -11,7 +11,7 @@ export const getMemories = async (rarity: string, skills: string) => {
 	}
 
 	const response = await fetch(
-		`${process.env.API_URL}/api/memories?${query}`,
+		`${process.env.API_URL}/api/characters?${query}`,
 		{
 			next: { revalidate: 10 },
 		},
@@ -19,7 +19,7 @@ export const getMemories = async (rarity: string, skills: string) => {
 
 	if (response.ok) {
 		const data = await response.json();
-		const result = MemoriesSchema.safeParse(data);
+		const result = CharactersSchema.safeParse(data);
 		if (result.success) {
 			return result.data;
 		}

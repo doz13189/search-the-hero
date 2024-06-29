@@ -4,35 +4,28 @@ import { z } from "zod";
 import { getMemories } from "../../../../_lib/handler/memories";
 import { NoData } from "@/app/search/_components/no-data";
 import Link from "next/link";
-import { getTagLabel } from "@/app/_data/_common/schema";
+import { Skills } from "@/app/search/_components/skills";
 
 export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 	memory,
 }) => {
 	return (
 		<Link href={`/search/memory/result/${memory.id}`}>
-			<div>{`[${memory.rarity}] ${memory.name}`}</div>
-			{memory.tags.map((tag) => (
-				<span
-					key={tag}
-					className="inline-block bg-yellow text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded"
-				>
-					{getTagLabel(tag)}
-				</span>
-			))}
+			<div>{`[${memory.rarity.toUpperCase()}] ${memory.name}`}</div>
+			<Skills skills={[...memory.skills]} />
 		</Link>
 	);
 };
 
 export const Memories: FC<{
 	args: {
-		searchParams: { rarity: string; tags: string };
+		searchParams: { rarity: string; skills: string };
 	};
 }> = ({ args }) => {
 	const argRarity = args.searchParams?.rarity;
-	const argTags = args.searchParams?.tags;
+	const argSkills = args.searchParams?.skills;
 
-	const response = getMemories(argRarity, argTags);
+	const response = getMemories(argRarity, argSkills);
 	return response
 		.then((value) => {
 			const memories = value.memories;
@@ -44,7 +37,7 @@ export const Memories: FC<{
 				return <NoData />;
 			}
 
-			return memories.map((memory) => <Memory memory={memory} />);
+			return memories.map((memory) => <div className="mb-3"><Memory memory={memory} /></div>);
 		})
 		.catch((err) => {
 			console.error(err);

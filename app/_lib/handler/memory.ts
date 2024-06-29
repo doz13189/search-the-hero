@@ -1,9 +1,9 @@
-import { HeroSchema, HeroesSchema } from "@/app/_data/hero/schema";
+import { MemorySchema } from "@/app/_data/memory/schema";
 import { z } from "zod";
 
-export const getHero = async (id: string) => {
+export const getMemory = async (id: string) => {
 	const response = await fetch(
-		`${process.env.API_URL}/api/hero?id=${id}`,
+		`${process.env.API_URL}/api/memory?id=${id}`,
 		{
 			next: { revalidate: 10 },
 		},
@@ -12,7 +12,7 @@ export const getHero = async (id: string) => {
 	if (response.ok) {
 		const data = await response.json();
 		const result = z.object({
-			heroes: HeroSchema,
+			memories: MemorySchema,
 		}).safeParse(data);
 
 		if (result.success) {

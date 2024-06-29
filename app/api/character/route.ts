@@ -1,12 +1,12 @@
-import { heroes } from "@/app/_data/hero/object";
+import { characters } from "@/app/_data/character/object";
 import JsonQuery from "json-query";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
 	const id = request.nextUrl.searchParams.get("id");
-	const response = JsonQuery(`heroes[id=${id}]`, {
-		data: heroes,
+	const response = JsonQuery(`characters[id=${id}]`, {
+		data: characters,
 	}).value;
 
-	return NextResponse.json({ heroes: response }, { status: 200 });
+	return NextResponse.json({ characters: response }, { status: 200 });
 }

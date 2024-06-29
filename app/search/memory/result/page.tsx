@@ -4,22 +4,22 @@ import { SearchFilters } from "../../_components/search-filters";
 import { EditFilterButton } from "../../_components/edit-filter-button";
 
 export default function MemorySearchResult(args: {
-	searchParams: { rarity: string; tags: string };
+	searchParams: { rarity: string; skills: string };
 }) {
 	const argRarity = args.searchParams?.rarity;
-	const argTags = args.searchParams?.tags?.split(",");
+	const argSkills = args.searchParams?.skills?.split(",");
 
 	return (
 		<div className="min-h-screen container mx-auto py-1 px-3">
 			<div className="mb-3">
-				<SearchFilters rarity={argRarity} tags={argTags} />
+				<SearchFilters rarity={argRarity} skills={argSkills} />
 				<div
 					className="
 					flex
 					justify-end
 				"
 				>
-					<EditFilterButton pathname={"memory"} rarity={argRarity} tags={argTags} />
+					<EditFilterButton pathname={"memory"} rarity={argRarity} skills={argSkills} />
 				</div>
 			</div>
 

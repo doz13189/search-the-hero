@@ -1,26 +1,22 @@
 import { z } from "zod";
-import { Rarity, skillTags } from "../_common/schema";
-import { typedObjectKeys } from "../_common/utils";
+import { Rarity, Skills } from "../_common/schema";
 
-const [firstKey, ...otherKeys] = typedObjectKeys(skillTags);
 export const MemorySchema = z.object({
-	id: z.number(),
+	id: z.string(),
 	name: z.string(),
-	description: z.string(),
 	rarity: Rarity,
-	levels: z.array(
-		z.object({
-			level: z.number(),
-			skill: z.array(
-				z.object({
-					key1: z.number(),
-					key2: z.number(),
-					key3: z.number(),
-				}),
-			),
-		}),
-	),
-	tags: z.array(z.enum([firstKey, ...otherKeys]))
+	skills: z.array(Skills),
+	stats: z.array(z.object({
+		hp: z.string(),
+		power: z.string(),
+		speed: z.string(),
+	})),
+	description: z.object({
+		skilllv1: z.string(),
+		skilllv2: z.string(),
+		skilllv3: z.string(),
+		skilldxlv1: z.string(),
+	}),
 });
 
 export const MemoriesSchema = z.object({
