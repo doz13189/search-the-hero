@@ -1,0 +1,85 @@
+"use client";
+
+import { FC, useState } from "react";
+import { z } from "zod";
+import { Skills } from "../../../_components/skills";
+import { MemorySchema } from "@/app/_data/memory/schema";
+
+const getMemoryContent = (activeTabState: number, memory: z.infer<typeof MemorySchema>) => {
+	switch (activeTabState) {
+		case 0:
+			return memory.description.skilllv1;
+		case 1:
+			return memory.description.skilllv2;
+		case 2:
+			return memory.description.skilllv3;
+		case 3:
+			return memory.description.skilldxlv1;
+		default:
+			return memory.description.skilldxlv1;
+	}
+}
+
+export const MemoryDetailContents: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
+	memory,
+}) => {
+	const [activeTabState, setActiveTabState] = useState<0 | 1 | 2 | 3>(3);
+
+	return (
+		<div className="min-h-screen container mx-auto py-1 px-3">
+		<div className="py-1">{`[${memory.rarity.toUpperCase()}] ${memory.name}`}</div>
+		<div className="py-1">
+			<Skills skills={memory.skills} />
+		</div>
+
+		<ul className="my-3 flex flex-wrap text-xs font-medium text-center text-gray-500">
+			<li className="me-2">
+				<button
+					onClick={() => setActiveTabState(0)}
+					className={`
+						inline-block px-2 py-1 rounded-lg
+						${activeTabState === 0 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
+				`} aria-current="page">Lv.1</button>
+			</li>
+			<li className="me-2">
+				<button
+				onClick={() => setActiveTabState(1)}
+				className={`
+					inline-block px-2 py-1 rounded-lg
+					${activeTabState === 1 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
+				`}>Lv.2</button>
+			</li>
+			<li className="me-2">
+				<button
+				onClick={() => setActiveTabState(2)}
+				className={`
+					inline-block px-2 py-1 rounded-lg
+					${activeTabState === 2 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
+				`}>Lv.3</button>
+			</li>
+			<li className="me-2">
+				<button
+				onClick={() => setActiveTabState(3)}
+				className={`
+					inline-block px-2 py-1 rounded-lg
+					${activeTabState === 3 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
+				`}>DX Lv.1</button>
+			</li>
+		</ul>
+
+		<div className="py-2">
+			<p className="text-orange text-xs">効果</p>
+
+			<div className="
+					mt-1
+					p-1
+					text-xs
+					bg-light-gray
+					rounded-lg
+				">{(getMemoryContent(activeTabState, memory))}</div>
+
+		</div>
+	</div>
+	);
+};
+
