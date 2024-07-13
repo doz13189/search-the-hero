@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 import { z } from "zod";
 import { Skills } from "../../../_components/skills";
 import { MemorySchema } from "@/app/_data/memory/schema";
+import { Memory } from "./list";
 
 const getMemoryContent = (activeTabState: number, memory: z.infer<typeof MemorySchema>) => {
 	switch (activeTabState) {
@@ -27,10 +28,8 @@ export const MemoryDetailContents: FC<{ memory: z.infer<typeof MemorySchema> }> 
 
 	return (
 		<div className="min-h-screen container mx-auto py-1 px-3">
-		<div className="py-1">{`[${memory.rarity.toUpperCase()}] ${memory.name}`}</div>
-		<div className="py-1">
-			<Skills skills={memory.skills} />
-		</div>
+
+		<Memory memory={memory} />
 
 		<ul className="my-3 flex flex-wrap text-xs font-medium text-center text-gray-500">
 			<li className="me-2">
