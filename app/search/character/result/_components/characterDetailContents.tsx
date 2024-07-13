@@ -3,8 +3,7 @@
 import { FC, useState } from "react";
 import { z } from "zod";
 import { CharacterSchema } from "@/app/_data/character/schema";
-import { Skills } from "../../../_components/skills";
-import { typeLabel } from "../_utils/label";
+import { Character } from "./list";
 
 const getCharacterContent = (activeTabState: number, character: z.infer<typeof CharacterSchema>) => {
 	switch (activeTabState) {
@@ -31,11 +30,7 @@ export const CharacterDetailContents: FC<{ character: z.infer<typeof CharacterSc
 	return (
 		<div className="min-h-screen container mx-auto py-1 px-3">
 
-		<div className="py-1">{`[${character.rarity.toUpperCase()}/${typeLabel(character.type)}タイプ] ${character.epithet} ${character.name}`}</div>
-
-		<div className="py-1">
-			<Skills skills={character.skills} />
-		</div>
+		<Character character={character} />
 
 		<ul className="my-3 flex flex-wrap text-xs font-medium text-center text-gray-500">
 			<li className="me-2">
