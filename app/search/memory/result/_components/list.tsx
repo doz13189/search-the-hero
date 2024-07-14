@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Skills } from "@/app/search/_components/skills";
 import Image from "next/image";
 import { getImageNameByRarity } from "@/app/search/_lib/utils";
+import { AllPage, BackPage, NextPage } from "@/app/search/_components/paging";
 
 export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 	memory,
@@ -38,8 +39,8 @@ export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 					/>
 					<Image
 						src={`/rarity/card_rarity_0${getImageNameByRarity(memory.rarity)}.webp`}
-						width={15}
-						height={15}
+						width={20}
+						height={20}
 						alt="memory icon"
 						className="absolute top-0 left-0"
 					/>
@@ -53,15 +54,19 @@ export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 
 export const Memories: FC<{
 	args: {
-		searchParams: { rarity: string; skills: string };
+		searchParams: { rarity: string; skills: string, offset: string, limit: string };
 	};
 }> = ({ args }) => {
 	const argRarity = args.searchParams?.rarity;
 	const argSkills = args.searchParams?.skills;
 
-	const response = getMemories(argRarity, argSkills);
+	const argOffset = args.searchParams?.offset || "0";
+	const argLimit = args.searchParams?.limit || "10";
+
+	const response = getMemories(argRarity, argSkills, argOffset, argLimit);
 	return response
 		.then((value) => {
+			const result = value.result;
 			const memories = value.memories;
 			if (!memories) {
 				return <NoData />;
@@ -71,7 +76,34 @@ export const Memories: FC<{
 				return <NoData />;
 			}
 
-			return memories.map((memory) => <div className="mb-3"><Memory memory={memory} /></div>);
+			return (
+				<>
+					<div className="flex my-3">
+						<div className="mr-2">
+							<p className="text-xs">
+								{`検索結果: ${result.total} 件`}
+							</p>
+						</div>
+						<div className="mr-2">
+							<p className="text-xs">
+								{`表示件数: ${result.offset + 1}-${result.offset + result.limit >= result.total ? result.total : result.offset + result.limit} 件`}
+							</p>
+						</div>
+					</div>
+					{memories.map((memory) => <div key={memory.id} className="mb-3"><Memory key={memory.id} memory={memory} /></div>)}
+					<div className="flex my-3">
+						<div className="mr-1">
+							<BackPage pathname="character" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
+						</div>
+						<div className="mr-1">
+							<NextPage pathname="character" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
+						</div>
+						<div className="mr-1">
+							<AllPage pathname="character" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
+						</div>
+					</div>
+				</>
+			)
 		})
 		.catch((err) => {
 			console.error(err);

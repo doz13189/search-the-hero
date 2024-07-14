@@ -9,6 +9,9 @@ export async function GET(request: NextRequest) {
 	const rarity = request.nextUrl.searchParams.get("rarity");
 	const skills = request.nextUrl.searchParams.get("skills");
 
+	const offset = parseInt(request.nextUrl.searchParams.get("offset") || "0");
+	const limit = parseInt(request.nextUrl.searchParams.get("limit") || "10");
+
 	let response = JsonQuery('memories[*]', {
 		data: { memories },
 	}).value[0]
@@ -29,5 +32,13 @@ export async function GET(request: NextRequest) {
 			});
 	}
 
-	return NextResponse.json({ memories: response }, { status: 200 });
+	return NextResponse.json({
+		memories: response.slice(offset, offset + limit),
+		result: {
+			offset,
+			limit,
+			total: response.length
+		}
+		
+	 }, { status: 200 });
 }

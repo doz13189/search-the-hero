@@ -1,6 +1,6 @@
-import { CharactersSchema } from "@/app/_data/character/schema";
+import { CharactersResponseSchema } from "@/app/_data/character/schema";
 
-export const getCharacters = async (rarity: string, name: string, tags: string, skills: string) => {
+export const getCharacters = async (rarity: string, name: string, tags: string, skills: string, offset: string, limit: string) => {
 	let query = "";
 	if (skills) {
 		query = `skills=${skills}`
@@ -18,6 +18,14 @@ export const getCharacters = async (rarity: string, name: string, tags: string, 
 		query = query + `&tags=${tags}`;
 	}
 
+	if (offset) {
+		query = query + `&offset=${offset}`;
+	}
+
+	if (limit) {
+		query = query + `&limit=${limit}`;
+	}
+
 	const response = await fetch(
 		`${process.env.API_URL}/api/characters?${query}`,
 		{
@@ -27,7 +35,7 @@ export const getCharacters = async (rarity: string, name: string, tags: string, 
 
 	if (response.ok) {
 		const data = await response.json();
-		const result = CharactersSchema.safeParse(data);
+		const result = CharactersResponseSchema.safeParse(data);
 		if (result.success) {
 			return result.data;
 		}

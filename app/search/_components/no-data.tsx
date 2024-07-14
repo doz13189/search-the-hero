@@ -2,8 +2,6 @@ import { FC } from "react";
 
 export const NoData: FC = () => {
 	return (
-		<>
-			<p>見つかりません。</p>
-		</>
+		<p>見つかりません。</p>
 	);
 };

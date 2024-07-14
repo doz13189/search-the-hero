@@ -56,3 +56,12 @@ export const CharacterSchema = z.object({
 export const CharactersSchema = z.object({
 	characters: z.array(CharacterSchema),
 });
+
+export const CharactersResponseSchema = z.object({
+	characters: z.array(CharacterSchema),
+	result: z.object({
+		offset: z.number(),
+		limit: z.number(),
+		total: z.number(),
+	}),
+});
