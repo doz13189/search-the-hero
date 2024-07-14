@@ -28,9 +28,7 @@ export const getCharacters = async (rarity: string, name: string, tags: string, 
 
 	const response = await fetch(
 		`${process.env.API_URL}/api/characters?${query}`,
-		{
-			next: { revalidate: 10 },
-		},
+		{ cache: 'no-store' }
 	);
 
 	if (response.ok) {
