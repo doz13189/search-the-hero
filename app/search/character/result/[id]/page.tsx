@@ -1,5 +1,7 @@
 import { getCharacter } from "@/app/_lib/handler/character";
 import { CharacterDetailContents } from "../_components/characterDetailContents";
+import { Suspense } from "react";
+import { Loading } from "@/app/search/_components/Loading";
 
 export default function Page({ params }: { params: { id: string } }) {
 
@@ -8,8 +10,9 @@ export default function Page({ params }: { params: { id: string } }) {
 	return response.then((value) => {
 		const character = value.characters;
 		return (
-			<CharacterDetailContents character={character} />
+			<Suspense fallback={<Loading />}>
+				<CharacterDetailContents character={character} />
+			</Suspense>
 		);
-
 	})
 }

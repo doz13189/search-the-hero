@@ -14,7 +14,7 @@ export const Character: FC<{ character: z.infer<typeof CharacterSchema> }> = ({
 }) => {
 	return (
 		<Link href={`/search/character/result/${character.id}`}>
-			<div className="flex my-1">
+			<div className="flex">
 				<div className="relative w-12 h-12">
 					<Image
 						src={`/bg/chara_bg_10${getImageNameByRarity(character.rarity)}.webp`}

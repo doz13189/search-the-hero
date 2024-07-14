@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Memories } from "./_components/list";
 import { SearchFilters } from "../../_components/search-filters";
 import { EditFilterButton } from "../../_components/edit-filter-button";
+import { Loading } from "../../_components/Loading";
 
 export default function MemorySearchResult(args: {
 	searchParams: { rarity: string; skills: string, offset: string, limit: string };
@@ -23,7 +24,7 @@ export default function MemorySearchResult(args: {
 				</div>
 			</div>
 
-			<Suspense fallback={"Loading..."}>
+			<Suspense fallback={<Loading />}>
 				<Memories args={args} />
 			</Suspense>
 		</div>

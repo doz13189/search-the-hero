@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { EditFilterButton } from "../../_components/edit-filter-button";
 import { SearchFilters } from "../../_components/search-filters";
 import { Characters } from "./_components/list";
+import { Loading } from "../../_components/Loading";
 
 export default async function CharacterSearchResult(args: {
 	searchParams: { rarity: string; name: string; skills: string; tags: string, offset: string, limit: string };
@@ -25,7 +26,7 @@ export default async function CharacterSearchResult(args: {
 				</div>
 			</div>
 
-			<Suspense fallback={"Loading..."}>
+			<Suspense fallback={<Loading />}>
 				<Characters args={args} />
 			</Suspense>
 		</div>
