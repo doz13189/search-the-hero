@@ -2,9 +2,9 @@
 
 import { FC, useState } from "react";
 import { z } from "zod";
-import { Skills } from "../../../_components/skills";
 import { MemorySchema } from "@/app/_data/memory/schema";
 import { Memory } from "./list";
+import Image from "next/image";
 
 const getMemoryContent = (activeTabState: number, memory: z.infer<typeof MemorySchema>) => {
 	switch (activeTabState) {
@@ -29,47 +29,47 @@ export const MemoryDetailContents: FC<{ memory: z.infer<typeof MemorySchema> }> 
 	return (
 		<div className="min-h-screen container mx-auto py-1 px-3">
 
-		<Memory memory={memory} />
+			<Memory memory={memory} />
 
-		<ul className="my-3 flex flex-wrap text-xs font-medium text-center text-gray-500">
-			<li className="me-2">
-				<button
-					onClick={() => setActiveTabState(0)}
-					className={`
+			<ul className="my-3 flex flex-wrap text-xs font-medium text-center text-gray-500">
+				<li className="me-2">
+					<button
+						onClick={() => setActiveTabState(0)}
+						className={`
 						inline-block px-2 py-1 rounded-lg
 						${activeTabState === 0 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
 				`} aria-current="page">Lv.1</button>
-			</li>
-			<li className="me-2">
-				<button
-				onClick={() => setActiveTabState(1)}
-				className={`
+				</li>
+				<li className="me-2">
+					<button
+						onClick={() => setActiveTabState(1)}
+						className={`
 					inline-block px-2 py-1 rounded-lg
 					${activeTabState === 1 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
 				`}>Lv.2</button>
-			</li>
-			<li className="me-2">
-				<button
-				onClick={() => setActiveTabState(2)}
-				className={`
+				</li>
+				<li className="me-2">
+					<button
+						onClick={() => setActiveTabState(2)}
+						className={`
 					inline-block px-2 py-1 rounded-lg
 					${activeTabState === 2 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
 				`}>Lv.3</button>
-			</li>
-			<li className="me-2">
-				<button
-				onClick={() => setActiveTabState(3)}
-				className={`
+				</li>
+				<li className="me-2">
+					<button
+						onClick={() => setActiveTabState(3)}
+						className={`
 					inline-block px-2 py-1 rounded-lg
 					${activeTabState === 3 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
 				`}>DX Lv.1</button>
-			</li>
-		</ul>
+				</li>
+			</ul>
 
-		<div className="py-2">
-			<p className="text-orange text-xs">効果</p>
+			<div className="py-2">
+				<p className="text-orange text-xs">効果</p>
 
-			<div className="
+				<div className="
 					mt-1
 					p-1
 					text-xs
@@ -77,8 +77,21 @@ export const MemoryDetailContents: FC<{ memory: z.infer<typeof MemorySchema> }> 
 					rounded-lg
 				">{(getMemoryContent(activeTabState, memory))}</div>
 
+			</div>
+
+			<div className="py-2">
+				<div className="relative w-full h-64">
+					<p className="absolute top-0 left-0 text-orange text-xs">フルイメージ</p>
+					<Image
+						src={`/memory-image/memory_l_${memory.id}.webp`}
+						layout="fill"
+						objectFit="contain"
+						alt="memory"
+					/>
+				</div>
+			</div>
+
 		</div>
-	</div>
 	);
 };
 
