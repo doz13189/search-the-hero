@@ -4,9 +4,7 @@ import { z } from "zod";
 export const getCharacter = async (id: string) => {
 	const response = await fetch(
 		`${process.env.API_URL}/api/character?id=${id}`,
-		{
-			next: { revalidate: 10 },
-		},
+		{ cache: 'no-store' }
 	);
 
 	if (response.ok) {
