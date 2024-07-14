@@ -20,9 +20,7 @@ export const getMemories = async (rarity: string, skills: string, offset: string
 
 	const response = await fetch(
 		`${process.env.API_URL}/api/memories?${query}`,
-		{
-			next: { revalidate: 10 },
-		},
+		{ cache: 'no-store' }
 	);
 
 	if (response.ok) {
