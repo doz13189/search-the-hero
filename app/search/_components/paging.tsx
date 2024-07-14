@@ -22,6 +22,7 @@ export const NextPage: FC<{ pathname: string, total: number, rarity: string; ski
 		<button
 		type="submit"
 		className={`
+		text-xs
 		my-1
 		px-4
 		py-1
@@ -60,6 +61,7 @@ export const BackPage: FC<{ pathname: string, total: number, rarity: string; ski
 		<button
 		type="submit"
 		className={`
+		text-xs
 		my-1
 		px-4
 		py-1
@@ -98,6 +100,7 @@ export const AllPage: FC<{ pathname: string, total: number, rarity: string; skil
 		<button
 		type="submit"
 		className={`
+		text-xs
 		my-1
 		px-4
 		py-1

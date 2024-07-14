@@ -97,13 +97,13 @@ export const Memories: FC<{
 						</div>)}
 
 					<div className="flex my-3">
-						<div className="mr-1">
+						<div className="flex-1">
 							<BackPage pathname="character" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
 						</div>
-						<div className="mr-1">
+						<div className="flex-1">
 							<NextPage pathname="character" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
 						</div>
-						<div className="mr-1">
+						<div className="flex-1">
 							<AllPage pathname="character" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
 						</div>
 					</div>
