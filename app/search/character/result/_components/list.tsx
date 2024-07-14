@@ -103,13 +103,13 @@ export const Characters: FC<{
 						<Character key={character.id} character={character} />
 					</div>)}
 				<div className="flex my-3">
-					<div className="mr-1">
+					<div className="flex-1">
 						<BackPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
 					</div>
-					<div className="mr-1">
+					<div className="flex-1">
 						<NextPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
 					</div>
-					<div className="mr-1">
+					<div className="flex-1">
 						<AllPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
 					</div>
 				</div>

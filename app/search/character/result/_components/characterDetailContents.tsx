@@ -83,7 +83,7 @@ export const CharacterDetailContents: FC<{ character: z.infer<typeof CharacterSc
 					mt-1
 					p-1
 					text-xs
-					bg-light-gray
+					bg-very-light-gray
 					rounded-lg
 				"
 				dangerouslySetInnerHTML={{ __html: getCharacterContent(activeTabState, character).plusUltra.description }}
@@ -101,7 +101,7 @@ export const CharacterDetailContents: FC<{ character: z.infer<typeof CharacterSc
 					mt-1
 					p-1
 					text-xs
-					bg-light-gray
+					bg-very-light-gray
 					rounded-lg
 				"
 				dangerouslySetInnerHTML={{ __html: getCharacterContent(activeTabState, character).actionSkill1.description }}
@@ -119,7 +119,7 @@ export const CharacterDetailContents: FC<{ character: z.infer<typeof CharacterSc
 					mt-1
 					p-1
 					text-xs
-					bg-light-gray
+					bg-very-light-gray
 					rounded-lg
 				"
 				dangerouslySetInnerHTML={{ __html: getCharacterContent(activeTabState, character).actionSkill2.description }}
@@ -134,7 +134,7 @@ export const CharacterDetailContents: FC<{ character: z.infer<typeof CharacterSc
 					mt-1
 					p-1
 					text-xs
-					bg-light-gray
+					bg-very-light-gray
 					rounded-lg
 				"
 				dangerouslySetInnerHTML={{ __html: getCharacterContent(activeTabState, character).autoSkill1.description }}
@@ -149,7 +149,7 @@ export const CharacterDetailContents: FC<{ character: z.infer<typeof CharacterSc
 					mt-1
 					p-1
 					text-xs
-					bg-light-gray
+					bg-very-light-gray
 					rounded-lg
 				"
 				dangerouslySetInnerHTML={{ __html: getCharacterContent(activeTabState, character).autoSkill2.description }}
@@ -164,7 +164,7 @@ export const CharacterDetailContents: FC<{ character: z.infer<typeof CharacterSc
 					mt-1
 					p-1
 					text-xs
-					bg-light-gray
+					bg-very-light-gray
 					rounded-lg
 				"
 			>

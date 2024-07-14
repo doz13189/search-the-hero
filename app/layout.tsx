@@ -36,7 +36,7 @@ export default function RootLayout({
 						flex
 						justify-center
 						text-orange
-						bg-light-gray
+						bg-very-light-gray
 						border-t-2
 						border-b-2
 						border-grey

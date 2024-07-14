@@ -75,7 +75,7 @@ export const MemoryDetailContents: FC<{ memory: z.infer<typeof MemorySchema> }> 
 					mt-1
 					p-1
 					text-xs
-					bg-light-gray
+					bg-very-light-gray
 					rounded-lg
 				">{(getMemoryContent(activeTabState, memory))}</div>
 
