@@ -94,11 +94,14 @@ export const Characters: FC<{
 					</div>
 					<div className="mr-2">
 						<p className="text-xs">
-							{`表示件数: ${result.offset + 1}-${result.offset + result.limit >= result.total ? result.total: result.offset + result.limit} 件`}
+							{`表示件数: ${result.offset + 1}-${result.offset + result.limit >= result.total ? result.total : result.offset + result.limit} 件`}
 						</p>
 					</div>
 				</div>
-				{characters.map((character) => <div key={character.id} className="mb-3"><Character key={character.id} character={character} /></div>)}
+				{characters.map((character) =>
+					<div key={character.id} className="p-2 mb-1 bg-very-light-gray rounded-md">
+						<Character key={character.id} character={character} />
+					</div>)}
 				<div className="flex my-3">
 					<div className="mr-1">
 						<BackPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
