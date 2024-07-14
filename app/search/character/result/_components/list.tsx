@@ -7,6 +7,7 @@ import { Skills } from "../../../_components/skills";
 import { getCharacters } from "@/app/_lib/handler/characters";
 import Image from "next/image";
 import { getImageNameByAttribute, getImageNameByRarity } from "@/app/search/_lib/utils";
+import { AllPage, BackPage, NextPage } from "../../../_components/paging";
 
 export const Character: FC<{ character: z.infer<typeof CharacterSchema> }> = ({
 	character,
@@ -45,8 +46,8 @@ export const Character: FC<{ character: z.infer<typeof CharacterSchema> }> = ({
 					/>
 					<Image
 						src={`/rarity/card_rarity_0${getImageNameByRarity(character.rarity)}.webp`}
-						width={15}
-						height={15}
+						width={20}
+						height={20}
 						alt="character icon"
 						className="absolute top-0 left-0"
 					/>
@@ -60,7 +61,7 @@ export const Character: FC<{ character: z.infer<typeof CharacterSchema> }> = ({
 
 export const Characters: FC<{
 	args: {
-		searchParams: { rarity: string; name: string; skills: string; tags: string; };
+		searchParams: { rarity: string; name: string; skills: string; tags: string, offset: string, limit: string };
 	};
 }> = ({ args }) => {
 	const argRarity = args.searchParams?.rarity;
@@ -68,9 +69,13 @@ export const Characters: FC<{
 	const argName = args.searchParams?.name;
 	const argTags = args.searchParams?.tags;
 
-	const response = getCharacters(argRarity, argName, argTags, argSkills);
+	const argOffset = args.searchParams?.offset || "0";
+	const argLimit = args.searchParams?.limit || "10";
+
+	const response = getCharacters(argRarity, argName, argTags, argSkills, argOffset, argLimit);
 	return response
 		.then((value) => {
+			const result = value.result;
 			const characters = value.characters;
 			if (!characters) {
 				return <NoData />;
@@ -80,7 +85,32 @@ export const Characters: FC<{
 				return <NoData />;
 			}
 
-			return characters.map((character) => <div className="mb-3"><Character character={character} /></div>);
+			return (<>
+				<div className="flex my-3">
+					<div className="mr-2">
+						<p className="text-xs">
+							{`検索結果: ${result.total} 件`}
+						</p>
+					</div>
+					<div className="mr-2">
+						<p className="text-xs">
+							{`表示件数: ${result.offset + 1}-${result.offset + result.limit >= result.total ? result.total: result.offset + result.limit} 件`}
+						</p>
+					</div>
+				</div>
+				{characters.map((character) => <div key={character.id} className="mb-3"><Character key={character.id} character={character} /></div>)}
+				<div className="flex my-3">
+					<div className="mr-1">
+						<BackPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
+					</div>
+					<div className="mr-1">
+						<NextPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
+					</div>
+					<div className="mr-1">
+						<AllPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
+					</div>
+				</div>
+			</>)
 		})
 		.catch((err) => {
 			console.error(err);

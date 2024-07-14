@@ -4,7 +4,7 @@ import { SearchFilters } from "../../_components/search-filters";
 import { Characters } from "./_components/list";
 
 export default async function CharacterSearchResult(args: {
-	searchParams: { rarity: string; name: string; skills: string; tags: string };
+	searchParams: { rarity: string; name: string; skills: string; tags: string, offset: string, limit: string };
 }) {
 	const argRarity = args.searchParams?.rarity;
 	const argName = args.searchParams?.name;

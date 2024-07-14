@@ -22,3 +22,12 @@ export const MemorySchema = z.object({
 export const MemoriesSchema = z.object({
 	memories: z.array(MemorySchema),
 });
+
+export const MemoriesResponseSchema = z.object({
+	memories: z.array(MemorySchema),
+	result: z.object({
+		offset: z.number(),
+		limit: z.number(),
+		total: z.number(),
+	}),
+});

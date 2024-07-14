@@ -11,6 +11,9 @@ export async function GET(request: NextRequest) {
 	const tags = request.nextUrl.searchParams.get("tags");
 	const skills = request.nextUrl.searchParams.get("skills");
 
+	const offset = parseInt(request.nextUrl.searchParams.get("offset") || "0");
+	const limit = parseInt(request.nextUrl.searchParams.get("limit") || "10");
+
 	let response = JsonQuery('characters[*]', {
 		data: { characters },
 	}).value[0]
@@ -46,6 +49,13 @@ export async function GET(request: NextRequest) {
 				});
 			})
 	}
-	
-	return NextResponse.json({ characters: response }, { status: 200 });
+
+	return NextResponse.json({
+		characters: response.slice(offset, offset + limit),
+		result: {
+			offset,
+			limit,
+			total: response.length
+		}
+	}, { status: 200 });
 }

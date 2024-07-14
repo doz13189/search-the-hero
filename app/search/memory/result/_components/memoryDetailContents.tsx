@@ -84,8 +84,9 @@ export const MemoryDetailContents: FC<{ memory: z.infer<typeof MemorySchema> }> 
 					<p className="absolute top-0 left-0 text-orange text-xs">フルイメージ</p>
 					<Image
 						src={`/memory-image/memory_l_${memory.id}.webp`}
-						layout="fill"
-						objectFit="contain"
+						style={{ objectFit: "contain" }}
+						fill
+						priority={false}
 						alt="memory"
 					/>
 				</div>
