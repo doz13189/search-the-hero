@@ -24,7 +24,8 @@ const getMemoryContent = (activeTabState: number, memory: z.infer<typeof MemoryS
 export const MemoryDetailContents: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 	memory,
 }) => {
-	const [activeTabState, setActiveTabState] = useState<0 | 1 | 2 | 3>(3);
+	const initialActiveTabState = memory.rarity === "r" ? 2 : 3;
+	const [activeTabState, setActiveTabState] = useState<0 | 1 | 2 | 3>(initialActiveTabState);
 
 	return (
 		<div className="min-h-screen container mx-auto py-1 px-3">
@@ -56,14 +57,15 @@ export const MemoryDetailContents: FC<{ memory: z.infer<typeof MemorySchema> }> 
 					${activeTabState === 2 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
 				`}>Lv.3</button>
 				</li>
-				<li className="me-2">
+				{memory.rarity === "r" ? null : <li className="me-2">
 					<button
 						onClick={() => setActiveTabState(3)}
 						className={`
 					inline-block px-2 py-1 rounded-lg
 					${activeTabState === 3 ? "text-white bg-orange active" : "hover:text-gray-900 hover:bg-gray-100"}
 				`}>DX Lv.1</button>
-				</li>
+				</li>}
+
 			</ul>
 
 			<div className="py-2">
