@@ -13,7 +13,7 @@ export default function Page() {
 					bg-very-light-gray
 					rounded-lg
 				">
-					<p className="text-xs">{`（2024/07/15）`}</p>
+					<p className="text-xs">{`2024/07/15`}</p>
 					<p className="text-xs">{`以下のデータ追加に伴うアップデートを実施しました。`}</p>
 					{["1185006"].map((id) => (
 						<div key={id} className="m-2">
