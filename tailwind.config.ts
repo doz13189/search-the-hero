@@ -23,6 +23,7 @@ const config: Config = {
 				"soft-orange": "#FFA07A",
 				"grey": "rgba(0, 0, 0, 0.6)",
 				"light-gray": "rgba(0, 0, 0, 0.1)",
+				"very-light-gray": "rgba(0, 0, 0, 0.05)",
 			},
 			borderColor: {
 				"grey": "rgba(0, 0, 0, 0.6)",

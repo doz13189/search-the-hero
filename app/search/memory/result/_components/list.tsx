@@ -14,7 +14,7 @@ export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 }) => {
 	return (
 		<Link href={`/search/memory/result/${memory.id}`}>
-			<div className="flex my-1">
+			<div className="flex">
 				<div className="relative w-12 h-12">
 					<Image
 						src={`/bg/chara_bg_10${getImageNameByRarity(memory.rarity)}.webp`}
@@ -90,7 +90,12 @@ export const Memories: FC<{
 							</p>
 						</div>
 					</div>
-					{memories.map((memory) => <div key={memory.id} className="mb-3"><Memory key={memory.id} memory={memory} /></div>)}
+
+					{memories.map((memory) =>
+						<div key={memory.id} className="p-2 mb-1 bg-very-light-gray rounded-md">
+							<Memory key={memory.id} memory={memory} />
+						</div>)}
+
 					<div className="flex my-3">
 						<div className="mr-1">
 							<BackPage pathname="character" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
