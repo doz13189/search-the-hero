@@ -185,7 +185,9 @@ export const CharacterSkills = z.enum([
 	'肉塊',
 	'最大HPダウン',
 	'凍傷命中率アップ',
-	'ストレス'
+	'ストレス',
+	"鋭利",
+	"クリティカル率ダウン完全耐性",
 ] as const)
 
 export const MemorySkills = z.enum([
@@ -241,7 +243,8 @@ export const MemorySkills = z.enum([
 	'氷結耐性アップ',
 	'混乱耐性アップ',
 	'燃焼耐性アップ',
-	'恐怖'
+	'恐怖',
+	"クリティカル抵抗ダウン"
 ] as const)
 
 

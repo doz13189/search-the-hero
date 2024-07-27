@@ -13,14 +13,14 @@ export default function Page() {
 					bg-very-light-gray
 					rounded-lg
 				">
-					<p className="text-xs">{`2024/07/15`}</p>
+					<p className="text-xs">{`2024/07/29`}</p>
 					<p className="text-xs">{`以下のデータ追加に伴うアップデートを実施しました。`}</p>
-					{["1185006"].map((id) => (
+					{["1221003"].map((id) => (
 						<div key={id} className="m-2">
 							<NewCharacter key={id} id={id} />
 						</div>
 					))}
-					{["2400140", "2300191", "2300190"].map((id) => (
+					{["2400142", "2300194", "2300195"].map((id) => (
 						<div key={id} className="m-2">
 							<NewMemory key={id} id={id} />
 						</div>

@@ -43502,6 +43502,193 @@ export const characters: z.infer<typeof CharactersSchema> = {
                 "自分のスピードがアップしている時、自分のパワーを20%アップ",
                 "WAVE開始後、自分のプルスウルトラ技の威力を25%アップ(4ターン)"
             ]
+        },
+        {
+            "id": "1221003",
+            "epithet": "駆ける海上",
+            "name": "ミルコ",
+            "rarity": "ur",
+            "type": "str",
+            "sex": "女",
+            "skills": [
+                "クリティカル威力アップ",
+                "氷結耐性アップ",
+                "凍傷耐性アップ",
+                "鋭利",
+                "クリティカル率ダウン完全耐性",
+                "クリティカル率アップ",
+                "与ダメージ回復",
+                "プルスウルトラ効率アップ",
+                "スピードアップ",
+                "回避",
+                "スキル威力アップ",
+                "プルスウルトラゲージ増加"
+            ],
+            "tags": [
+                "プロヒーロー",
+                "ヒーロー"
+            ],
+            "stats": [
+                {
+                    "hp": "5280",
+                    "power": "889",
+                    "speed": "126",
+                    "defense": "100",
+                    "critical": "15"
+                },
+                {
+                    "hp": "12785",
+                    "power": "2548",
+                    "speed": "205",
+                    "defense": "100",
+                    "critical": "15"
+                },
+                {
+                    "hp": "44935",
+                    "power": "8918",
+                    "speed": "725",
+                    "defense": "100",
+                    "critical": "15"
+                },
+                {
+                    "hp": "53935",
+                    "power": "10718",
+                    "speed": "905",
+                    "defense": "100",
+                    "critical": "15"
+                }
+            ],
+            "uniqueSkills": [
+                "自分のHPが5%未満の時、自分のアクションスキルのクールタイムを1短縮する(最大7回)",
+                "自分がくいしばり状態の時、戦闘中に1度だけ自分に逆境(3ターン)を付与する",
+                "自分で敵を倒すたび、自分のスピードを20%アップ(3ターン)",
+                "戦闘開始後、自分のスキル威力を10%ダウン、クリティカル率を30%アップ(3ターン)",
+                "戦闘開始後、味方全体のディフェンスを20%アップ(3ターン)",
+                "2ターン毎に自分のスキル威力が10%アップ(最大3回)",
+                "自分で敵を倒すたび、自分のクリティカル率を15%アップ"
+            ],
+            "skill": {
+                "levelone": {
+                    "plusUltra": {
+                        "name": "月波蹴＜ルナスプラッシュ＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">550</span>%ダメージ<br>自分のクリティカル威力<span style=\"color: #79ff80;\">10</span>%アップ(累積)<br>味方全体の氷結・凍傷耐性アップ(3ターン)"
+                    },
+                    "actionSkill1": {
+                        "name": "踵月輪＜ルナリング＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">300</span>%ダメージ<br>自分に回避(1回)を付与",
+                        "coolTime": "5"
+                    },
+                    "actionSkill2": {
+                        "name": "月墜蹴＜ルナフォール＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">300</span>%ダメージ<br>自分のプルスウルトラゲージ<span style=\"color: #79ff80;\">20</span>%アップ<br>敵がかばう・挑発の時、このスキルのスキル威力<span style=\"color: #79ff80;\">30</span>%アップ",
+                        "coolTime": "5"
+                    },
+                    "autoSkill1": {
+                        "name": "しなやかな脚",
+                        "description": "自分に鋭利を付与、クリティカル率ダウン完全耐性を付与、クリティカル率<span style=\"color: #79ff80;\">40</span>%アップ<br>自分のスキルでCHAIN成功時、味方全体のクリティカル率<span style=\"color: #79ff80;\">10</span>%アップ(3ターン)"
+                    },
+                    "autoSkill2": {
+                        "name": "負けん気",
+                        "description": "自分のクリティカル攻撃が2回発生しきった時、自分に与ダメージ<span style=\"color: #79ff80;\">6</span>%回復を付与(最大5回)、プルスウルトラ効率<span style=\"color: #79ff80;\">6</span>%アップ(最大5回)、スピード<span style=\"color: #79ff80;\">6</span>%アップ(最大5回)<br>自分のHPが50%未満の時、自分に回避(2回)を付与(最大3回)"
+                    }
+                },
+                "leveltwo": {
+                    "plusUltra": {
+                        "name": "月波蹴＜ルナスプラッシュ＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">600</span>%ダメージ<br>自分のクリティカル威力<span style=\"color: #79ff80;\">10</span>%アップ(累積)<br>味方全体の氷結・凍傷耐性アップ(3ターン)"
+                    },
+                    "actionSkill1": {
+                        "name": "踵月輪＜ルナリング＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">325</span>%ダメージ<br>自分に回避(1回)を付与",
+                        "coolTime": "4"
+                    },
+                    "actionSkill2": {
+                        "name": "月墜蹴＜ルナフォール＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">325</span>%ダメージ<br>自分のプルスウルトラゲージ<span style=\"color: #79ff80;\">25</span>%アップ<br>敵がかばう・挑発の時、このスキルのスキル威力<span style=\"color: #79ff80;\">35</span>%アップ",
+                        "coolTime": "4"
+                    },
+                    "autoSkill1": {
+                        "name": "しなやかな脚",
+                        "description": "自分に鋭利を付与、クリティカル率ダウン完全耐性を付与、クリティカル率<span style=\"color: #79ff80;\">45</span>%アップ<br>自分のスキルでCHAIN成功時、味方全体のクリティカル率<span style=\"color: #79ff80;\">15</span>%アップ(3ターン)"
+                    },
+                    "autoSkill2": {
+                        "name": "負けん気",
+                        "description": "自分のクリティカル攻撃が2回発生しきった時、自分に与ダメージ<span style=\"color: #79ff80;\">8</span>%回復を付与(最大5回)、プルスウルトラ効率<span style=\"color: #79ff80;\">8</span>%アップ(最大5回)、スピード<span style=\"color: #79ff80;\">8</span>%アップ(最大5回)<br>自分のHPが50%未満の時、自分に回避(2回)を付与(最大3回)"
+                    }
+                },
+                "levelthree": {
+                    "plusUltra": {
+                        "name": "月波蹴＜ルナスプラッシュ＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">650</span>%ダメージ<br>自分のクリティカル威力<span style=\"color: #79ff80;\">10</span>%アップ(累積)<br>味方全体の氷結・凍傷耐性アップ(3ターン)"
+                    },
+                    "actionSkill1": {
+                        "name": "踵月輪＜ルナリング＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">350</span>%ダメージ<br>自分に回避(1回)を付与",
+                        "coolTime": "3"
+                    },
+                    "actionSkill2": {
+                        "name": "月墜蹴＜ルナフォール＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">350</span>%ダメージ<br>自分のプルスウルトラゲージ<span style=\"color: #79ff80;\">30</span>%アップ<br>敵がかばう・挑発の時、このスキルのスキル威力<span style=\"color: #79ff80;\">40</span>%アップ",
+                        "coolTime": "3"
+                    },
+                    "autoSkill1": {
+                        "name": "しなやかな脚",
+                        "description": "自分に鋭利を付与、クリティカル率ダウン完全耐性を付与、クリティカル率<span style=\"color: #79ff80;\">50</span>%アップ<br>自分のスキルでCHAIN成功時、味方全体のクリティカル率<span style=\"color: #79ff80;\">20</span>%アップ(3ターン)"
+                    },
+                    "autoSkill2": {
+                        "name": "負けん気",
+                        "description": "自分のクリティカル攻撃が2回発生しきった時、自分に与ダメージ<span style=\"color: #79ff80;\">10</span>%回復を付与(最大5回)、プルスウルトラ効率<span style=\"color: #79ff80;\">10</span>%アップ(最大5回)、スピード<span style=\"color: #79ff80;\">10</span>%アップ(最大5回)<br>自分のHPが50%未満の時、自分に回避(2回)を付与(最大3回)"
+                    }
+                },
+                "dxlevelone": {
+                    "plusUltra": {
+                        "name": "月波蹴＜ルナスプラッシュ＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">650</span>%ダメージ<br>自分のクリティカル威力<span style=\"color: #79ff80;\">10</span>%アップ(累積)<br>味方全体の氷結・凍傷耐性アップ(3ターン)"
+                    },
+                    "actionSkill1": {
+                        "name": "踵月輪＜ルナリング＞ DX",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">375</span>%ダメージ<br>自分に回避(1回)を付与",
+                        "coolTime": "3"
+                    },
+                    "actionSkill2": {
+                        "name": "月墜蹴＜ルナフォール＞ DX",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">375</span>%ダメージ<br>自分のプルスウルトラゲージ<span style=\"color: #79ff80;\">30</span>%アップ<br>敵がかばう・挑発の時、このスキルのスキル威力<span style=\"color: #79ff80;\">45</span>%アップ",
+                        "coolTime": "3"
+                    },
+                    "autoSkill1": {
+                        "name": "しなやかな脚",
+                        "description": "自分に鋭利を付与、クリティカル率ダウン完全耐性を付与、クリティカル率<span style=\"color: #79ff80;\">50</span>%アップ<br>自分のスキルでCHAIN成功時、味方全体のクリティカル率<span style=\"color: #79ff80;\">20</span>%アップ(3ターン)"
+                    },
+                    "autoSkill2": {
+                        "name": "負けん気",
+                        "description": "自分のクリティカル攻撃が2回発生しきった時、自分に与ダメージ<span style=\"color: #79ff80;\">10</span>%回復を付与(最大5回)、プルスウルトラ効率<span style=\"color: #79ff80;\">10</span>%アップ(最大5回)、スピード<span style=\"color: #79ff80;\">10</span>%アップ(最大5回)<br>自分のHPが50%未満の時、自分に回避(2回)を付与(最大3回)"
+                    }
+                },
+                "dxleveltwo": {
+                    "plusUltra": {
+                        "name": "月波蹴＜ルナスプラッシュ＞",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">650</span>%ダメージ<br>自分のクリティカル威力<span style=\"color: #79ff80;\">10</span>%アップ(累積)<br>味方全体の氷結・凍傷耐性アップ(3ターン)"
+                    },
+                    "actionSkill1": {
+                        "name": "踵月輪＜ルナリング＞ DX",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">400</span>%ダメージ<br>自分に回避(1回)を付与",
+                        "coolTime": "3"
+                    },
+                    "actionSkill2": {
+                        "name": "月墜蹴＜ルナフォール＞ DX",
+                        "description": "敵単体に<span style=\"color: #79ff80;\">400</span>%ダメージ<br>自分のプルスウルトラゲージ<span style=\"color: #79ff80;\">35</span>%アップ<br>敵がかばう・挑発の時、このスキルのスキル威力<span style=\"color: #79ff80;\">50</span>%アップ",
+                        "coolTime": "3"
+                    },
+                    "autoSkill1": {
+                        "name": "しなやかな脚",
+                        "description": "自分に鋭利を付与、クリティカル率ダウン完全耐性を付与、クリティカル率<span style=\"color: #79ff80;\">50</span>%アップ<br>自分のスキルでCHAIN成功時、味方全体のクリティカル率<span style=\"color: #79ff80;\">20</span>%アップ(3ターン)"
+                    },
+                    "autoSkill2": {
+                        "name": "負けん気",
+                        "description": "自分のクリティカル攻撃が2回発生しきった時、自分に与ダメージ<span style=\"color: #79ff80;\">10</span>%回復を付与(最大5回)、プルスウルトラ効率<span style=\"color: #79ff80;\">10</span>%アップ(最大5回)、スピード<span style=\"color: #79ff80;\">10</span>%アップ(最大5回)<br>自分のHPが50%未満の時、自分に回避(2回)を付与(最大3回)"
+                    }
+                }
+            }
         }
     ]
 };
