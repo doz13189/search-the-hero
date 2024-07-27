@@ -9,9 +9,37 @@ const font = RocknRoll_One({
 	subsets: ["cyrillic"],
 });
 
+const serviceTitle = "Search the hero";
+const serviceDescription = "僕のヒーローアカデミア ULTRA IMPACT(ヒロトラ)のプレイキャラ/メモリーを検索することができる非公式サービスです。また、リーク情報は扱いません。";
+const serviceImage = "https://search-the-hero.vercel.app/_next/image?url=%2Fmemory-image%2Fmemory_l_2400152.webp&w=1920&q=75";
 export const metadata: Metadata = {
-	title: "My Hero Academia",
-	description: "ULTRA IMPACT",
+	title: serviceTitle,
+	description: serviceDescription,
+	openGraph: {
+		type: 'website',
+		url: 'http://localhost:3000/home',
+		title: serviceTitle,
+		description: serviceDescription,
+		images: [
+		  {
+			url: serviceImage,
+			width: 800,
+			height: 600,
+			alt: 'Og Image Alt',
+		  },
+		],
+	  },
+	  twitter: {
+		card: 'summary_large_image',
+		title: serviceTitle,
+		description: serviceDescription,
+		images: [
+		  {
+			url: serviceImage,
+			alt: 'Twitter Image Alt',
+		  },
+		],
+	  },
 };
 
 export default function RootLayout({
