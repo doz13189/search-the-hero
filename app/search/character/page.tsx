@@ -9,16 +9,19 @@ import { SkillForm } from "../_components/skill-form";
 import { useState } from "react";
 import { NameForm } from "../_components/name-form";
 import { TagForm } from "../_components/tag-form";
+import { TypeForm } from "../_components/type-form";
 
 export default function Search(args: {
-	searchParams: { rarity: string; name: string; skills: string; tags: string };
+	searchParams: { rarity: string; type: string; name: string; skills: string; tags: string };
 }) {
 	const argRarity = args.searchParams?.rarity;
+	const argType = args.searchParams?.type;
 	const argSkills = args.searchParams?.skills?.split(",");
 	const argName = args.searchParams?.name;
 	const argTags = args.searchParams?.tags?.split(",");
 
 	const [rarity, setRarity] = useState(argRarity || "");
+	const [type, setType] = useState(argType || "");
 	const [skills, setSkills] = useState<string[]>(argSkills || []);
 	const [name, setName] = useState(argName || "");
 	const [tags, setTags] = useState<string[]>(argTags || []);
@@ -28,6 +31,10 @@ export default function Search(args: {
 			<div className="mb-3">
 				<div>
 					<RarityForm rarity={rarity} setRarity={setRarity} />
+				</div>
+
+				<div className="my-2">
+					<TypeForm type={type} setType={setType} />
 				</div>
 
 				<div className="my-2">
@@ -43,7 +50,7 @@ export default function Search(args: {
 				</div>
 
 
-				<SearchFilters rarity={rarity} name={name} skills={skills} tags={tags} />
+				<SearchFilters rarity={rarity} type={type} name={name} skills={skills} tags={tags} />
 
 				<label
 					htmlFor="search"
@@ -53,10 +60,10 @@ export default function Search(args: {
 				</label>
 				<div className="flex justify-end">
 					<div className="flex-initial">
-						<ResetButton setRarity={setRarity} setName={setName} setSkills={setSkills} setTags={setTags} />
+						<ResetButton setRarity={setRarity} setType={setType} setName={setName} setSkills={setSkills} setTags={setTags} />
 					</div>
 					<div className="flex-initial">
-						<FilterButton pathname="character" rarity={rarity} name={name} skills={skills} tags={tags} />
+						<FilterButton pathname="character" rarity={rarity} type={type} name={name} skills={skills} tags={tags} />
 					</div>
 				</div>
 			</div>
