@@ -7,6 +7,7 @@ import { z } from "zod";
 
 export async function GET(request: NextRequest) {
 	const rarity = request.nextUrl.searchParams.get("rarity");
+	const type = request.nextUrl.searchParams.get("type");
 	const name = request.nextUrl.searchParams.get("name");
 	const tags = request.nextUrl.searchParams.get("tags");
 	const skills = request.nextUrl.searchParams.get("skills");
@@ -21,6 +22,13 @@ export async function GET(request: NextRequest) {
 	if (rarity) {
 		response = response.filter((character: z.infer<typeof CharacterSchema>) => {
 			return character.rarity === rarity
+		});
+	}
+
+	console.log("type", type)
+	if (type) {
+		response = response.filter((character: z.infer<typeof CharacterSchema>) => {
+			return character.type === type
 		});
 	}
 

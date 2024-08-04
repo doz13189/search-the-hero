@@ -61,10 +61,11 @@ export const Character: FC<{ character: z.infer<typeof CharacterSchema> }> = ({
 
 export const Characters: FC<{
 	args: {
-		searchParams: { rarity: string; name: string; skills: string; tags: string, offset: string, limit: string };
+		searchParams: { rarity: string; type: string; name: string; skills: string; tags: string, offset: string, limit: string };
 	};
 }> = ({ args }) => {
 	const argRarity = args.searchParams?.rarity;
+	const argType = args.searchParams?.type;
 	const argSkills = args.searchParams?.skills;
 	const argName = args.searchParams?.name;
 	const argTags = args.searchParams?.tags;
@@ -72,7 +73,7 @@ export const Characters: FC<{
 	const argOffset = args.searchParams?.offset || "0";
 	const argLimit = args.searchParams?.limit || "10";
 
-	const response = getCharacters(argRarity, argName, argTags, argSkills, argOffset, argLimit);
+	const response = getCharacters(argRarity, argType, argName, argTags, argSkills, argOffset, argLimit);
 	return response
 		.then((value) => {
 			const result = value.result;
@@ -104,13 +105,13 @@ export const Characters: FC<{
 					</div>)}
 				<div className="flex my-3">
 					<div className="flex-1">
-						<BackPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
+						<BackPage pathname="character" total={result.total} rarity={argRarity} type={argType} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
 					</div>
 					<div className="flex-1">
-						<NextPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
+						<NextPage pathname="character" total={result.total} rarity={argRarity} type={argType} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
 					</div>
 					<div className="flex-1">
-						<AllPage pathname="character" total={result.total} rarity={argRarity} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
+						<AllPage pathname="character" total={result.total} rarity={argRarity} type={argType} name={argName} skills={argSkills?.split(",")} tags={argTags?.split(",")} offset={argOffset} limit={argLimit} />
 					</div>
 				</div>
 			</>)

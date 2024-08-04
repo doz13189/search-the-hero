@@ -4,9 +4,10 @@ import { useRouter } from "next/navigation";
 import { FC } from "react";
 import { createQuery } from "../_lib/create-query";
 
-export const EditFilterButton: FC<{ pathname: string, rarity: string; skills: string[], name?: string; tags?: string[], }> = ({
+export const EditFilterButton: FC<{ pathname: string, rarity: string;  skills: string[], type?: string; name?: string; tags?: string[], }> = ({
 	pathname,
 	rarity,
+	type,
 	skills,
 	name,
 	tags
@@ -27,7 +28,7 @@ export const EditFilterButton: FC<{ pathname: string, rarity: string; skills: st
 			border-grey
 			rounded-lg
 		"
-			onClick={() => router.push(`/search/${pathname}?${createQuery(rarity, skills, name, tags)}`)}
+			onClick={() => router.push(`/search/${pathname}?${createQuery({ rarity, skills, name, tags, type })}`)}
 		>
 			検索条件変更
 		</button>

@@ -4,11 +4,12 @@ import { FC } from "react";
 import { useRouter } from "next/navigation";
 import { createQuery } from "@/app/search/_lib/create-query";
 
-export const NextPage: FC<{ pathname: string, total: number, rarity: string; skills: string[], name?: string; tags?: string[], offset?: string, limit?: string }> = ({
+export const NextPage: FC<{ pathname: string, total: number, rarity: string; skills: string[], type?: string; name?: string; tags?: string[], offset?: string, limit?: string }> = ({
 	pathname,
 	total,
 	rarity,
 	skills,
+	type,
 	name,
 	tags,
 	offset,
@@ -34,7 +35,7 @@ export const NextPage: FC<{ pathname: string, total: number, rarity: string; ski
 
   `}
 		onClick={() =>
-			router.push(`/search/${pathname}/result?${createQuery(rarity, skills, name, tags, String(nextOffset), limit)}`)
+			router.push(`/search/${pathname}/result?${createQuery({ rarity, skills, type, name, tags, offset: String(nextOffset), limit} )}`)
 		}
 		disabled={disable}
 	>
@@ -44,10 +45,11 @@ export const NextPage: FC<{ pathname: string, total: number, rarity: string; ski
 };
 
 
-export const BackPage: FC<{ pathname: string, total: number, rarity: string; skills: string[], name?: string; tags?: string[], offset?: string, limit?: string }> = ({
+export const BackPage: FC<{ pathname: string, total: number, rarity: string; skills: string[], type?: string, name?: string; tags?: string[], offset?: string, limit?: string }> = ({
 	pathname,
 	rarity,
 	skills,
+	type,
 	name,
 	tags,
 	offset,
@@ -73,7 +75,7 @@ export const BackPage: FC<{ pathname: string, total: number, rarity: string; ski
   `}
      		
 		onClick={() =>
-			router.push(`/search/${pathname}/result?${createQuery(rarity, skills, name, tags, String(nextOffset), limit)}`)
+			router.push(`/search/${pathname}/result?${createQuery({ rarity, skills, type, name, tags, offset: String(nextOffset), limit})}`)
 		}
 		disabled={disable}
 	>
@@ -83,11 +85,12 @@ export const BackPage: FC<{ pathname: string, total: number, rarity: string; ski
 };
 
 
-export const AllPage: FC<{ pathname: string, total: number, rarity: string; skills: string[], name?: string; tags?: string[], offset?: string, limit?: string }> = ({
+export const AllPage: FC<{ pathname: string, total: number, rarity: string; skills: string[], type?: string; name?: string; tags?: string[], offset?: string, limit?: string }> = ({
 	pathname,
 	total,
 	rarity,
 	skills,
+	type,
 	name,
 	tags,
 	offset,
@@ -112,7 +115,7 @@ export const AllPage: FC<{ pathname: string, total: number, rarity: string; skil
 
   `}
 		onClick={() =>
-			router.push(`/search/${pathname}/result?${createQuery(rarity, skills, name, tags, String(0), String(total))}`)
+			router.push(`/search/${pathname}/result?${createQuery({ rarity, skills, type, name, tags, offset: String(0),  limit: String(total)})}`)
 		}
 		disabled={disable}
 	>
