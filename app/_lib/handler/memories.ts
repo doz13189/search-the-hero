@@ -1,6 +1,6 @@
-import { MemoriesResponseSchema, MemoriesSchema } from "@/app/_data/memory/schema";
+import { MemoriesResponseSchema } from "@/app/_data/memory/schema";
 
-export const getMemories = async (rarity: string, skills: string, offset: string, limit: string) => {
+export const getMemories = async (rarity: string, skills: string, name: string, offset: string, limit: string) => {
 	let query = "";
 	if (skills) {
 		query = `skills=${skills}`
@@ -8,6 +8,10 @@ export const getMemories = async (rarity: string, skills: string, offset: string
 
 	if (rarity) {
 		query = query + `&rarity=${rarity}`;
+	}
+
+	if (name) {
+		query = query + `&name=${name}`;
 	}
 
 	if (offset) {
