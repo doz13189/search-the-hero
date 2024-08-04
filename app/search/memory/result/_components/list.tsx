@@ -54,16 +54,17 @@ export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 
 export const Memories: FC<{
 	args: {
-		searchParams: { rarity: string; skills: string, offset: string, limit: string };
+		searchParams: { rarity: string; skills: string, name: string, offset: string, limit: string };
 	};
 }> = ({ args }) => {
 	const argRarity = args.searchParams?.rarity;
 	const argSkills = args.searchParams?.skills;
+	const argName = args.searchParams?.name;
 
 	const argOffset = args.searchParams?.offset || "0";
 	const argLimit = args.searchParams?.limit || "10";
 
-	const response = getMemories(argRarity, argSkills, argOffset, argLimit);
+	const response = getMemories(argRarity, argSkills, argName, argOffset, argLimit);
 	return response
 		.then((value) => {
 			const result = value.result;
@@ -98,13 +99,13 @@ export const Memories: FC<{
 
 					<div className="flex my-3">
 						<div className="flex-1">
-							<BackPage pathname="memory" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
+							<BackPage pathname="memory" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} name={argName}  offset={argOffset} limit={argLimit} />
 						</div>
 						<div className="flex-1">
-							<NextPage pathname="memory" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
+							<NextPage pathname="memory" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} name={argName} offset={argOffset} limit={argLimit} />
 						</div>
 						<div className="flex-1">
-							<AllPage pathname="memory" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} offset={argOffset} limit={argLimit} />
+							<AllPage pathname="memory" total={result.total} rarity={argRarity} skills={argSkills?.split(",")} name={argName} offset={argOffset} limit={argLimit} />
 						</div>
 					</div>
 				</>

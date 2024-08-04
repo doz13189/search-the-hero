@@ -8,6 +8,7 @@ import { z } from "zod";
 export async function GET(request: NextRequest) {
 	const rarity = request.nextUrl.searchParams.get("rarity");
 	const skills = request.nextUrl.searchParams.get("skills");
+	const name = request.nextUrl.searchParams.get("name");
 
 	const offset = parseInt(request.nextUrl.searchParams.get("offset") || "0");
 	const limit = parseInt(request.nextUrl.searchParams.get("limit") || "10");
@@ -32,6 +33,12 @@ export async function GET(request: NextRequest) {
 			});
 	}
 
+	if (name) {
+		response = response.filter((memory: z.infer<typeof MemorySchema>) => {
+			return memory.name.includes(name);
+		});
+	}
+	
 	return NextResponse.json({
 		memories: response.slice(offset, offset + limit),
 		result: {
