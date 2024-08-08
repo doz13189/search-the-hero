@@ -1,13 +1,13 @@
 import { MemorySchema } from "@/app/_data/memory/schema";
 import { FC } from "react";
 import { z } from "zod";
-import { getMemories } from "../../../../_lib/handler/memories";
 import { NoData } from "@/app/search/_components/no-data";
 import Link from "next/link";
 import { Skills } from "@/app/search/_components/skills";
 import Image from "next/image";
 import { getImageNameByRarity } from "@/app/search/_lib/utils";
 import { AllPage, BackPage, NextPage } from "@/app/search/_components/paging";
+import { queryMemories } from "@/app/_lib/query/memories";
 
 export const Memory: FC<{ memory: z.infer<typeof MemorySchema> }> = ({
 	memory,
@@ -64,7 +64,14 @@ export const Memories: FC<{
 	const argOffset = args.searchParams?.offset || "0";
 	const argLimit = args.searchParams?.limit || "10";
 
-	const response = getMemories(argRarity, argSkills, argName, argOffset, argLimit);
+	const response = queryMemories({
+		rarity: argRarity, 
+		skills: argSkills,
+		name: argName,
+		offset: argOffset,
+		limit: argLimit
+	});
+
 	return response
 		.then((value) => {
 			const result = value.result;

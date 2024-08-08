@@ -1,4 +1,5 @@
-import { getCharacter } from "@/app/_lib/handler/character";
+import { getCharacter } from "@/app/_lib/apiHandler/character";
+import { queryCharacter } from "@/app/_lib/query/character";
 import { Loading } from "@/app/search/_components/Loading";
 import { getImageNameByAttribute, getImageNameByRarity } from "@/app/search/_lib/utils";
 import Image from "next/image";
@@ -8,11 +9,9 @@ import { FC, Suspense } from "react";
 export const NewCharacter: FC<{ id: string }> = ({
 	id
 }) => {
-	const response = getCharacter(id);
+	const response = queryCharacter(id);
 
-	return response.then((value) => {
-		const character = value.characters;
-
+	return response.then((character) => {
 		return (
 			<Suspense fallback={<Loading />}>
 				<Link href={`/search/character/result/${character.id}`}>
