@@ -1,4 +1,5 @@
-import { getMemory } from "@/app/_lib/handler/memory";
+import { getMemory } from "@/app/_lib/apiHandler/memory";
+import { queryMemory } from "@/app/_lib/query/memory";
 import { Loading } from "@/app/search/_components/Loading";
 import { getImageNameByRarity } from "@/app/search/_lib/utils";
 import Image from "next/image";
@@ -8,11 +9,8 @@ import { FC, Suspense } from "react";
 export const NewMemory: FC<{ id: string }> = ({
 	id
 }) => {
-	const response = getMemory(id);
-
-	return response.then((value) => {
-		const memory = value.memories;
-		
+	const response = queryMemory(id);
+	return response.then((memory) => {
 		return (
 			<Suspense fallback={<Loading />}>
 				<Link href={`/search/memory/result/${memory.id}`}>

@@ -4,7 +4,7 @@ import { CharacterSchema } from "@/app/_data/character/schema";
 import { NoData } from "@/app/search/_components/no-data";
 import Link from "next/link";
 import { Skills } from "../../../_components/skills";
-import { getCharacters } from "@/app/_lib/handler/characters";
+import { getCharacters } from "@/app/_lib/apiHandler/characters";
 import Image from "next/image";
 import { getImageNameByAttribute, getImageNameByRarity } from "@/app/search/_lib/utils";
 import { AllPage, BackPage, NextPage } from "../../../_components/paging";

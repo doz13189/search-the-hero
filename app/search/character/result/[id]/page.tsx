@@ -1,14 +1,11 @@
-import { getCharacter } from "@/app/_lib/handler/character";
 import { CharacterDetailContents } from "../_components/characterDetailContents";
 import { Suspense } from "react";
 import { Loading } from "@/app/search/_components/Loading";
+import { queryCharacter } from "@/app/_lib/query/character";
 
 export default function Page({ params }: { params: { id: string } }) {
-
-	const response = getCharacter(params.id);
-
-	return response.then((value) => {
-		const character = value.characters;
+	const response = queryCharacter(params.id);
+	return response.then((character) => {
 		return (
 			<Suspense fallback={<Loading />}>
 				<CharacterDetailContents character={character} />
