@@ -32,3 +32,20 @@ export const getImageNameByAttribute = (rarity: z.infer<typeof Type>) => {
 			const _: never = rarity;
 	}
 }
+
+export const getTypeLabel = (type: z.infer<typeof Type>) => {
+	switch (type) {
+		case "str":
+			return "力";
+		case "abl":
+			return "技";
+		case "int":
+			return "知";
+		case "mnd":
+			return "信";
+		case "dst":
+			return "破";
+		default:
+			const _: never = type;
+	}
+}

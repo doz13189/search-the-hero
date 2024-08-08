@@ -1,8 +1,12 @@
 
 import { FC } from "react";
+import { getTypeLabel } from "../_lib/utils";
+import { Type } from "@/app/_data/_common/schema";
+import { z } from "zod";
 
-export const SearchFilters: FC<{ rarity: string; skills: string[], name?: string; tags?: string[] }> = ({
+export const SearchFilters: FC<{ rarity: string; skills: string[], type?: string;  name?: string; tags?: string[] }> = ({
 	rarity,
+	type,
 	skills,
 	name,
 	tags
@@ -33,6 +37,14 @@ export const SearchFilters: FC<{ rarity: string; skills: string[], name?: string
 						className="inline-block text-xs"
 					>
 						{`${rarity.toUpperCase()},`}
+					</span>
+				}
+				{type &&
+					<span
+						key={type}
+						className="inline-block text-xs"
+					>
+						{`${getTypeLabel(type as z.infer<typeof Type>)},`}
 					</span>
 				}
 				{name &&
